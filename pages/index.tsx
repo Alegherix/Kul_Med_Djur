@@ -1,9 +1,10 @@
 import Head from 'next/head';
+import Navbar from '../src/components/Navbar';
 
 export default function Home() {
   return (
     <div>
-      <p className="text-3xl text-blue-400">Hello World</p>
+      <Navbar />
     </div>
   );
 }
