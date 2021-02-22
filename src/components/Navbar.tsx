@@ -69,7 +69,7 @@ const Navbar = () => {
   const tablet = useMatchMedia('(min-width: 768px)');
 
   return (
-    <nav className="flex flex-col min-h-screen w-full bg-gray-400 text-white ">
+    <nav className="flex flex-col w-full bg-gray-400 text-white ">
       <div className="flex justify-between p-4 bg-gray-700">
         <p className="text-xl font-bold text-white">Logo</p>
         {!tablet && <Burger open={open} setOpen={setOpen} />}
