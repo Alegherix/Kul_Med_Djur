@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+
+@font-face {
+  font-family: 'Sanchez';
+  font-style: normal;
+  font-weight: 400;
+  src: url(/fonts/Sanchez-Regular.woff2) format('woff2');
+  /* font-display: swap; */
+}
+
+@tailwind utilities;
+
+body {
+  @apply font-sans;
+}
