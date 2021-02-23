@@ -1,6 +1,6 @@
-# Delsjön Runt - (provisional name)
+# Kul med djur
 
-This is a project dedicated to create a landing page for Delsjön Runt, An upcoming event this spring to bring your pets to Delsjön for a day of activites.
+This is a project dedicated to create a landing page for Kul med djur - Delsjön Runt, An upcoming event this spring to bring your pets to Delsjön for a day of activites.
 
 ## Stack
 

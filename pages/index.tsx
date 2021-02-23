@@ -8,7 +8,7 @@ import { EventContainer } from '../src/components/Event';
 
 export default function Home() {
   return (
-    <main className="">
+    <main>
       <Hero />
       <About />
       <EventContainer />

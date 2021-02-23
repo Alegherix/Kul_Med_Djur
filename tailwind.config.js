@@ -21,6 +21,9 @@ module.exports = {
         grass: '#aec689',
         moss: '#1a431f',
       },
+      width: {
+        smallest: '1px',
+      },
       backgroundImage: (theme) => ({
         hero: "url('/hero.svg')",
       }),
