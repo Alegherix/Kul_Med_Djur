@@ -2,10 +2,10 @@
 @tailwind components;
 
 @font-face {
-  font-family: 'Sanchez';
+  font-family: 'NiveauGrotesk';
   font-style: normal;
   font-weight: 400;
-  src: url(/fonts/Sanchez-Regular.woff2) format('woff2');
+  src: url(/fonts/NiveauGroteskRegular.woff2) format('woff2');
   /* font-display: swap; */
 }
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import useMatchMedia from '../hooks/useMatchMedia';
 import { Link } from 'react-scroll';
+import Image from 'next/image';
 
 const Burger = ({ setOpen, open }) => {
   const handleBurger = (e) => {
@@ -54,7 +55,7 @@ export const SmoothScroll: React.FC<IScrollTo> = ({ text, to }) => {
 
 const NavigationItems = () => {
   return (
-    <ul className="flex items-center justify-center flex-col bg-gray-700 gap-2 text-xl md:flex-row">
+    <ul className="flex flex-wrap items-center justify-center flex-col  gap-2 text-xl md:flex-row text-happy">
       <SmoothScroll text="Om Eventet" to="about" />
       <SmoothScroll text="Hundar" to="dogs" />
       <SmoothScroll text="Katter" to="cats" />
@@ -69,9 +70,9 @@ const Navbar = () => {
   const tablet = useMatchMedia('(min-width: 768px)');
 
   return (
-    <nav className="flex flex-col w-full bg-gray-400 text-white ">
-      <div className="flex justify-between p-4 bg-gray-700">
-        <p className="text-xl font-bold text-white">Logo</p>
+    <nav className="flex flex-col w-full text-white ">
+      <div className="flex justify-between items-center p-4">
+        <Image src="/Folksam_logo.svg" width={90} height={45} layout="fixed" />
         {!tablet && <Burger open={open} setOpen={setOpen} />}
         {tablet && <NavigationItems />}
       </div>
