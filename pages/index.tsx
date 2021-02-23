@@ -4,12 +4,14 @@ import Footer from '../src/components/Footer';
 import Hero from '../src/components/Hero';
 import Navbar from '../src/components/Navbar';
 import { SucessPopup, ErrorPopup } from '../src/components/SignupForm';
+import { EventContainer } from '../src/components/Event';
 
 export default function Home() {
   return (
     <main className="">
       <Hero />
-      {/* <About /> */}
+      <About />
+      <EventContainer />
     </main>
   );
 }
