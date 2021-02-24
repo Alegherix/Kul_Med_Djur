@@ -1,15 +1,11 @@
 import About from '../src/components/About';
-import Event, {
-  CatContainer,
-  HorseContainer,
-  IEvent,
-} from '../src/components/Event';
-import Footer from '../src/components/Footer';
-import Hero from '../src/components/Hero';
-import Navbar from '../src/components/Navbar';
-import { SucessPopup, ErrorPopup } from '../src/components/SignupForm';
-import { DogContainer } from '../src/components/Event';
 import ColorIncluderTest from '../src/components/ColorIncluderTest';
+import {
+  CatContainer,
+  DogContainer,
+  HorseContainer,
+} from '../src/components/Event';
+import Hero from '../src/components/Hero';
 
 export default function Home() {
   return (

@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 export interface IEventDescription {
   time: string;
@@ -169,19 +170,30 @@ export const HorseContainer = () => {
     'Passa på att delta i någon av våra aktiviteter för just hästar',
   ];
   return (
-    <section
-      style={{ backgroundImage: "url('/light_brown_plate.svg')" }}
-      className="text-moss px-4 py-16 -mt-7 bg-cover bg-center"
-    >
-      <EventContainer
-        title="Hästägare?"
-        description={desc}
-        events={horseEvents}
-        bgColor="melon"
-        fontColor="moss"
-      />
+    <section className="relative -mt-7">
+      <div
+        style={{ zIndex: -1, minHeight: '500px' }}
+        className="absolute w-full overflow-hidden"
+      >
+        <Image src="/light_brown_plate.svg" layout="fill" />
+      </div>
+      <div
+        style={{ minHeight: '500px' }}
+        className=" flex flex-col items-center justify-center"
+      >
+        <EventContainer
+          title="Hästägare?"
+          description={desc}
+          events={horseEvents}
+          bgColor="melon"
+          fontColor="moss"
+        />
+      </div>
     </section>
   );
+
+  // style={{ backgroundImage: "url('/light_brown_plate.svg')" }}
+  // className="text-moss px-4 py-16 -mt-7 bg-cover bg-center"
 };
 
 export default Event;
