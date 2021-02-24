@@ -1,8 +1,11 @@
 import React from 'react';
 
-export interface IEvent {
+export interface IEventDescription {
   time: string;
   text: string;
+}
+
+export interface IEvent extends IEventDescription {
   fontColor: string;
   bgColor: string;
 }
@@ -21,81 +24,122 @@ const Event: React.FC<IEvent> = ({ time, text, fontColor, bgColor }) => {
   );
 };
 
-const dogEvents: IEvent[] = [
+const dogEvents: IEventDescription[] = [
   {
     text: 'Testa på agility med Anna Andersson',
     time: '10.00',
-    bgColor: 'grass',
-    fontColor: 'moss',
   },
 
   {
     text: 'Föreläsning om hundars beteende',
     time: '11.00',
-    bgColor: 'grass',
-    fontColor: 'moss',
   },
 
   {
     text: 'Kloklippning och pälsvård',
     time: '13.00',
-    bgColor: 'grass',
-    fontColor: 'moss',
   },
 
   {
     text: 'Testad på lydnas med Jan Jansson',
     time: '13.00',
-    bgColor: 'grass',
-    fontColor: 'moss',
+  },
+];
+
+const catEvents: IEventDescription[] = [
+  {
+    text: 'Utställningstips med Karin Johansson',
+    time: '10.00',
+  },
+  {
+    text: 'Föreläsning om katters beteende',
+    time: '11.00',
+  },
+  {
+    text: 'Kattkafé med tillhörande fika',
+    time: '13.00',
+  },
+  {
+    text: 'Träffa uppfödare av olika raser',
+    time: '14.00',
   },
 ];
 
 interface IEventContainer {
-  svgName: string;
-  events: IEvent[];
+  events: IEventDescription[];
   title: string;
-  description: string;
+  description: string[];
+  fontColor: string;
+  bgColor: string;
 }
 
-export const EventContainer = () => {
+export const EventContainer: React.FC<IEventContainer> = ({
+  events,
+  title,
+  description,
+  fontColor,
+  bgColor,
+}) => {
+  return (
+    <>
+      <h3 className="text-center mb-3 text-3xl font-bold">{title}</h3>
+      {description.map((d) => (
+        <p key={d} className="text-sm text-center">
+          {d}
+        </p>
+      ))}
+      <div className="flex flex-col gap-4 pb-2 mt-4">
+        {events.map((event) => (
+          <Event
+            key={event.text}
+            {...event}
+            fontColor={fontColor}
+            bgColor={bgColor}
+          />
+        ))}
+      </div>
+    </>
+  );
+};
+
+export const DogContainer = () => {
+  const desc = [
+    'Eller går du i tankarna att skaffa en fyrbent kompis?',
+    'Passa på att delta i någon av våra aktiviteter för just hundar',
+  ];
   return (
     <section
       style={{ backgroundImage: "url('/dark_green_plate.svg')" }}
       className="text-melon px-4 py-16 -mt-6 bg-cover bg-center"
     >
-      <h3 className="text-center mb-3 text-3xl font-bold">Hundägare?</h3>
-      <p className="text-sm text-center mb-4">
-        Eller går du i tankarna att skaffa en fyrbent kompis?
-        <br />
-        Passa på att delta i någon av våra aktiviteter för just hundar
-      </p>
-      <div className="flex flex-col gap-4 pb-2">
-        {dogEvents.map((dogEvent) => (
-          <Event key={dogEvent.text} {...dogEvent} />
-        ))}
-      </div>
+      <EventContainer
+        title="Hundägare?"
+        description={desc}
+        events={dogEvents}
+        bgColor="grass"
+        fontColor="moss"
+      />
     </section>
   );
 };
 
-const DogContainer = () => {
+export const CatContainer = () => {
+  const desc = [
+    'Eller drömmer du om att skaffa en lurvig rumskamrat?',
+    'Passa på att delta i någon av våra aktiviteter för just katter',
+  ];
   return (
     <section
-      style={{ backgroundImage: "url('/dark_green_plate.svg')" }}
-      className="text-melon px-4 py-16 -mt-6 bg-cover bg-center"
+      style={{ backgroundImage: "url('/light_blue_plate.svg')" }}
+      className="text-lake px-4 py-16 -mt-9 bg-cover bg-center"
     >
-      <h3 className="text-center mb-3 text-3xl font-bold">Hundägare?</h3>
-      <p className="text-sm text-center mb-4">
-        Eller går du i tankarna att skaffa en fyrbent kompis?
-        <br />
-        Passa på att delta i någon av våra aktiviteter för just hundar
-      </p>
-      <div className="flex flex-col gap-4 pb-2">
-        {dogEvents.map((dogEvent) => (
-          <Event key={dogEvent.text} {...dogEvent} />
-        ))}
-      </div>
+      <EventContainer
+        title="Hundägare?"
+        description={desc}
+        events={dogEvents}
+        bgColor="lake"
+        fontColor="white"
+      />
     </section>
   );
 };
