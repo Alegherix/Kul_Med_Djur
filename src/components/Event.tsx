@@ -65,6 +65,25 @@ const catEvents: IEventDescription[] = [
   },
 ];
 
+const horseEvents: IEventDescription[] = [
+  {
+    text: 'Utställningstips med Siv Svensson',
+    time: '10.00',
+  },
+  {
+    text: 'Föreläsning om trav & skritt teknik',
+    time: '11.00',
+  },
+  {
+    text: 'Hästvård och hur du tar hand om stallet',
+    time: '13.00',
+  },
+  {
+    text: 'Hästägande och dess möjligheter',
+    time: '14.00',
+  },
+];
+
 interface IEventContainer {
   events: IEventDescription[];
   title: string;
@@ -134,11 +153,32 @@ export const CatContainer = () => {
       className="text-lake px-4 py-16 -mt-9 bg-cover bg-center"
     >
       <EventContainer
-        title="Hundägare?"
+        title="Kattägare?"
         description={desc}
-        events={dogEvents}
+        events={catEvents}
         bgColor="lake"
         fontColor="white"
+      />
+    </section>
+  );
+};
+
+export const HorseContainer = () => {
+  const desc = [
+    'Eller alltid varit lite nyfiken på vad det innebär?',
+    'Passa på att delta i någon av våra aktiviteter för just hästar',
+  ];
+  return (
+    <section
+      style={{ backgroundImage: "url('/light_brown_plate.svg')" }}
+      className="text-moss px-4 py-16 -mt-7 bg-cover bg-center"
+    >
+      <EventContainer
+        title="Hästägare?"
+        description={desc}
+        events={horseEvents}
+        bgColor="melon"
+        fontColor="moss"
       />
     </section>
   );

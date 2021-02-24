@@ -1,5 +1,9 @@
 import About from '../src/components/About';
-import Event, { CatContainer, IEvent } from '../src/components/Event';
+import Event, {
+  CatContainer,
+  HorseContainer,
+  IEvent,
+} from '../src/components/Event';
 import Footer from '../src/components/Footer';
 import Hero from '../src/components/Hero';
 import Navbar from '../src/components/Navbar';
@@ -13,6 +17,7 @@ export default function Home() {
       <About />
       <DogContainer />
       <CatContainer />
+      <HorseContainer />
     </main>
   );
 }

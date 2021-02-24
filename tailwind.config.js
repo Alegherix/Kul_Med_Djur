@@ -19,6 +19,7 @@ module.exports = {
         melon: '#e9ffe6',
         dirt: '#ba985f',
         grass: '#aec689',
+        overgrownGrass: '#99BD7B',
         moss: '#1a431f',
       },
       width: {
