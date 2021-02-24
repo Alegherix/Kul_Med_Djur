@@ -10,19 +10,13 @@ export interface IEvent extends IEventDescription {
   bgColor: string;
 }
 
-const Event: React.FC<IEvent> = ({ time, text, fontColor, bgColor }) => {
-  return (
-    <>
-      <div
-        className={`flex p-2 gap-2 rounded-2xl items-center justify-between text-${fontColor} bg-${bgColor}`}
-      >
-        <p className="font-bold">{time}</p>
-        <div className={`w-smallest h-4 bg-${fontColor} rounded-md`}></div>
-        <p className="flex-1">{text}</p>
-      </div>
-    </>
-  );
-};
+interface IEventContainer {
+  events: IEventDescription[];
+  title: string;
+  description: string[];
+  fontColor: string;
+  bgColor: string;
+}
 
 const dogEvents: IEventDescription[] = [
   {
@@ -84,13 +78,19 @@ const horseEvents: IEventDescription[] = [
   },
 ];
 
-interface IEventContainer {
-  events: IEventDescription[];
-  title: string;
-  description: string[];
-  fontColor: string;
-  bgColor: string;
-}
+const Event: React.FC<IEvent> = ({ time, text, fontColor, bgColor }) => {
+  return (
+    <>
+      <div
+        className={`flex p-2 pl-3 gap-2 rounded-2xl items-center justify-between text-${fontColor} bg-${bgColor} shadow-md`}
+      >
+        <p className="font-bold">{time}</p>
+        <div className={`w-smallest h-4 bg-${fontColor} rounded-md`}></div>
+        <p className="flex-1">{text}</p>
+      </div>
+    </>
+  );
+};
 
 export const EventContainer: React.FC<IEventContainer> = ({
   events,

@@ -9,6 +9,7 @@ import Hero from '../src/components/Hero';
 import Navbar from '../src/components/Navbar';
 import { SucessPopup, ErrorPopup } from '../src/components/SignupForm';
 import { DogContainer } from '../src/components/Event';
+import ColorIncluderTest from '../src/components/ColorIncluderTest';
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <DogContainer />
       <CatContainer />
       <HorseContainer />
+      <ColorIncluderTest />
     </main>
   );
 }
