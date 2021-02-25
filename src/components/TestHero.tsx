@@ -1,7 +1,7 @@
 import React from 'react';
-import HeroSVG from './components/svg/HeroSVG';
+import HeroSVG from './svg/HeroSVG';
 import Image from 'next/image';
-import Navbar from './components/Navbar';
+import Navbar from './Navbar';
 import { motion } from 'framer-motion';
 
 interface TestHeroProps {}

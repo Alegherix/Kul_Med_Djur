@@ -25,9 +25,35 @@ module.exports = {
       width: {
         smallest: '1px',
       },
-      backgroundImage: (theme) => ({
-        hero: "url('/hero_2.svg')",
-      }),
+
+      animation: {
+        cloudOne: 'glide 11s alternate-reverse infinite linear',
+        cloudTwo: 'glide 9s alternate-reverse infinite linear',
+        cloudThree: 'glide 12s alternate-reverse infinite linear',
+        hooverCloud: 'hoovering 18s alternate-reverse infinite linear',
+        test: 'glide 1s alternate-reverse infinite linear',
+      },
+
+      keyframes: {
+        hoovering: {
+          '0%': { transform: 'translate(0, 0)' },
+          '10%': { transform: 'translate(1% ,-1%)' },
+          '20%': { transform: 'translate(3% ,-2%)' },
+          '30%': { transform: 'translate(4% ,-3%)' },
+          '40%': { transform: 'translate(5% ,-4%)' },
+          '50%': { transform: 'translate(6% ,-4%)' },
+          '60%': { transform: 'translate(5% ,-3%)' },
+          '70%': { transform: 'translate(4% ,-3%)' },
+          '80%': { transform: 'translate(3% ,-2%)' },
+          '90%': { transform: 'translate(1% ,-1%)' },
+          '100%': { transform: 'translate(0% ,-0%)' },
+        },
+
+        glide: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-5%)' },
+        },
+      },
     },
   },
   variants: {

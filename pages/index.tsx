@@ -7,7 +7,7 @@ import {
 } from '../src/components/Event';
 import HeroSVG from '../src/components/svg/HeroSVG';
 import Hero from '../src/components/Hero';
-import TestHero from '../src/TestHero';
+import TestHero from '../src/components/TestHero';
 
 export default function Home() {
   return (
