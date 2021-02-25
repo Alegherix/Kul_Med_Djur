@@ -10,7 +10,7 @@ const About: React.FC<AboutProps> = ({}) => {
         height: '35vh',
         backgroundImage: "url('/light_green_plate.svg')",
       }}
-      className="text-center text-moss -mt-10 flex items-center justify-center flex-col h-full py-8 bg-cover bg-center"
+      className="text-center text-moss -mt-4 flex items-center justify-center flex-col h-full py-8 bg-cover bg-center"
     >
       <h2 className="text-3xl font-bold mb-3">Eventbeskrivning här</h2>
       <p className="mb-4 w-96 mx-auto ">

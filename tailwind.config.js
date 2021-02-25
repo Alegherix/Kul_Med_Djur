@@ -26,7 +26,7 @@ module.exports = {
         smallest: '1px',
       },
       backgroundImage: (theme) => ({
-        hero: "url('/hero.svg')",
+        hero: "url('/hero_2.svg')",
       }),
     },
   },

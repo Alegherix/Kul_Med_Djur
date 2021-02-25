@@ -11,6 +11,12 @@
 
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply bg-melon;
+  }
+}
+
 body {
   @apply font-sans;
 }

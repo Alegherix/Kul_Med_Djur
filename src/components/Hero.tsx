@@ -7,7 +7,7 @@ const Hero: React.FC = () => {
     <>
       <main
         style={{ height: '80vh' }}
-        className="rel flex flex-col bg-hero bg-cover bg-center"
+        className="rel flex flex-col bg-hero bg-cover bg-center bg-melon"
       >
         <Navbar />
         <div className="mt-10 text-center text-white">
