@@ -59,7 +59,11 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      // transition: ['group-focus'],
+      transform: ['group-focus'],
+      // translate: ['group-focus'],
+    },
   },
   plugins: [],
 };

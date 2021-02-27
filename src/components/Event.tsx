@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import Position from './svg/Location';
+import Position from './svg/LocationSVG';
 
 export interface IEventDescription {
   time: string;

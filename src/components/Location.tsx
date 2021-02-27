@@ -1,5 +1,5 @@
 import React from 'react';
-import LocationSVG from './svg/Location';
+import LocationSVG from './svg/LocationSVG';
 
 export const Location = () => {
   return (
@@ -17,7 +17,9 @@ export const Location = () => {
       </div>
 
       <div className="flex flex-col">
-        <LocationSVG />
+        <div className="w-80 h-80">
+          <LocationSVG />
+        </div>
         <p className="mt-4 font-bold text-center">Delsjöbadet</p>
         <p className="font-bold text-center">416 55 Göteborg</p>
       </div>

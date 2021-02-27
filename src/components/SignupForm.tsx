@@ -1,4 +1,7 @@
-const SucessPopup = () => {
+import { useState } from 'react';
+import { useForm } from 'react-hook-form';
+
+export const SucessPopup = () => {
   return (
     <div className="flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
       <div className="flex items-center justify-center w-12 bg-green-500">
@@ -25,7 +28,7 @@ const SucessPopup = () => {
   );
 };
 
-const ErrorPopup = () => {
+export const ErrorPopup = () => {
   return (
     <div className="flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
       <div className="flex items-center justify-center w-12 bg-red-500">
@@ -52,4 +55,58 @@ const ErrorPopup = () => {
   );
 };
 
-export { SucessPopup, ErrorPopup };
+type FormValues = {
+  firstName: string;
+  lastName: string;
+  email: string;
+};
+
+const SignupForm = () => {
+  const [fNameFocus, setfNameFocus] = useState(false);
+  const { register, handleSubmit, errors } = useForm<FormValues>();
+
+  const submitForm = (e) => {
+    console.log('Submitting form');
+  };
+
+  const fNameFocusEvent = (e) => {
+    if (e.target.value.length === 0) setfNameFocus(false);
+  };
+
+  return (
+    <section className="text-moss px-6 mt-4 pb-80">
+      <h3>Anmälan</h3>
+      <p className="text-center text-sm w-3/4 mx-auto mb-6">
+        Här kan du anmäla dig och din fyrbetna vän till en eller fler av
+        aktiviteterna.
+      </p>
+
+      <form className="flex gap-2 pb-16" onSubmit={handleSubmit(submitForm)}>
+        <div className="flex flex-col w-full">
+          <label
+            className={`pointer-events-none transition duration-150 ease-in transform ${
+              fNameFocus
+                ? 'translate-y-0 translate-x-0'
+                : 'translate-y-7 translate-x-2 scale-95'
+            }`}
+          >
+            Förnamn
+          </label>
+          <input
+            name="lastName"
+            ref={register}
+            onFocus={() => setfNameFocus(true)}
+            onBlur={fNameFocusEvent}
+          />
+        </div>
+
+        <div className="flex flex-col w-full">
+          <label>Efternamn</label>
+          <input name="lastName" ref={register} />
+        </div>
+      </form>
+    </section>
+  );
+};
+
+export default SignupForm;

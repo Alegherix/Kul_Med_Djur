@@ -10,6 +10,7 @@ import Hero from '../src/components/Hero';
 import React from 'react';
 import { Collaboration } from '../src/components/Collaborations';
 import { Location } from '../src/components/Location';
+import SignupForm from '../src/components/SignupForm';
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <HorseContainer />
       <Collaboration />
       <Location />
+      <SignupForm />
 
       <ColorIncluderTest />
       {/* <HeroSVG /> */}

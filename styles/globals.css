@@ -19,6 +19,13 @@
   h3 {
     @apply font-bold text-center text-3xl mb-2;
   }
+
+  label {
+    @apply text-moss mb-1 text-sm;
+  }
+  input {
+    @apply placeholder-moss placeholder-opacity-50 rounded-2xl bg-grass pl-2 h-8 text-xs;
+  }
 }
 
 body {
