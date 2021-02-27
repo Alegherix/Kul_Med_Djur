@@ -33,6 +33,27 @@ export const Collaboration = () => {
       hooverText: 'Svenska Kennelklubben',
       href: 'https://skk.se',
     },
+    {
+      src: '/collaborations/SKK.webp',
+      height: 95,
+      width: 95,
+      hooverText: 'Svenska Kennelklubben',
+      href: 'https://skk.se',
+    },
+    {
+      src: '/collaborations/SKK.webp',
+      height: 95,
+      width: 95,
+      hooverText: 'Svenska Kennelklubben',
+      href: 'https://skk.se',
+    },
+    {
+      src: '/collaborations/SKK.webp',
+      height: 95,
+      width: 95,
+      hooverText: 'Svenska Kennelklubben',
+      href: 'https://skk.se',
+    },
     // {
     //   src: '',
     //   height: 0,

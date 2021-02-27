@@ -74,14 +74,17 @@ const SignupForm = () => {
   };
 
   return (
-    <section className="text-moss px-6 mt-4 pb-80">
+    <section id="interest" className="text-moss px-8 mt-8 pb-4 flex flex-col">
       <h3>Anmälan</h3>
-      <p className="text-center text-sm w-3/4 mx-auto mb-6">
+      <p className="text-center text-sm mx-auto mb-6">
         Här kan du anmäla dig och din fyrbetna vän till en eller fler av
         aktiviteterna.
       </p>
 
-      <form className="flex gap-2 pb-16" onSubmit={handleSubmit(submitForm)}>
+      <form
+        className="grid grid-cols-2 gap-2 mb-4"
+        onSubmit={handleSubmit(submitForm)}
+      >
         <div className="flex flex-col w-full">
           <label
             className={`pointer-events-none transition duration-150 ease-in transform ${
@@ -104,7 +107,30 @@ const SignupForm = () => {
           <label>Efternamn</label>
           <input name="lastName" ref={register} />
         </div>
+
+        <div className="col-span-2 flex flex-col">
+          <label>E-postadress</label>
+          <input name="email" ref={register} />
+        </div>
+        <div className="flex flex-col">
+          <label>Mobilnummer</label>
+          <input name="cellphone" ref={register} />
+        </div>
       </form>
+
+      <div className="mb-4">
+        <p>Jag har anmält mig till följande aktiviteter:</p>
+      </div>
+
+      <button className="bg-moss px-8 py-3 text-melon rounded-3xl mx-auto w-40 mb-4">
+        Skicka
+      </button>
+
+      <p className="mx-auto  text-sm">
+        När vi har bekräftat din anmälan skickas ett mejl till adressen du
+        angett. I mejlet får du mer information om aktiviteterna som du har
+        anmält dig till.
+      </p>
     </section>
   );
 };

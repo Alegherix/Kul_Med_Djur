@@ -11,6 +11,7 @@ import React from 'react';
 import { Collaboration } from '../src/components/Collaborations';
 import { Location } from '../src/components/Location';
 import SignupForm from '../src/components/SignupForm';
+import Footer from '../src/components/Footer';
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
       <Collaboration />
       <Location />
       <SignupForm />
+      <Footer />
 
       <ColorIncluderTest />
       {/* <HeroSVG /> */}
