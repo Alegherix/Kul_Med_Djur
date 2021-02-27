@@ -126,7 +126,7 @@ const SignupForm = () => {
         Skicka
       </button>
 
-      <p className="mx-auto  text-sm">
+      <p className="pl-4 mx-auto text-sm text-center">
         När vi har bekräftat din anmälan skickas ett mejl till adressen du
         angett. I mejlet får du mer information om aktiviteterna som du har
         anmält dig till.
