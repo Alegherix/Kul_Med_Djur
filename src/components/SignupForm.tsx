@@ -76,8 +76,8 @@ const SignupForm = () => {
   return (
     <section id="interest" className="text-moss px-8 mt-8 pb-4 flex flex-col">
       <h3>Anmälan</h3>
-      <p className="text-center text-sm mx-auto mb-6">
-        Här kan du anmäla dig och din fyrbetna vän till en eller fler av
+      <p className="text-center text-sm mx-auto mb-4">
+        Här kan du anmäla dig och din fyrbenta vän till en eller fler av
         aktiviteterna.
       </p>
 
