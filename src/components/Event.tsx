@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Position from './svg/Position';
 
 export interface IEventDescription {
   time: string;
@@ -102,7 +103,7 @@ export const EventContainer: React.FC<IEventContainer> = ({
 }) => {
   return (
     <>
-      <h3 className="text-center mb-3 text-3xl font-bold">{title}</h3>
+      <h3>{title}</h3>
       {description.map((d) => (
         <p key={d} className="text-sm text-center">
           {d}
@@ -186,7 +187,7 @@ export const HorseContainer = () => {
           description={desc}
           events={horseEvents}
           bgColor="melon"
-          fontColor="moss"
+          fontColor="mound"
         />
       </div>
     </section>
@@ -194,6 +195,44 @@ export const HorseContainer = () => {
 
   // style={{ backgroundImage: "url('/light_brown_plate.svg')" }}
   // className="text-moss px-4 py-16 -mt-7 bg-cover bg-center"
+};
+
+export const Collaboration = () => {
+  return (
+    <section
+      style={{ background: "url('/light_pink_plate.svg')", height: '60vh' }}
+      className="text-wine px-6 bg-cover bg-center -mt-10 py-16 text-center"
+    >
+      <h3>Samarbetspartners</h3>
+      <p className="text-sm">
+        Vi är stolta över att kunna presentera de samarbetspartners som hjälper
+        oss att anordna eventet!
+      </p>
+      <div className="grid grid-cols-2 "></div>
+    </section>
+  );
+};
+
+export const FindUs = () => {
+  return (
+    <section
+      style={{ background: "url('/green_plate.svg')", height: '60vh' }}
+      className="text-moss -mt-9 pt-12 px-6 text-center flex flex-col"
+    >
+      <div>
+        <h3>Hitta hit!</h3>
+        <p className="text-sm">
+          Alla aktiviteter som sker under dagen kommer äga rum runt Stora
+          Delsjön i Göteborg. Vi utgår från Delsjöbadet, där Folksam kommer att
+          finnas på plats med info.
+        </p>
+      </div>
+
+      <div className="flex flex-col">
+        <Position />
+      </div>
+    </section>
+  );
 };
 
 export default Event;

@@ -18,9 +18,11 @@ module.exports = {
         sea: '#009ce0',
         melon: '#e9ffe6',
         dirt: '#ba985f',
+        mound: '#4A260E',
         grass: '#aec689',
         overgrownGrass: '#99BD7B',
         moss: '#1a431f',
+        wine: '#561E42',
       },
       width: {
         smallest: '1px',

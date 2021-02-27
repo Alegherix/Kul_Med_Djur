@@ -4,6 +4,8 @@ import {
   CatContainer,
   DogContainer,
   HorseContainer,
+  Collaboration,
+  FindUs,
 } from '../src/components/Event';
 import HeroSVG from '../src/components/svg/HeroSVG';
 import Hero from '../src/components/Hero';
@@ -18,6 +20,9 @@ export default function Home() {
       <DogContainer />
       <CatContainer />
       <HorseContainer />
+      <Collaboration />
+      <FindUs />
+
       <ColorIncluderTest />
       {/* <HeroSVG /> */}
     </main>

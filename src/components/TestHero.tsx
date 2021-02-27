@@ -22,7 +22,7 @@ const TestHero: React.FC<TestHeroProps> = ({}) => {
 
   return (
     <main ref={ref} className="relative " style={{ height: '80vh' }}>
-      <HeroSVG />
+      <HeroSVG refHook={{ ref }} />
       <Navbar />
       <motion.div style={{ y }} className="mt-10 text-center text-white">
         <motion.h1
