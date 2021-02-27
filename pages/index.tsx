@@ -4,24 +4,23 @@ import {
   CatContainer,
   DogContainer,
   HorseContainer,
-  Collaboration,
-  FindUs,
 } from '../src/components/Event';
 import HeroSVG from '../src/components/svg/HeroSVG';
 import Hero from '../src/components/Hero';
-import TestHero from '../src/components/TestHero';
+import React from 'react';
+import { Collaboration } from '../src/components/Collaborations';
+import { Location } from '../src/components/Location';
 
 export default function Home() {
   return (
     <main>
-      {/* <Hero /> */}
-      <TestHero />
+      <Hero />
       <About />
       <DogContainer />
       <CatContainer />
       <HorseContainer />
       <Collaboration />
-      <FindUs />
+      <Location />
 
       <ColorIncluderTest />
       {/* <HeroSVG /> */}
