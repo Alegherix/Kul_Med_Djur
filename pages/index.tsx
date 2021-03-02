@@ -12,13 +12,15 @@ import { Collaboration } from '../src/components/Collaborations';
 import { Location } from '../src/components/Location';
 import SignupForm from '../src/components/SignupForm';
 import Footer from '../src/components/Footer';
+import PlateTest from '../src/components/PlateTest';
 
 export default function Home() {
   return (
     <main>
       <Hero />
       <About />
-      <DogContainer />
+      <PlateTest />
+      {/* <DogContainer /> */}
       <CatContainer />
       <HorseContainer />
       <Collaboration />

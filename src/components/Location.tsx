@@ -70,16 +70,6 @@ export const Location = () => {
         </p>
       </div>
 
-      {/* <div
-        style={{
-          clipPath:
-            'polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 15% 50%, 0% 0%)',
-        }}
-        className="bg-red-600 w-32 h-9 text-white text-xl flex items-center justify-center absolute top-72 left-10 findUs"
-      >
-        <p>Hitta hit</p>
-      </div> */}
-
       <div className="flex flex-col">
         <div className="w-80 flex items-center justify-center">
           <LocationSVG />
