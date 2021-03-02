@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimateSharedLayout, AnimatePresence } from 'framer-motion';
-import { FaChevronDown } from 'react-icons/fa';
+import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
 const items = [0];
 
@@ -13,7 +13,7 @@ const Example = () => {
   return (
     <AnimateSharedLayout>
       <motion.div
-        style={{ maxWidth: '414px' }}
+        style={{ maxWidth: '385px' }}
         layout
         initial={{ borderRadius: 10 }}
         className="bg-grass w-full flex flex-col gap-4  mx-auto"
@@ -41,6 +41,8 @@ const Card = () => {
         toggleOpen={toggleOpen}
         time="10.00"
         text="Testa på agility med Anna Andersson"
+        color="moss"
+        isOpen={isOpen}
       />
       <AnimatePresence>
         {isOpen && <Content textContent={textContent} />}
@@ -49,20 +51,21 @@ const Card = () => {
   );
 };
 
-const Details = ({ toggleOpen, time, text }) => {
+const Details = ({ toggleOpen, time, text, color, isOpen }) => {
   return (
-    <motion.div
-      layout
-      onClick={toggleOpen}
-      className="flex p-2 items-center text-moss"
-    >
+    <motion.div layout className={`flex p-2 items-center text-${color}`}>
       <div className="font-bold mr-2">{time}</div>
       <div
         style={{ width: '1px' }}
         className="h-6 rounded-lg bg-moss mx-2"
       ></div>
       <div className="">{text}</div>
-      <FaChevronDown className="flex-grow" />
+      <FaChevronDown
+        onClick={toggleOpen}
+        className={`cursor-pointer flex-grow transition transform duration-300 ${
+          isOpen ? 'rotate-180' : ''
+        }`}
+      />
     </motion.div>
   );
 };

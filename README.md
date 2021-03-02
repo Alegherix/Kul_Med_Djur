@@ -8,6 +8,8 @@ This is a project dedicated to create a landing page for Kul med djur - Delsjön
 - Typescript
 - TailwindCSS
 - Vercel
+- Framer Motion
+- Immer
 
 ## Authors
 

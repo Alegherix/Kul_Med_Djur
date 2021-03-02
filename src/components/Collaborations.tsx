@@ -54,27 +54,6 @@ export const Collaboration = () => {
       hooverText: 'Fourth',
       href: 'https://skk.se',
     },
-    // {
-    //   src: '',
-    //   height: 0,
-    //   width: 0,
-    //   hooverText: '',
-    //   href: '',
-    // },
-    // {
-    //   src: '',
-    //   height: 0,
-    //   width: 0,
-    //   hooverText: '',
-    //   href: '',
-    // },
-    // {
-    //   src: '',
-    //   height: 0,
-    //   width: 0,
-    //   hooverText: '',
-    //   href: '',
-    // },
   ];
 
   return (
@@ -87,7 +66,7 @@ export const Collaboration = () => {
         Vi är stolta över att kunna presentera de samarbetspartners som hjälper
         oss att anordna eventet!
       </p>
-      <div className="grid grid-cols-2 gap-4 flex-grow">
+      <div className="grid grid-cols-2 gap-4 flex-grow md:grid-cols-4 max-w-screen-xl mx-auto">
         {collabs.map((collab) => (
           <CollabImage key={collab.hooverText} {...collab} />
         ))}
