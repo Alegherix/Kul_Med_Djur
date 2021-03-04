@@ -1,5 +1,6 @@
-import React, { createContext, useContext, useReducer } from 'react';
+import React, { createContext, useContext } from 'react';
 import produce from 'immer';
+import { useImmerReducer } from 'use-immer';
 
 interface IEventState {
   firstEvent: string;
@@ -10,7 +11,15 @@ interface IEventState {
 }
 
 interface IEventAction {
-  type: string;
+  type: 'firstEvent' | 'secondEvent' | 'thirdEvent';
+}
+
+interface IEventDispatchContext {
+  dispatch: React.Dispatch<IEventAction> | null;
+}
+
+interface IEventStateContext {
+  state: IEventState;
 }
 
 const initialState: IEventState = {
@@ -27,24 +36,34 @@ const eventReducer = (draft: IEventState, action: IEventAction) => {
       draft.firstEvent = draft.payload;
       return;
     }
+    case 'secondEvent': {
+      draft.secondEvent = draft.payload;
+      return;
+    }
+    case 'thirdEvent': {
+      draft.secondEvent = draft.payload;
+      return;
+    }
   }
 };
 
-const curriedEventReducer = produce(eventReducer);
+const EventDispatchContext = createContext<IEventDispatchContext>({
+  dispatch: null,
+});
 
-const EventUseReducer = () => {
-  const [state, dispatch] = useReducer(curriedEventReducer, initialState);
-};
-
-const EventDispatchContext = createContext({});
-const EventStateContext = createContext({});
+const EventStateContext = createContext<IEventStateContext>({
+  state: initialState,
+});
 
 const EventProvider = ({ children }) => {
-  <EventDispatchContext.Provider value={{}}>
-    <EventStateContext.Provider value={{}}>
-      {children}
-    </EventStateContext.Provider>
-  </EventDispatchContext.Provider>;
+  const [state, dispatch] = useImmerReducer(eventReducer, initialState);
+  return (
+    <EventDispatchContext.Provider value={{ dispatch }}>
+      <EventStateContext.Provider value={{ state }}>
+        {children}
+      </EventStateContext.Provider>
+    </EventDispatchContext.Provider>
+  );
 };
 
 export default EventProvider;

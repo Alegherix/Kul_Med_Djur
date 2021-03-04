@@ -19,7 +19,8 @@
     "react-hook-form": "^6.15.4",
     "react-icons": "^4.2.0",
     "react-scroll": "^1.8.1",
-    "tailwindcss": "^2.0.3"
+    "tailwindcss": "^2.0.3",
+    "use-immer": "^0.4.2"
   },
   "devDependencies": {
     "@types/node": "^14.14.31",
