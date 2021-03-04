@@ -1,12 +1,8 @@
 import { AnimatePresence, AnimateSharedLayout, motion } from 'framer-motion';
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import { FaChevronDown } from 'react-icons/fa';
-import {
-  EventDispatchContext,
-  EventStateContext,
-  useEventDispatch,
-  useEventState,
-} from '../hooks/useEvent';
+import { useEventDispatch, useEventState } from '../hooks/useEvent';
+import { EventType } from '../utils/eventUtils';
 
 const items = [0];
 
@@ -15,7 +11,7 @@ export interface IEventDescription {
   text: string;
 }
 
-const Example = () => {
+const Event = () => {
   return (
     <AnimateSharedLayout>
       <motion.div
@@ -43,7 +39,7 @@ const Card = () => {
 
   return (
     <motion.div layout initial={{ borderRadius: 10 }}>
-      <Details
+      <Overview
         toggleOpen={toggleOpen}
         time="10.00"
         text="Testa på agility med Anna Andersson"
@@ -57,7 +53,7 @@ const Card = () => {
   );
 };
 
-const Details = ({ toggleOpen, time, text, color, isOpen }) => {
+const Overview = ({ toggleOpen, time, text, color, isOpen }) => {
   return (
     <motion.div layout className={`flex p-2 items-center text-${color}`}>
       <div className="font-bold mr-2">{time}</div>
@@ -76,18 +72,19 @@ const Details = ({ toggleOpen, time, text, color, isOpen }) => {
   );
 };
 
-function Content({ textContent }) {
-  // const [subscribed, setSubscribed] = useState(false);
-  const { dispatch } = useContext(EventDispatchContext);
-  const { state } = useContext(EventStateContext);
+interface IContent {
+  textContent: string;
+  period: string;
+  type: EventType;
+}
+
+const Content: React.FC<IContent> = ({ textContent, type, period }) => {
+  const { dispatch } = useEventDispatch();
+  const { state } = useEventState();
 
   const toggleSubscribed = () => {
-    // setSubscribed(!subscribed);
-    dispatch({ type: 'firstEvent', payload: 'dogEvent' });
+    dispatch({ type: 'firstEvent', payload: 'dog' });
   };
-
-  const shouldToggle = () => state.firstEvent === 'dogEvent';
-
   return (
     <motion.div
       layout
@@ -112,7 +109,7 @@ function Content({ textContent }) {
           className="w-16 h-8 p-1 bg-gray-700 rounded-md flex flex-col cursor-pointer"
           style={{}}
         >
-          {state.firstEvent !== 'dogEvent' ? (
+          {state.firstEvent !== 'dog' ? (
             <motion.div
               layout
               className="h-full w-6 bg-red-400 rounded-sm"
@@ -127,9 +124,9 @@ function Content({ textContent }) {
       </div>
     </motion.div>
   );
-}
+};
 
-const PlateTest = ({}) => {
+const PlateTest = () => {
   return (
     <section className="">
       <div
@@ -137,7 +134,7 @@ const PlateTest = ({}) => {
         className="text-melon px-4 py-16 -mt-6 bg-cover bg-center"
       ></div>
       <div className="bg-moss -mt-3 px-4">
-        <Example />
+        <Event />
       </div>
       <div
         style={{ backgroundImage: "url('/dark_bottom.svg')" }}

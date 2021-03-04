@@ -1,5 +1,56 @@
 import React, { createContext, useContext } from 'react';
 import { useImmerReducer } from 'use-immer';
+import { EventType } from '../utils/eventUtils';
+
+// interface IEventState {
+//   firstEvent: string;
+//   secondEvent: string;
+//   thirdEvent: string;
+//   fourthEvent: string;
+//   payload: string;
+// }
+
+// interface IEventAction {
+//   type: 'first' | 'second' | 'third' | 'fourt';
+//   payload: 'dog' | 'cat' | 'horse';
+// }
+
+// interface IEventDispatchContext {
+//   dispatch: React.Dispatch<IEventAction> | null;
+// }
+
+// interface IEventStateContext {
+//   state: IEventState;
+// }
+
+// const initialState: IEventState = {
+//   firstEvent: '',
+//   secondEvent: '',
+//   thirdEvent: '',
+//   fourthEvent: '',
+//   payload: '',
+// };
+
+// const eventReducer = (draft: IEventState, action: IEventAction) => {
+//   switch (action.type) {
+//     case 'first': {
+//       draft[action.type] === action.payload
+//         ? (draft[action.type] = '')
+//         : (draft[action.type] = action.payload);
+//       return;
+//     }
+//     // case 'secondEvent': {
+//     //   state.secondEvent = state.payload;
+//     //   return;
+//     // }
+//     // case 'thirdEvent': {
+//     //   state.secondEvent = state.payload;
+//     //   return;
+//     // }
+//     default:
+//       return;
+//   }
+// };
 
 interface IEventState {
   firstEvent: string;
@@ -11,7 +62,7 @@ interface IEventState {
 
 interface IEventAction {
   type: 'firstEvent' | 'secondEvent' | 'thirdEvent' | 'fourthEvent';
-  payload: 'dogEvent' | 'catEvent' | 'horseEvent';
+  payload: EventType;
 }
 
 interface IEventDispatchContext {
