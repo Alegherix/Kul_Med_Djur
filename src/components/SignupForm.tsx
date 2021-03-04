@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useEventState } from '../hooks/useEvent';
 
 export const SucessPopup = () => {
   return (
@@ -62,6 +63,10 @@ type FormValues = {
 };
 
 const SignupForm = () => {
+  const {
+    state: { firstEvent },
+  } = useEventState();
+
   const [fNameFocus, setfNameFocus] = useState(false);
   const { register, handleSubmit, errors } = useForm<FormValues>();
 
@@ -120,6 +125,7 @@ const SignupForm = () => {
 
       <div className="mb-4">
         <p>Jag har anmält mig till följande aktiviteter:</p>
+        {firstEvent !== '' ? <p>{firstEvent}</p> : 'No event yet'}
       </div>
 
       <button className="bg-moss px-8 py-3 text-melon rounded-3xl mx-auto w-40 mb-4">

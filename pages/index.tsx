@@ -28,7 +28,6 @@ export default function Home() {
       <SignupForm />
       <Footer />
 
-      <ColorIncluderTest />
       {/* <HeroSVG /> */}
     </main>
   );

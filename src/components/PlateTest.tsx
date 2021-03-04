@@ -1,6 +1,12 @@
-import React, { useState } from 'react';
-import { motion, AnimateSharedLayout, AnimatePresence } from 'framer-motion';
-import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { AnimatePresence, AnimateSharedLayout, motion } from 'framer-motion';
+import React, { useContext, useState } from 'react';
+import { FaChevronDown } from 'react-icons/fa';
+import {
+  EventDispatchContext,
+  EventStateContext,
+  useEventDispatch,
+  useEventState,
+} from '../hooks/useEvent';
 
 const items = [0];
 
@@ -71,8 +77,17 @@ const Details = ({ toggleOpen, time, text, color, isOpen }) => {
 };
 
 function Content({ textContent }) {
-  const [subscribed, setSubscribed] = useState(false);
-  const toggleSubscribed = () => setSubscribed(!subscribed);
+  // const [subscribed, setSubscribed] = useState(false);
+  const { dispatch } = useContext(EventDispatchContext);
+  const { state } = useContext(EventStateContext);
+
+  const toggleSubscribed = () => {
+    // setSubscribed(!subscribed);
+    dispatch({ type: 'firstEvent', payload: 'dogEvent' });
+  };
+
+  const shouldToggle = () => state.firstEvent === 'dogEvent';
+
   return (
     <motion.div
       layout
@@ -85,6 +100,9 @@ function Content({ textContent }) {
         style={{ height: '1px' }}
         className="w-full bg-moss rounded-md mb-2"
       />
+      <div>
+        <p>Anmäld? {state.firstEvent}</p>
+      </div>
       <div className="row w-full rounded-md text-moss mb-6">{textContent}</div>
       <div className="row w-full flex gap-2 justify-end">
         <p>Jag anmäler mig</p>
@@ -94,7 +112,7 @@ function Content({ textContent }) {
           className="w-16 h-8 p-1 bg-gray-700 rounded-md flex flex-col cursor-pointer"
           style={{}}
         >
-          {!subscribed ? (
+          {state.firstEvent !== 'dogEvent' ? (
             <motion.div
               layout
               className="h-full w-6 bg-red-400 rounded-sm"
