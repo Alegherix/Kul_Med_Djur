@@ -83,7 +83,7 @@ const Content: React.FC<IContent> = ({ textContent, type, period }) => {
   const { state } = useEventState();
 
   const toggleSubscribed = () => {
-    dispatch({ type: 'firstEvent', payload: 'dog' });
+    dispatch({ period: 'first', type: 'dog' });
   };
   return (
     <motion.div
@@ -98,7 +98,7 @@ const Content: React.FC<IContent> = ({ textContent, type, period }) => {
         className="w-full bg-moss rounded-md mb-2"
       />
       <div>
-        <p>Anmäld? {state.firstEvent}</p>
+        <p>Anmäld? {JSON.stringify(state)}</p>
       </div>
       <div className="row w-full rounded-md text-moss mb-6">{textContent}</div>
       <div className="row w-full flex gap-2 justify-end">
@@ -109,7 +109,7 @@ const Content: React.FC<IContent> = ({ textContent, type, period }) => {
           className="w-16 h-8 p-1 bg-gray-700 rounded-md flex flex-col cursor-pointer"
           style={{}}
         >
-          {state.firstEvent !== 'dog' ? (
+          {state.first.type !== 'dog' ? (
             <motion.div
               layout
               className="h-full w-6 bg-red-400 rounded-sm"
