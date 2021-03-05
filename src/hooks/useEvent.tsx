@@ -22,6 +22,9 @@ interface IEventState {
   second: {
     type: EventType;
   };
+  third: {
+    type: EventType;
+  };
 }
 
 const initialState: IEventState = {
@@ -31,8 +34,12 @@ const initialState: IEventState = {
   second: {
     type: '',
   },
+  third: {
+    type: '',
+  },
 };
 
+// Not happy, but unsure how to further abstract this...
 const eventReducer = (draft: IEventState, action: IEventAction) => {
   switch (action.period) {
     case 'first': {
