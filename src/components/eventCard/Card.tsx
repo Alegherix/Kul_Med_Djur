@@ -1,9 +1,17 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import React, { useState } from 'react';
+import { IFullEventDetails } from '../../utils/eventData';
 import Content from './Content';
 import Overview from './Overview';
 
-const Card = ({ time, text, color, textContent, period, type }) => {
+const Card: React.FC<IFullEventDetails> = ({
+  time,
+  text,
+  primaryColor,
+  textContent,
+  period,
+  type,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleOpen = () => {
     setIsOpen(!isOpen);
@@ -15,7 +23,7 @@ const Card = ({ time, text, color, textContent, period, type }) => {
         toggleOpen={toggleOpen}
         time={time}
         text={text}
-        color={color}
+        color={primaryColor}
         isOpen={isOpen}
       />
       <AnimatePresence>
