@@ -25,6 +25,9 @@ interface IEventState {
   third: {
     type: EventType;
   };
+  fourth: {
+    type: EventType;
+  };
 }
 
 const initialState: IEventState = {
@@ -35,6 +38,9 @@ const initialState: IEventState = {
     type: '',
   },
   third: {
+    type: '',
+  },
+  fourth: {
     type: '',
   },
 };

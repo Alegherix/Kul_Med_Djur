@@ -7,7 +7,7 @@ import Overview from './Overview';
 const Card: React.FC<IFullEventDetails> = ({
   time,
   text,
-  primaryColor,
+  colorScheme: { primaryColor, secondaryColor, tertiaryColor },
   textContent,
   period,
   type,
@@ -18,12 +18,16 @@ const Card: React.FC<IFullEventDetails> = ({
   };
 
   return (
-    <motion.div layout initial={{ borderRadius: 10 }}>
+    <motion.div
+      layout
+      initial={{ borderRadius: 10 }}
+      className={`bg-${secondaryColor}`}
+    >
       <Overview
         toggleOpen={toggleOpen}
         time={time}
         text={text}
-        color={primaryColor}
+        color={tertiaryColor}
         isOpen={isOpen}
       />
       <AnimatePresence>

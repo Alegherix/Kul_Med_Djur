@@ -20,7 +20,7 @@ export default function Home() {
       <Hero />
       <About />
       <DogEvent />
-      <DogContainer />
+      {/* <DogContainer /> */}
       <CatContainer />
       <HorseContainer />
       <Collaboration />

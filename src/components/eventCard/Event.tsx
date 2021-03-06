@@ -13,7 +13,7 @@ const Event: React.FC<IEvent> = ({
 }) => {
   return (
     <AnimateSharedLayout>
-      <div className={`flex justify-center flex-col text-${primaryColor}`}>
+      <div className={`flex justify-center flex-col text-${primaryColor} mb-3`}>
         <h3>{header}</h3>
         {description.map((d) => (
           <p key={d} className="text-sm text-center">
@@ -25,7 +25,7 @@ const Event: React.FC<IEvent> = ({
         style={{ maxWidth: '385px' }}
         layout
         initial={{ borderRadius: 10 }}
-        className={`bg-${secondaryColor} w-full flex flex-col gap-4 mx-auto`}
+        className={` w-full mx-auto grid grid-cols-1 gap-4`}
       >
         {details.map((item) => (
           <Card key={item.text} {...item} />

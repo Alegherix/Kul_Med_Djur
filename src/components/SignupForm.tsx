@@ -64,7 +64,7 @@ type FormValues = {
 
 const SignupForm = () => {
   const {
-    state: { firstEvent },
+    state: { first },
   } = useEventState();
 
   const [fNameFocus, setfNameFocus] = useState(false);
@@ -125,7 +125,7 @@ const SignupForm = () => {
 
       <div className="mb-4">
         <p>Jag har anmält mig till följande aktiviteter:</p>
-        {firstEvent !== '' ? <p>{firstEvent}</p> : 'No event yet'}
+        {first.type !== '' ? <p>{first.type}</p> : 'No event yet'}
       </div>
 
       <button className="bg-moss px-8 py-3 text-melon rounded-3xl mx-auto w-40 mb-4">

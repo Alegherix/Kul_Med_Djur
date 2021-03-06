@@ -20,6 +20,7 @@ const Content: React.FC<IContent> = ({ textContent, type, period }) => {
     if (period === 'first') return state.first;
     if (period === 'second') return state.second;
     if (period === 'third') return state.third;
+    if (period === 'fourth') return state.fourth;
   };
 
   return (
@@ -34,9 +35,9 @@ const Content: React.FC<IContent> = ({ textContent, type, period }) => {
         style={{ height: '1px' }}
         className="w-full bg-moss rounded-md mb-2"
       />
-      <div>
+      {/* <div>
         <p>Anmäld? {JSON.stringify(state)}</p>
-      </div>
+      </div> */}
       <div className="row w-full rounded-md text-moss mb-6">{textContent}</div>
       <div className="row w-full flex gap-2 justify-end">
         <p>Jag anmäler mig</p>
