@@ -92,11 +92,11 @@ const SignupForm = () => {
       >
         <div className="flex flex-col w-full">
           <label
-            className={`pointer-events-none transition duration-150 ease-in transform ${
-              fNameFocus
-                ? 'translate-y-0 translate-x-0'
-                : 'translate-y-7 translate-x-2 scale-95'
-            }`}
+          // className={`pointer-events-none transition duration-150 ease-in transform ${
+          //   fNameFocus
+          //     ? 'translate-y-0 translate-x-0'
+          //     : 'translate-y-7 translate-x-2 scale-95'
+          // }`}
           >
             Förnamn
           </label>

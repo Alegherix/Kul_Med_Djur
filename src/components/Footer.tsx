@@ -13,7 +13,7 @@ interface IFooterIcon {
 
 const FooterIcon: React.FC<IFooterIcon> = ({ Icon, href }) => {
   return (
-    <a className="w-4 h-4 rounded-md" href={href}>
+    <a className="w-4 h-4 rounded-md mx-2" href={href}>
       <Icon />
     </a>
   );
@@ -54,7 +54,7 @@ const Footer = () => {
           folksam.se
         </a>
       </p>
-      <div className="flex gap-4">
+      <div className="flex">
         {footerIcons.map((icon) => (
           <FooterIcon key={icon.href} {...icon} />
         ))}
