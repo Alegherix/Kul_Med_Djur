@@ -71,7 +71,10 @@ export const Location = () => {
       </div>
 
       <div className="flex flex-col">
-        <div className="w-80 flex items-center justify-center">
+        <div
+          style={{ maxWidth: '450px' }}
+          className="w-full flex items-center justify-center "
+        >
           <LocationSVG />
         </div>
         <p className="textLocation mt-4 font-bold text-center">Delsjöbadet</p>

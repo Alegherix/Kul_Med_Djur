@@ -15,7 +15,6 @@
   body {
     @apply bg-melon;
     @apply font-sans;
-    @apply overflow-hidden;
   }
 
   h3 {
