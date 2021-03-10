@@ -36,7 +36,7 @@
   }
 
   .descText {
-    @apply md:text-lg lg:text-xl xl:text-2xl;
+    @apply md:text-lg lg:text-xl;
   }
 
   .otherText {

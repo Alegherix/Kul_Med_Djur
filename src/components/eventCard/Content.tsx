@@ -23,29 +23,47 @@ const Content: React.FC<IContent> = ({ textContent, type, period }) => {
     if (period === 'fourth') return state.fourth;
   };
 
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1 },
+  };
+
   return (
     <motion.div
       layout
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
+      variants={container}
+      initial="hidden"
+      animate="show"
+      exit="hidden"
       className="w-full p-2 text-moss"
     >
       <div
         style={{ height: '1px' }}
         className="w-full bg-moss rounded-md mb-2"
       />
-      {/* <div>
-        <p>Anmäld? {JSON.stringify(state)}</p>
-      </div> */}
-      <div className="row w-full rounded-md text-moss mb-6">{textContent}</div>
-      <div className="row w-full flex gap-2 justify-end">
-        <p>Jag anmäler mig</p>
+      <motion.div
+        variants={item}
+        className="row w-full rounded-md text-moss mb-6"
+      >
+        {textContent}
+      </motion.div>
+      <motion.div variants={item} className="row w-full flex gap-2 justify-end">
+        <motion.p variants={item}>Jag anmäler mig</motion.p>
         <motion.div
+          variants={item}
           layout
           onClick={toggleSubscribed}
           className="w-16 h-8 p-1 bg-gray-700 rounded-md flex flex-col cursor-pointer"
-          style={{}}
         >
           {findCorrectPeriod().type !== type ? (
             <motion.div
@@ -59,7 +77,7 @@ const Content: React.FC<IContent> = ({ textContent, type, period }) => {
             ></motion.div>
           )}
         </motion.div>
-      </div>
+      </motion.div>
     </motion.div>
   );
 };

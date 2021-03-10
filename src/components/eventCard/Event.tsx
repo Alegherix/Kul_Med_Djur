@@ -22,10 +22,9 @@ const Event: React.FC<IEvent> = ({
         ))}
       </div>
       <motion.div
-        style={{ maxWidth: '385px' }}
         layout
         initial={{ borderRadius: 10 }}
-        className={` w-full mx-auto grid grid-cols-1 gap-4`}
+        className={`max-w-sm w-full mx-auto grid grid-cols-1 gap-4 md:grid-cols-2 md:max-w-3xl`}
       >
         {details.map((item) => (
           <Card key={item.text} {...item} />

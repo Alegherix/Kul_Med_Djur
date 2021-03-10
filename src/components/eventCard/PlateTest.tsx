@@ -8,10 +8,10 @@ const DogEvent = () => {
     <section className="">
       <div
         style={{ backgroundImage: "url('/dark_green_plate.svg')" }}
-        className="px-4 py-12 -mt-6 bg-cover bg-center"
+        className="py-20 bg-cover bg-center"
       ></div>
 
-      <div className="bg-moss -mt-3 px-4">
+      <div className="bg-moss -mt-28 px-4">
         <Event {...dogEvent} />
       </div>
 
@@ -22,23 +22,5 @@ const DogEvent = () => {
     </section>
   );
 };
-
-// const CatEvent = () => {
-//   return (
-//     <section className="">
-//       <div
-//         style={{ backgroundImage: "url('/dark_green_plate.svg')" }}
-//         className="text-melon px-4 py-16 -mt-6 bg-cover bg-center"
-//       ></div>
-//       <div className="bg-moss -mt-3 px-4">
-//         <Event />
-//       </div>
-//       <div
-//         style={{ backgroundImage: "url('/dark_bottom.svg')" }}
-//         className="text-melon px-4 py-16 bg-cover bg-center"
-//       ></div>
-//     </section>
-//   );
-// };
 
 export default DogEvent;

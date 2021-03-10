@@ -62,7 +62,7 @@ export const Collaboration = () => {
       className="text-wine px-6 bg-cover bg-center -mt-10 py-16 text-center md:py-28"
     >
       <h3 className="mb-6">Samarbetspartners</h3>
-      <p className="text-sm mb-7 md:text-base lg:text-lg xl:text-3xl">
+      <p className="mb-7 descText">
         Vi är stolta över att kunna presentera de samarbetspartners som hjälper
         oss att anordna eventet!
       </p>

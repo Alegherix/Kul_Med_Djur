@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import React, { useState } from 'react';
+import useMatchMedia from '../../hooks/useMatchMedia';
 import { IFullEventDetails } from '../../utils/eventData';
 import Content from './Content';
 import Overview from './Overview';
@@ -16,6 +17,7 @@ const Card: React.FC<IFullEventDetails> = ({
   const toggleOpen = () => {
     setIsOpen(!isOpen);
   };
+  const tablet = useMatchMedia('(min-width: 768px)');
 
   return (
     <motion.div
@@ -31,7 +33,7 @@ const Card: React.FC<IFullEventDetails> = ({
         isOpen={isOpen}
       />
       <AnimatePresence>
-        {isOpen && (
+        {(tablet || isOpen) && (
           <Content textContent={textContent} period={period} type={type} />
         )}
       </AnimatePresence>

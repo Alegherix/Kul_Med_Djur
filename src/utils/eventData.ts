@@ -60,6 +60,24 @@ const dogEventDetails: IFullEventDetails[] = [
     type: 'dog',
     colorScheme: dogColorScheme,
   },
+  {
+    time: '13.00',
+    text: 'Föreläsning om hundars beteende',
+    textContent:
+      'Hundars beteende är mer komplext än vad de flesta någonsin kunnat föreställa sig, lär dig mer om hur hundar fungerar och ta eran relation till en ny nivå.',
+    period: 'second',
+    type: 'dog',
+    colorScheme: dogColorScheme,
+  },
+  {
+    time: '14.00',
+    text: 'Föreläsning om hundars beteende',
+    textContent:
+      'Hundars beteende är mer komplext än vad de flesta någonsin kunnat föreställa sig, lär dig mer om hur hundar fungerar och ta eran relation till en ny nivå.',
+    period: 'second',
+    type: 'dog',
+    colorScheme: dogColorScheme,
+  },
 ];
 
 export const dogEvent: IEvent = {
