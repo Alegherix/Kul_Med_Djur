@@ -81,58 +81,58 @@ const SignupForm = () => {
   return (
     <section id="interest" className="text-moss px-8 mt-8 pb-4 flex flex-col">
       <h3>Anmälan</h3>
-      <p className="text-center text-sm mx-auto mb-4">
+      <p className="text-center mx-auto mb-4 descText">
         Här kan du anmäla dig och din fyrbenta vän till en eller fler av
         aktiviteterna.
       </p>
 
-      <form
-        className="grid grid-cols-2 gap-2 mb-4"
-        onSubmit={handleSubmit(submitForm)}
-      >
-        <div className="flex flex-col w-full">
-          <label
-          // className={`pointer-events-none transition duration-150 ease-in transform ${
-          //   fNameFocus
-          //     ? 'translate-y-0 translate-x-0'
-          //     : 'translate-y-7 translate-x-2 scale-95'
-          // }`}
-          >
-            Förnamn
-          </label>
-          <input
-            name="lastName"
-            ref={register}
-            onFocus={() => setfNameFocus(true)}
-            onBlur={fNameFocusEvent}
-          />
-        </div>
+      <div className="xl:flex mx-auto gap-8 w-full max-w-6xl">
+        <form
+          className="grid grid-cols-2 gap-2 mb-4 w-full max-w-2xl mx-auto otherText"
+          onSubmit={handleSubmit(submitForm)}
+        >
+          <div className="flex flex-col w-full">
+            <label
+            // className={`pointer-events-none transition duration-150 ease-in transform ${
+            //   fNameFocus
+            //     ? 'translate-y-0 translate-x-0'
+            //     : 'translate-y-7 translate-x-2 scale-95'
+            // }`}
+            >
+              Förnamn
+            </label>
+            <input
+              name="lastName"
+              ref={register}
+              onFocus={() => setfNameFocus(true)}
+              onBlur={fNameFocusEvent}
+            />
+          </div>
 
-        <div className="flex flex-col w-full">
-          <label>Efternamn</label>
-          <input name="lastName" ref={register} />
-        </div>
+          <div className="flex flex-col w-full">
+            <label>Efternamn</label>
+            <input name="lastName" ref={register} />
+          </div>
 
-        <div className="col-span-2 flex flex-col">
-          <label>E-postadress</label>
-          <input name="email" ref={register} />
+          <div className="col-span-2 flex flex-col">
+            <label>E-postadress</label>
+            <input name="email" ref={register} />
+          </div>
+          <div className="flex flex-col">
+            <label>Mobilnummer</label>
+            <input name="cellphone" ref={register} />
+          </div>
+        </form>
+        <div className="mb-4 w-full max-w-2xl mx-auto">
+          <p>Jag har anmält mig till följande aktiviteter:</p>
+          {first.type !== '' ? <p>{first.type}</p> : 'No event yet'}
         </div>
-        <div className="flex flex-col">
-          <label>Mobilnummer</label>
-          <input name="cellphone" ref={register} />
-        </div>
-      </form>
-
-      <div className="mb-4">
-        <p>Jag har anmält mig till följande aktiviteter:</p>
-        {first.type !== '' ? <p>{first.type}</p> : 'No event yet'}
       </div>
 
       <button className="bg-moss px-8 py-3 text-melon rounded-3xl mx-auto w-40 mb-4">
         Skicka
       </button>
-
-      <p className="pl-4 mx-auto text-sm text-center">
+      <p className="pl-4 mx-auto text-center max-w-md otherText">
         När vi har bekräftat din anmälan skickas ett mejl till adressen du
         angett. I mejlet får du mer information om aktiviteterna som du har
         anmält dig till.

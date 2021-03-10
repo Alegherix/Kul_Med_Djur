@@ -23,10 +23,10 @@
   }
 
   label {
-    @apply text-moss mb-1 text-sm;
+    @apply text-moss mb-1 text-sm lg:text-base;
   }
   input {
-    @apply placeholder-moss placeholder-opacity-50 rounded-2xl bg-grass pl-2 h-8 text-xs;
+    @apply placeholder-moss placeholder-opacity-50 rounded-2xl bg-grass pl-2 h-8 text-xs md:py-5 md:text-base;
   }
 }
 
@@ -37,5 +37,9 @@
 
   .descText {
     @apply md:text-lg lg:text-xl xl:text-2xl;
+  }
+
+  .otherText {
+    @apply md:text-base lg:text-lg;
   }
 }
