@@ -49,8 +49,8 @@ export const Collaboration = () => {
     },
     {
       src: '/collaborations/SKK.webp',
-      height: 95,
-      width: 95,
+      height: 250,
+      width: 250,
       hooverText: 'Fourth',
       href: 'https://skk.se',
     },
@@ -59,14 +59,14 @@ export const Collaboration = () => {
   return (
     <section
       style={{ background: "url('/light_pink_plate.svg')" }}
-      className="text-wine px-6 bg-cover bg-center -mt-10 py-16 text-center"
+      className="text-wine px-6 bg-cover bg-center -mt-10 py-16 text-center md:py-28"
     >
-      <h3>Samarbetspartners</h3>
-      <p className="text-sm mb-7">
+      <h3 className="mb-6">Samarbetspartners</h3>
+      <p className="text-sm mb-7 md:text-base lg:text-lg xl:text-3xl">
         Vi är stolta över att kunna presentera de samarbetspartners som hjälper
         oss att anordna eventet!
       </p>
-      <div className="grid grid-cols-2 gap-4 flex-grow md:grid-cols-4 max-w-screen-xl mx-auto">
+      <div className="grid grid-cols-2 gap-4 flex-grow md:grid-cols-4 max-w-screen-2xl mx-auto md:gap-0 ">
         {collabs.map((collab) => (
           <CollabImage key={collab.hooverText} {...collab} />
         ))}

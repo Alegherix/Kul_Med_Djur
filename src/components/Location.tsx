@@ -1,6 +1,7 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import React from 'react';
+
+import React, { useEffect, useState } from 'react';
 import useIsomorphicLayoutEffect from '../hooks/UseIsomorphicLayoutEffect';
 import LocationSVG from './svg/LocationSVG';
 
@@ -61,24 +62,26 @@ export const Location = () => {
       style={{ background: "url('/green_plate.svg')" }}
       className="text-moss -mt-9 py-12 px-6 text-center flex flex-col h-full relative"
     >
-      <div>
-        <h3>Hitta hit!</h3>
-        <p className="text-sm mb-7">
-          Alla aktiviteter som sker under dagen kommer äga rum runt Stora
-          Delsjön i Göteborg. Vi utgår från Delsjöbadet, där Folksam kommer att
-          finnas på plats med info.
-        </p>
-      </div>
-
-      <div className="flex flex-col">
-        <div
-          style={{ maxWidth: '450px' }}
-          className="w-full flex items-center justify-center "
-        >
-          <LocationSVG />
+      <div className="max-w-screen-2xl mx-auto md:flex flex-row-reverse items-center">
+        <div className="md:w-full md:ml-2">
+          <h3>Hitta hit!</h3>
+          <p className="text-sm mb-7 md:text-lg lg:text-xl xl:text-3xl">
+            Alla aktiviteter som sker under dagen kommer äga rum runt Stora
+            Delsjön i Göteborg. Vi utgår från Delsjöbadet, där Folksam kommer
+            att finnas på plats med info.
+          </p>
         </div>
-        <p className="textLocation mt-4 font-bold text-center">Delsjöbadet</p>
-        <p className="font-bold text-center">416 55 Göteborg</p>
+
+        <div className="flex flex-col md:w-full items-center descText">
+          <div
+            style={{ maxWidth: '450px' }}
+            className="w-full flex items-center justify-center"
+          >
+            <LocationSVG />
+          </div>
+          <p className="textLocation mt-4 font-bold text-center">Delsjöbadet</p>
+          <p className="font-bold text-center">416 55 Göteborg</p>
+        </div>
       </div>
     </section>
   );

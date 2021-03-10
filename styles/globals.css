@@ -17,8 +17,9 @@
     @apply font-sans;
   }
 
-  h3 {
-    @apply font-bold text-center text-3xl mb-2;
+  h3,
+  h2 {
+    @apply font-bold text-center text-3xl mb-2 md:text-4xl xl:text-5xl;
   }
 
   label {
@@ -32,5 +33,9 @@
 @layer components {
   .navIcon {
     @apply w-4 h-4 rounded-sm;
+  }
+
+  .descText {
+    @apply md:text-lg lg:text-xl xl:text-2xl;
   }
 }
