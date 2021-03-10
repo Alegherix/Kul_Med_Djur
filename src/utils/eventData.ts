@@ -15,7 +15,7 @@ export interface IFullEventDetails {
   colorScheme: ColorScheme;
 }
 
-type ColorScheme = {
+export type ColorScheme = {
   primaryColor: string;
   secondaryColor: string;
   tertiaryColor: string;
@@ -39,6 +39,12 @@ const dogEventHeading: IEventHeading = {
     'Passa på att delta i någon av våra aktiviteter för just hundar',
   ],
   colorScheme: dogColorScheme,
+};
+
+const catColorScheme: ColorScheme = {
+  primaryColor: 'lake',
+  secondaryColor: 'lake',
+  tertiaryColor: 'white',
 };
 
 const dogEventDetails: IFullEventDetails[] = [
@@ -80,7 +86,59 @@ const dogEventDetails: IFullEventDetails[] = [
   },
 ];
 
+const catEventHeading: IEventHeading = {
+  header: 'Kattägare?',
+  description: [
+    'Eller drömmer du om att skaffa en lurvig rumskamrat?',
+    'Passa på att delta i någon av våra aktiviteter för just katter',
+  ],
+  colorScheme: catColorScheme,
+};
+
+const catEventDetails: IFullEventDetails[] = [
+  {
+    time: '10.00',
+    text: 'Testa på agility med Anna Andersson',
+    textContent:
+      'Testa på agility med Anna Andersson, ta med din fyrbenta kompis och öva tillsammans eller kom ensam och lär dig mer om hur agility fungerar',
+    period: 'first',
+    type: 'dog',
+    colorScheme: catColorScheme,
+  },
+  {
+    time: '11.00',
+    text: 'Föreläsning om hundars beteende',
+    textContent:
+      'Hundars beteende är mer komplext än vad de flesta någonsin kunnat föreställa sig, lär dig mer om hur hundar fungerar och ta eran relation till en ny nivå.',
+    period: 'second',
+    type: 'dog',
+    colorScheme: catColorScheme,
+  },
+  {
+    time: '13.00',
+    text: 'Föreläsning om hundars beteende',
+    textContent:
+      'Hundars beteende är mer komplext än vad de flesta någonsin kunnat föreställa sig, lär dig mer om hur hundar fungerar och ta eran relation till en ny nivå.',
+    period: 'second',
+    type: 'dog',
+    colorScheme: catColorScheme,
+  },
+  {
+    time: '14.00',
+    text: 'Föreläsning om hundars beteende',
+    textContent:
+      'Hundars beteende är mer komplext än vad de flesta någonsin kunnat föreställa sig, lär dig mer om hur hundar fungerar och ta eran relation till en ny nivå.',
+    period: 'second',
+    type: 'dog',
+    colorScheme: catColorScheme,
+  },
+];
 export const dogEvent: IEvent = {
   heading: dogEventHeading,
   details: dogEventDetails,
+};
+
+export const catEvent: IEvent = {
+  heading: catEventHeading,
+  details: catEventDetails,
 };

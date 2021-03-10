@@ -7,7 +7,7 @@ export default function DogSVG() {
       viewBox="0 0 822.04 886.41"
       xmlns="http://www.w3.org/2000/svg"
       data-name="Lager 1"
-      //   className="absolute h-32 right-0 -top-10 md:h-44"
+      className="h-28 md:h-64 absolute -right-0 md:relative md:mx-auto"
     >
       <defs />
       <path

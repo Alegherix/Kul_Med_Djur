@@ -1,14 +1,21 @@
 import { motion } from 'framer-motion';
 import { useEventDispatch, useEventState } from '../../hooks/useEvent';
+import { ColorScheme } from '../../utils/eventData';
 import { EventPeriod, EventType } from '../../utils/eventUtils';
 
 interface IContent {
   textContent: string;
   period: EventPeriod;
   type: EventType;
+  color: ColorScheme;
 }
 
-const Content: React.FC<IContent> = ({ textContent, type, period }) => {
+const Content: React.FC<IContent> = ({
+  textContent,
+  type,
+  period,
+  color: { secondaryColor, tertiaryColor },
+}) => {
   const { dispatch } = useEventDispatch();
   const { state } = useEventState();
 
@@ -49,16 +56,18 @@ const Content: React.FC<IContent> = ({ textContent, type, period }) => {
     >
       <div
         style={{ height: '1px' }}
-        className="w-full bg-moss rounded-md mb-2"
+        className={`w-full bg-${tertiaryColor} rounded-md mb-2`}
       />
       <motion.div
         variants={item}
-        className="row w-full rounded-md text-moss mb-6"
+        className={`row w-full rounded-md text-${tertiaryColor} mb-6`}
       >
         {textContent}
       </motion.div>
       <motion.div variants={item} className="row w-full flex gap-2 justify-end">
-        <motion.p variants={item}>Jag anmäler mig</motion.p>
+        <motion.p variants={item} className={`text-${tertiaryColor}`}>
+          Jag anmäler mig
+        </motion.p>
         <motion.div
           variants={item}
           layout

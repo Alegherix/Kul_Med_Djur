@@ -5,7 +5,7 @@ import Event from './Event';
 // testImplementationOf an Event
 const DogEvent = () => {
   return (
-    <section className="">
+    <section>
       <div
         style={{ backgroundImage: "url('/dark_green_plate.svg')" }}
         className="py-20 bg-cover bg-center"

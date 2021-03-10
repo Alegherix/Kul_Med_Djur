@@ -8,11 +8,12 @@ import Overview from './Overview';
 const Card: React.FC<IFullEventDetails> = ({
   time,
   text,
-  colorScheme: { primaryColor, secondaryColor, tertiaryColor },
+  colorScheme,
   textContent,
   period,
   type,
 }) => {
+  const { secondaryColor, tertiaryColor } = colorScheme;
   const [isOpen, setIsOpen] = useState(false);
   const toggleOpen = () => {
     setIsOpen(!isOpen);
@@ -34,7 +35,12 @@ const Card: React.FC<IFullEventDetails> = ({
       />
       <AnimatePresence>
         {(tablet || isOpen) && (
-          <Content textContent={textContent} period={period} type={type} />
+          <Content
+            textContent={textContent}
+            period={period}
+            type={type}
+            color={colorScheme}
+          />
         )}
       </AnimatePresence>
     </motion.div>

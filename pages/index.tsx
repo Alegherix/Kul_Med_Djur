@@ -12,7 +12,8 @@ import { Collaboration } from '../src/components/Collaborations';
 import { Location } from '../src/components/Location';
 import SignupForm from '../src/components/SignupForm';
 import Footer from '../src/components/Footer';
-import DogEvent from '../src/components/eventCard/PlateTest';
+import DogEvent from '../src/components/eventCard/DogEvent';
+import CatEvent from '../src/components/eventCard/CatEvent';
 
 export default function Home() {
   return (
@@ -20,7 +21,8 @@ export default function Home() {
       <Hero />
       <About />
       <DogEvent />
-      <CatContainer />
+      <CatEvent />
+      {/* <CatContainer /> */}
       <HorseContainer />
       <Collaboration />
       <Location />

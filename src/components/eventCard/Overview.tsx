@@ -13,7 +13,7 @@ const Overview = ({ toggleOpen, time, text, color, isOpen }) => {
       <div className="w-full">{text}</div>
       <FaChevronDown
         onClick={toggleOpen}
-        className={`mr-2 cursor-pointer flex-grow transition transform duration-300 ${
+        className={`mr-2 cursor-pointer flex-grow transition transform duration-300 md:hidden ${
           isOpen ? 'rotate-180' : ''
         }`}
       />
