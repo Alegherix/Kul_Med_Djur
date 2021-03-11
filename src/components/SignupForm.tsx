@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useEventState } from '../hooks/useEvent';
+import Swal from 'sweetalert2';
+import { IoClose } from 'react-icons/io5';
 
 export const SucessPopup = () => {
   return (
@@ -56,6 +58,17 @@ export const ErrorPopup = () => {
   );
 };
 
+const Activites = ({ text }) => {
+  return (
+    <div className="p-2 rounded-full bg-white shadow-md text-moss  inline-block">
+      <div className="flex items-center">
+        <p className="ml-2 mr-4">{text}</p>
+        <IoClose color="#1a431f" />
+      </div>
+    </div>
+  );
+};
+
 type FormValues = {
   firstName: string;
   lastName: string;
@@ -64,18 +77,17 @@ type FormValues = {
 
 const SignupForm = () => {
   const {
-    state: { first },
+    state: { first, second, third, fourth },
   } = useEventState();
+  const { register, handleSubmit, errors, reset } = useForm<FormValues>();
 
-  const [fNameFocus, setfNameFocus] = useState(false);
-  const { register, handleSubmit, errors } = useForm<FormValues>();
+  const [submit, setSubmit] = useState(false);
 
-  const submitForm = (e) => {
-    console.log('Submitting form');
-  };
-
-  const fNameFocusEvent = (e) => {
-    if (e.target.value.length === 0) setfNameFocus(false);
+  const submitFromBtn = () => {
+    setSubmit(true);
+    document.querySelector<HTMLFormElement>('form')?.reset();
+    if (!submit)
+      Swal.fire('Strålande!', 'Din anmälan är nu registrerad', 'success');
   };
 
   return (
@@ -87,26 +99,10 @@ const SignupForm = () => {
       </p>
 
       <div className="xl:flex mx-auto gap-8 w-full max-w-5xl">
-        <form
-          className="grid grid-cols-2 gap-2 mb-4 w-full max-w-2xl mx-auto otherText"
-          onSubmit={handleSubmit(submitForm)}
-        >
+        <form className="grid grid-cols-2 gap-2 mb-4 w-full max-w-2xl mx-auto otherText">
           <div className="flex flex-col w-full">
-            <label
-            // className={`pointer-events-none transition duration-150 ease-in transform ${
-            //   fNameFocus
-            //     ? 'translate-y-0 translate-x-0'
-            //     : 'translate-y-7 translate-x-2 scale-95'
-            // }`}
-            >
-              Förnamn
-            </label>
-            <input
-              name="lastName"
-              ref={register}
-              onFocus={() => setfNameFocus(true)}
-              onBlur={fNameFocusEvent}
-            />
+            <label>Förnamn</label>
+            <input name="lastName" ref={register} />
           </div>
 
           <div className="flex flex-col w-full">
@@ -125,16 +121,24 @@ const SignupForm = () => {
         </form>
         <div className="mb-4 w-full max-w-2xl mx-auto">
           <p>Jag har anmält mig till följande aktiviteter:</p>
-          {first.type !== '' ? <p>{first.type}</p> : 'No event yet'}
+          {first.type !== '' ? (
+            <Activites text="Agility" />
+          ) : (
+            <p>No event yet</p>
+          )}
         </div>
       </div>
 
       <button
+        onClick={submitFromBtn}
         className="bg-moss px-8 py-3 text-melon rounded-3xl 
-      mx-auto w-40 mb-4 md:py-5 md:px-8 md:rounded-full md:text-xl"
+      mx-auto w-40 mb-4 md:py-5 md:px-8 md:rounded-full md:text-xl disabled:opacity-50"
+        // TODO - Byt ut mot att formuläret ska vara ifyllt och att minst ett event finns med.
+        disabled={first.type === ''}
       >
         Skicka
       </button>
+
       <p className="pl-4 mx-auto text-center max-w-md otherText md:pb-8">
         När vi har bekräftat din anmälan skickas ett mejl till adressen du
         angett. I mejlet får du mer information om aktiviteterna som du har

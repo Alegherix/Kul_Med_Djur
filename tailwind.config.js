@@ -61,9 +61,8 @@ module.exports = {
   },
   variants: {
     extend: {
-      // transition: ['group-focus'],
       transform: ['group-focus'],
-      // translate: ['group-focus'],
+      opacity: ['disabled'],
     },
   },
   plugins: [],

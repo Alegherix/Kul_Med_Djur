@@ -52,7 +52,7 @@ const Content: React.FC<IContent> = ({
       initial="hidden"
       animate="show"
       exit={{ opacity: 0, transition: { duration: 0.5 } }}
-      className="w-full p-2"
+      className="w-full px-2 pb-2"
     >
       <motion.div
         style={{ height: '1px' }}

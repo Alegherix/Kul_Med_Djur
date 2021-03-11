@@ -65,7 +65,7 @@ export const Location = () => {
       <div className="max-w-5xl md:flex flex-row-reverse  items-center md:mx-auto">
         <div className="md:w-full md:ml-2 xl:text-left xl:pl-14">
           <h3 className="xl:text-left xl:px-7">Hitta hit!</h3>
-          <p className="mb-7 descText md:w-bigger  md:px-8 lg:px-7 ">
+          <p className="mb-7 descText md:w-bigger  md:px-8 lg:px-7 xl:pl-7 xl:w-full">
             Alla aktiviteter som sker under dagen kommer äga rum runt Stora
             Delsjön i Göteborg. Vi utgår från Delsjöbadet, där Folksam kommer
             att finnas på plats med info.

@@ -211,3 +211,12 @@ export const horseEvent: IEvent = {
   details: horseEventDetails,
   Svg: HorseSVG,
 };
+
+// export const eventMap = [
+//   {1: "Agility"},
+//   {2: "Föreläsning"},
+
+//   {12: "Träffa hästuppfödare"},
+//   {13: "Föreläsning: Hästars beteende"}
+
+// ]
