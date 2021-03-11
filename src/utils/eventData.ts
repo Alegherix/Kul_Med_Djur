@@ -1,3 +1,4 @@
+import CatSVG from '../components/svg/CatSVG';
 import DogSVG from '../components/svg/DogSVG';
 import HorseSVG from '../components/svg/HorseSVG';
 import { EventPeriod, EventType } from './eventUtils';
@@ -27,6 +28,7 @@ export interface IEvent {
   heading: IEventHeading;
   details: IFullEventDetails[];
   Svg: React.FC;
+  reverse?: boolean;
 }
 
 const dogColorScheme: ColorScheme = {
@@ -200,7 +202,8 @@ export const dogEvent: IEvent = {
 export const catEvent: IEvent = {
   heading: catEventHeading,
   details: catEventDetails,
-  Svg: DogSVG,
+  Svg: CatSVG,
+  reverse: true,
 };
 
 export const horseEvent: IEvent = {

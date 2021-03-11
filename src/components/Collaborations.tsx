@@ -66,7 +66,7 @@ export const Collaboration = () => {
         Vi är stolta över att kunna presentera de samarbetspartners som hjälper
         oss att anordna eventet!
       </p>
-      <div className="grid grid-cols-2 gap-4 flex-grow md:grid-cols-4 max-w-screen-md mx-auto md:gap-0 ">
+      <div className="grid grid-cols-2 gap-4 flex-grow max-w-sm md:grid-cols-4 md:max-w-screen-md mx-auto md:gap-0">
         {collabs.map((collab) => (
           <CollabImage key={collab.hooverText} {...collab} />
         ))}

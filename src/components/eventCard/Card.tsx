@@ -24,7 +24,7 @@ const Card: React.FC<IFullEventDetails> = ({
     <motion.div
       layout
       initial={{ borderRadius: 10 }}
-      className={`bg-${secondaryColor}`}
+      className={`bg-${secondaryColor} px-2 md:p-4`}
     >
       <Overview
         toggleOpen={toggleOpen}

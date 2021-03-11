@@ -13,24 +13,30 @@ const Event: React.FC<IEvent> = ({
   },
   details,
   Svg,
+  reverse,
 }) => {
   return (
     <AnimateSharedLayout>
-      <div className="flex justify-center md:h-40 max-w-5xl md:mx-auto">
+      <div
+        className={`flex justify-center md:h-40 max-w-5xl md:mx-auto xl:h-56 ${
+          reverse && 'flex-row-reverse'
+        }`}
+      >
         <div
-          className={`flex justify-center flex-col text-${primaryColor} mb-3 w-full md:pb-5`}
+          className={`flex justify-center flex-col text-${primaryColor} mb-3 w-full md:pb-5 ${
+            reverse && 'xl:pl-8'
+          }`}
         >
           <h3 className="xl:text-left">{header}</h3>
           {description.map((d) => (
             <p
               key={d}
-              className="text-center text-sm xl:text-left md:text-base"
+              className="text-center text-sm xl:text-left md:text-base lg:text-lg"
             >
               {d}
             </p>
           ))}
         </div>
-
         <div className="w-full -my-28 absolute md:relative ">
           <Svg />
         </div>

@@ -5,7 +5,7 @@ interface ColorIncluderTestProps {}
 const ColorIncluderTest: React.FC<ColorIncluderTestProps> = ({}) => {
   return (
     <>
-      <div className="bg-moss bg-lake bg-melon"></div>
+      <div className="bg-moss bg-lake bg-melon bg-mound text-mound"></div>
     </>
   );
 };

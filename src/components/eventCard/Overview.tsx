@@ -4,11 +4,14 @@ import { FaChevronDown } from 'react-icons/fa';
 
 const Overview = ({ toggleOpen, time, text, color, isOpen }) => {
   return (
-    <motion.div layout className={`flex p-2 items-center text-${color}`}>
+    <motion.div
+      layout
+      className={`flex p-2 items-center text-${color} md:font-bold xl:text-lg`}
+    >
       <div className="font-bold">{time}</div>
       <div
         style={{ width: '1px' }}
-        className="h-4 rounded-lg bg-moss mx-2"
+        className={`h-4 rounded-lg bg-${color} mx-2`}
       ></div>
       <div className="w-full">{text}</div>
       <FaChevronDown

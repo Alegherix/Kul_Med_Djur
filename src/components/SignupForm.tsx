@@ -81,12 +81,12 @@ const SignupForm = () => {
   return (
     <section id="interest" className="text-moss px-8 mt-8 pb-4 flex flex-col">
       <h3>Anmälan</h3>
-      <p className="text-center mx-auto mb-4 descText">
+      <p className="text-center mx-auto mb-4 descText md:mb-8 md:w-96">
         Här kan du anmäla dig och din fyrbenta vän till en eller fler av
         aktiviteterna.
       </p>
 
-      <div className="xl:flex mx-auto gap-8 w-full max-w-6xl">
+      <div className="xl:flex mx-auto gap-8 w-full max-w-5xl">
         <form
           className="grid grid-cols-2 gap-2 mb-4 w-full max-w-2xl mx-auto otherText"
           onSubmit={handleSubmit(submitForm)}
@@ -129,10 +129,13 @@ const SignupForm = () => {
         </div>
       </div>
 
-      <button className="bg-moss px-8 py-3 text-melon rounded-3xl mx-auto w-40 mb-4">
+      <button
+        className="bg-moss px-8 py-3 text-melon rounded-3xl 
+      mx-auto w-40 mb-4 md:py-5 md:px-8 md:rounded-full md:text-xl"
+      >
         Skicka
       </button>
-      <p className="pl-4 mx-auto text-center max-w-md otherText">
+      <p className="pl-4 mx-auto text-center max-w-md otherText md:pb-8">
         När vi har bekräftat din anmälan skickas ett mejl till adressen du
         angett. I mejlet får du mer information om aktiviteterna som du har
         anmält dig till.

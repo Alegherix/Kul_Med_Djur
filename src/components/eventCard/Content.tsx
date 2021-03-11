@@ -14,7 +14,7 @@ const Content: React.FC<IContent> = ({
   textContent,
   type,
   period,
-  color: { secondaryColor, tertiaryColor },
+  color: { tertiaryColor },
 }) => {
   const { dispatch } = useEventDispatch();
   const { state } = useEventState();
@@ -51,10 +51,10 @@ const Content: React.FC<IContent> = ({
       variants={container}
       initial="hidden"
       animate="show"
-      exit="hidden"
-      className="w-full p-2 text-moss"
+      exit={{ opacity: 0, transition: { duration: 0.5 } }}
+      className="w-full p-2"
     >
-      <div
+      <motion.div
         style={{ height: '1px' }}
         className={`w-full bg-${tertiaryColor} rounded-md mb-2`}
       />

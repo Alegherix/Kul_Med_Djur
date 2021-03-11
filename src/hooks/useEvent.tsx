@@ -60,6 +60,18 @@ const eventReducer = (draft: IEventState, action: IEventAction) => {
         : (draft.second.type = action.type);
       return;
     }
+    case 'third': {
+      draft.third.type === action.type
+        ? (draft.third.type = '')
+        : (draft.third.type = action.type);
+      return;
+    }
+    case 'fourth': {
+      draft.fourth.type === action.type
+        ? (draft.fourth.type = '')
+        : (draft.fourth.type = action.type);
+      return;
+    }
 
     default:
       return;

@@ -1,3 +1,4 @@
+import { AnimateSharedLayout, motion } from 'framer-motion';
 import React from 'react';
 import { dogEvent } from '../../utils/eventData';
 import Event from './Event';
@@ -10,7 +11,6 @@ const DogEvent = () => {
         style={{ backgroundImage: "url('/dark_green_plate.svg')" }}
         className="py-20 bg-cover bg-center"
       ></div>
-
       <div className="bg-moss -mt-28 px-4 md:pb-10">
         <Event {...dogEvent} />
       </div>
