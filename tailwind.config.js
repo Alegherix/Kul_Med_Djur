@@ -26,6 +26,7 @@ module.exports = {
       },
       width: {
         smallest: '1px',
+        bigger: '440px',
       },
 
       animation: {

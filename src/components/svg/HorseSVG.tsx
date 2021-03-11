@@ -7,7 +7,8 @@ export default function HorseSVG() {
       viewBox="0 0 956.31 874.97"
       xmlns="http://www.w3.org/2000/svg"
       data-name="Lager 1"
-      className="h-28 md:h-64 absolute -right-0 md:relative md:mx-auto"
+      className="h-28 md:h-64 absolute -right-0 md:relative md:mx-auto
+      xl:h-80"
     >
       <defs />
       <path

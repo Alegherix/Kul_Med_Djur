@@ -62,10 +62,10 @@ export const Location = () => {
       style={{ background: "url('/green_plate.svg')" }}
       className="text-moss -mt-9 py-12 px-6 text-center flex flex-col h-full relative"
     >
-      <div className="max-w-screen-2xl mx-auto md:flex flex-row-reverse items-center">
-        <div className="md:w-full md:ml-2">
-          <h3>Hitta hit!</h3>
-          <p className="mb-7 descText ">
+      <div className="max-w-5xl mx-auto md:flex flex-row-reverse  items-center">
+        <div className="md:w-full md:ml-2 xl:text-left w-96 xl:pl-14">
+          <h3 className="xl:text-left">Hitta hit!</h3>
+          <p className="mb-7 descText md:w-bigger">
             Alla aktiviteter som sker under dagen kommer äga rum runt Stora
             Delsjön i Göteborg. Vi utgår från Delsjöbadet, där Folksam kommer
             att finnas på plats med info.
@@ -75,7 +75,7 @@ export const Location = () => {
         <div className="flex flex-col md:w-full items-center descText">
           <div
             style={{ maxWidth: '450px' }}
-            className="w-full flex items-center justify-center"
+            className="w-full flex items-center justify-center md:w-72 xl:w-bigger"
           >
             <LocationSVG />
           </div>

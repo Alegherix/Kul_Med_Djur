@@ -9,27 +9,29 @@ const Event: React.FC<IEvent> = ({
   heading: {
     description,
     header,
-    colorScheme: { primaryColor, secondaryColor },
+    colorScheme: { primaryColor },
   },
   details,
   Svg,
 }) => {
   return (
     <AnimateSharedLayout>
-      <div className="flex justify-center md:h-40 max-w-3xl md:mx-auto">
+      <div className="flex justify-center md:h-40 max-w-5xl md:mx-auto">
         <div
-          className={`flex justify-center flex-col text-${primaryColor} mb-3 w-full `}
+          className={`flex justify-center flex-col text-${primaryColor} mb-3 w-full md:pb-5`}
         >
-          <h3>{header}</h3>
+          <h3 className="xl:text-left">{header}</h3>
           {description.map((d) => (
-            <p key={d} className="text-sm text-center">
+            <p
+              key={d}
+              className="text-center text-sm xl:text-left md:text-base"
+            >
               {d}
             </p>
           ))}
         </div>
-        <div className="w-full -my-28 absolute md:relative">
-          {/* <DogSVG /> */}
-          {/* <HorseSVG /> */}
+
+        <div className="w-full -my-28 absolute md:relative ">
           <Svg />
         </div>
       </div>

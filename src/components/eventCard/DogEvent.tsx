@@ -11,7 +11,7 @@ const DogEvent = () => {
         className="py-20 bg-cover bg-center"
       ></div>
 
-      <div className="bg-moss -mt-28 px-4">
+      <div className="bg-moss -mt-28 px-4 md:pb-10">
         <Event {...dogEvent} />
       </div>
 

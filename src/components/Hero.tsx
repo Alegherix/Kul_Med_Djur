@@ -30,7 +30,7 @@ const Hero = () => {
           style={{
             textShadow: '1px 4px 7px rgba(0,0,0,0.2)',
           }}
-          className="text-5xl mb-2 font-bold"
+          className="text-5xl mb-2 font-bold md:text-7xl lg:text-8xl md:mt-40"
         >
           Kul med Djur
         </motion.h1>
@@ -39,7 +39,7 @@ const Hero = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.6, ease: 'easeOut' }}
           style={{ textShadow: '1px 4px 7px rgba(0,0,0,0.2)' }}
-          className="text-xl"
+          className="text-xl md:text-3xl"
         >
           Delsjön runt
         </motion.p>

@@ -61,12 +61,12 @@ export const Collaboration = () => {
       style={{ background: "url('/light_pink_plate.svg')" }}
       className="text-wine px-6 bg-cover bg-center -mt-10 py-16 text-center md:py-28"
     >
-      <h3 className="mb-6">Samarbetspartners</h3>
-      <p className="mb-7 descText">
+      <h3 className="mb-2">Samarbetspartners</h3>
+      <p className="mb-7 md:w-bigger mx-auto md:mb-10">
         Vi är stolta över att kunna presentera de samarbetspartners som hjälper
         oss att anordna eventet!
       </p>
-      <div className="grid grid-cols-2 gap-4 flex-grow md:grid-cols-4 max-w-screen-2xl mx-auto md:gap-0 ">
+      <div className="grid grid-cols-2 gap-4 flex-grow md:grid-cols-4 max-w-screen-md mx-auto md:gap-0 ">
         {collabs.map((collab) => (
           <CollabImage key={collab.hooverText} {...collab} />
         ))}
