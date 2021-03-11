@@ -14,6 +14,7 @@ import SignupForm from '../src/components/SignupForm';
 import Footer from '../src/components/Footer';
 import DogEvent from '../src/components/eventCard/DogEvent';
 import CatEvent from '../src/components/eventCard/CatEvent';
+import HorseEvent from '../src/components/eventCard/HorseEvent';
 
 export default function Home() {
   return (
@@ -22,8 +23,9 @@ export default function Home() {
       <About />
       <DogEvent />
       <CatEvent />
+      <HorseEvent />
       {/* <CatContainer /> */}
-      <HorseContainer />
+      {/* <HorseContainer /> */}
       <Collaboration />
       <Location />
       <SignupForm />

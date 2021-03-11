@@ -32,6 +32,18 @@ const dogColorScheme: ColorScheme = {
   tertiaryColor: 'moss',
 };
 
+const catColorScheme: ColorScheme = {
+  primaryColor: 'lake',
+  secondaryColor: 'lake',
+  tertiaryColor: 'white',
+};
+
+const horseColorScheme: ColorScheme = {
+  primaryColor: 'mound',
+  secondaryColor: 'melon',
+  tertiaryColor: 'mound',
+};
+
 const dogEventHeading: IEventHeading = {
   header: 'Hundägare?',
   description: [
@@ -41,10 +53,22 @@ const dogEventHeading: IEventHeading = {
   colorScheme: dogColorScheme,
 };
 
-const catColorScheme: ColorScheme = {
-  primaryColor: 'lake',
-  secondaryColor: 'lake',
-  tertiaryColor: 'white',
+const catEventHeading: IEventHeading = {
+  header: 'Kattägare?',
+  description: [
+    'Eller drömmer du om att skaffa en lurvig rumskamrat?',
+    'Passa på att delta i någon av våra aktiviteter för just katter',
+  ],
+  colorScheme: catColorScheme,
+};
+
+const horseEventHeading: IEventHeading = {
+  header: 'Hästägare?',
+  description: [
+    'Eller alltid varit lite nyfiken på vad det innebär?',
+    'Passa på att delta i någon av våra aktiviteter för just hästar',
+  ],
+  colorScheme: horseColorScheme,
 };
 
 const dogEventDetails: IFullEventDetails[] = [
@@ -71,7 +95,7 @@ const dogEventDetails: IFullEventDetails[] = [
     text: 'Föreläsning om hundars beteende',
     textContent:
       'Hundars beteende är mer komplext än vad de flesta någonsin kunnat föreställa sig, lär dig mer om hur hundar fungerar och ta eran relation till en ny nivå.',
-    period: 'second',
+    period: 'third',
     type: 'dog',
     colorScheme: dogColorScheme,
   },
@@ -80,20 +104,11 @@ const dogEventDetails: IFullEventDetails[] = [
     text: 'Föreläsning om hundars beteende',
     textContent:
       'Hundars beteende är mer komplext än vad de flesta någonsin kunnat föreställa sig, lär dig mer om hur hundar fungerar och ta eran relation till en ny nivå.',
-    period: 'second',
+    period: 'fourth',
     type: 'dog',
     colorScheme: dogColorScheme,
   },
 ];
-
-const catEventHeading: IEventHeading = {
-  header: 'Kattägare?',
-  description: [
-    'Eller drömmer du om att skaffa en lurvig rumskamrat?',
-    'Passa på att delta i någon av våra aktiviteter för just katter',
-  ],
-  colorScheme: catColorScheme,
-};
 
 const catEventDetails: IFullEventDetails[] = [
   {
@@ -102,7 +117,7 @@ const catEventDetails: IFullEventDetails[] = [
     textContent:
       'Testa på agility med Anna Andersson, ta med din fyrbenta kompis och öva tillsammans eller kom ensam och lär dig mer om hur agility fungerar',
     period: 'first',
-    type: 'dog',
+    type: 'cat',
     colorScheme: catColorScheme,
   },
   {
@@ -111,7 +126,7 @@ const catEventDetails: IFullEventDetails[] = [
     textContent:
       'Hundars beteende är mer komplext än vad de flesta någonsin kunnat föreställa sig, lär dig mer om hur hundar fungerar och ta eran relation till en ny nivå.',
     period: 'second',
-    type: 'dog',
+    type: 'cat',
     colorScheme: catColorScheme,
   },
   {
@@ -119,8 +134,8 @@ const catEventDetails: IFullEventDetails[] = [
     text: 'Föreläsning om hundars beteende',
     textContent:
       'Hundars beteende är mer komplext än vad de flesta någonsin kunnat föreställa sig, lär dig mer om hur hundar fungerar och ta eran relation till en ny nivå.',
-    period: 'second',
-    type: 'dog',
+    period: 'third',
+    type: 'cat',
     colorScheme: catColorScheme,
   },
   {
@@ -128,11 +143,51 @@ const catEventDetails: IFullEventDetails[] = [
     text: 'Föreläsning om hundars beteende',
     textContent:
       'Hundars beteende är mer komplext än vad de flesta någonsin kunnat föreställa sig, lär dig mer om hur hundar fungerar och ta eran relation till en ny nivå.',
-    period: 'second',
-    type: 'dog',
+    period: 'fourth',
+    type: 'cat',
     colorScheme: catColorScheme,
   },
 ];
+
+const horseEventDetails: IFullEventDetails[] = [
+  {
+    time: '10.00',
+    text: 'Testa på agility med Anna Andersson',
+    textContent:
+      'Testa på agility med Anna Andersson, ta med din fyrbenta kompis och öva tillsammans eller kom ensam och lär dig mer om hur agility fungerar',
+    period: 'first',
+    type: 'horse',
+    colorScheme: horseColorScheme,
+  },
+  {
+    time: '11.00',
+    text: 'Föreläsning om hundars beteende',
+    textContent:
+      'Hundars beteende är mer komplext än vad de flesta någonsin kunnat föreställa sig, lär dig mer om hur hundar fungerar och ta eran relation till en ny nivå.',
+    period: 'second',
+    type: 'horse',
+    colorScheme: horseColorScheme,
+  },
+  {
+    time: '13.00',
+    text: 'Föreläsning om hundars beteende',
+    textContent:
+      'Hundars beteende är mer komplext än vad de flesta någonsin kunnat föreställa sig, lär dig mer om hur hundar fungerar och ta eran relation till en ny nivå.',
+    period: 'third',
+    type: 'horse',
+    colorScheme: horseColorScheme,
+  },
+  {
+    time: '14.00',
+    text: 'Föreläsning om hundars beteende',
+    textContent:
+      'Hundars beteende är mer komplext än vad de flesta någonsin kunnat föreställa sig, lär dig mer om hur hundar fungerar och ta eran relation till en ny nivå.',
+    period: 'fourth',
+    type: 'horse',
+    colorScheme: horseColorScheme,
+  },
+];
+
 export const dogEvent: IEvent = {
   heading: dogEventHeading,
   details: dogEventDetails,
@@ -141,4 +196,9 @@ export const dogEvent: IEvent = {
 export const catEvent: IEvent = {
   heading: catEventHeading,
   details: catEventDetails,
+};
+
+export const horseEvent: IEvent = {
+  heading: horseEventHeading,
+  details: horseEventDetails,
 };
