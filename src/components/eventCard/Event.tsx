@@ -2,6 +2,7 @@ import { AnimateSharedLayout, motion } from 'framer-motion';
 import React from 'react';
 import { IEvent } from '../../utils/eventData';
 import DogSVG from '../svg/DogSVG';
+import HorseSVG from '../svg/HorseSVG';
 import Card from './Card';
 
 const Event: React.FC<IEvent> = ({
@@ -11,6 +12,7 @@ const Event: React.FC<IEvent> = ({
     colorScheme: { primaryColor, secondaryColor },
   },
   details,
+  Svg,
 }) => {
   return (
     <AnimateSharedLayout>
@@ -26,7 +28,9 @@ const Event: React.FC<IEvent> = ({
           ))}
         </div>
         <div className="w-full -my-28 absolute md:relative">
-          <DogSVG />
+          {/* <DogSVG /> */}
+          {/* <HorseSVG /> */}
+          <Svg />
         </div>
       </div>
 

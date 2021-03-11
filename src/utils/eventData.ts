@@ -1,3 +1,5 @@
+import DogSVG from '../components/svg/DogSVG';
+import HorseSVG from '../components/svg/HorseSVG';
 import { EventPeriod, EventType } from './eventUtils';
 
 export interface IEventHeading {
@@ -24,6 +26,7 @@ export type ColorScheme = {
 export interface IEvent {
   heading: IEventHeading;
   details: IFullEventDetails[];
+  Svg: React.FC;
 }
 
 const dogColorScheme: ColorScheme = {
@@ -191,14 +194,17 @@ const horseEventDetails: IFullEventDetails[] = [
 export const dogEvent: IEvent = {
   heading: dogEventHeading,
   details: dogEventDetails,
+  Svg: DogSVG,
 };
 
 export const catEvent: IEvent = {
   heading: catEventHeading,
   details: catEventDetails,
+  Svg: DogSVG,
 };
 
 export const horseEvent: IEvent = {
   heading: horseEventHeading,
   details: horseEventDetails,
+  Svg: HorseSVG,
 };
