@@ -25,13 +25,6 @@ const Content: React.FC<IContent> = ({
     dispatch({ period, type, summary });
   };
 
-  const findCorrectPeriod = () => {
-    if (period === 'first') return state.first;
-    if (period === 'second') return state.second;
-    if (period === 'third') return state.third;
-    if (period === 'fourth') return state.fourth;
-  };
-
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -73,7 +66,7 @@ const Content: React.FC<IContent> = ({
           onClick={toggleSubscribed}
           className="w-16 h-8 p-1 bg-gray-700 rounded-md flex flex-col cursor-pointer"
         >
-          {findCorrectPeriod().type !== type ? (
+          {state[period].type !== type ? (
             <motion.div
               layout
               className="h-full w-6 bg-red-400 rounded-sm"

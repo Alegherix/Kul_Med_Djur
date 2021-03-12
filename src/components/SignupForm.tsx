@@ -122,7 +122,9 @@ const SignupForm = () => {
   const [firstName, setFirstName] = useState<string>('');
   const [lastName, setLastName] = useState<string>('');
   const [mail, setMail] = useState<string>('');
-  const [phoneNumber, setPhoneNumber] = useState<number | undefined>(undefined);
+
+  // parseInt refuses to parse 0 and update state, so no <number|undefined>.
+  const [phoneNumber, setPhoneNumber] = useState(undefined);
 
   // Fetches data from query string,
   const router = useRouter();
@@ -163,7 +165,7 @@ const SignupForm = () => {
     setFirstName('');
     setLastName('');
     setMail('');
-    setPhoneNumber(null);
+    setPhoneNumber(undefined);
   };
 
   // Used for deciding how we should render if events are subscribed to or not
@@ -172,18 +174,13 @@ const SignupForm = () => {
   };
 
   // Used for deciding if user should be able to submit form or not
-  const hasEnteredSufficentDetails = (): boolean => {
-    return (
-      firstName !== '' &&
-      lastName !== '' &&
-      (mail !== '' || phoneNumber !== null) &&
-      hasSubscribedForEvent()
-    );
-  };
+  const hasEnteredSufficentDetails = (): boolean =>
+    firstName && lastName && (mail || phoneNumber) && hasSubscribedForEvent();
 
   return (
     <section id="interest" className="text-moss px-8 mt-8 pb-4 flex flex-col">
       <h3>Anmälan</h3>
+      {phoneNumber}
       <p className="text-center mx-auto mb-4 descText md:mb-8 md:w-96">
         Här kan du anmäla dig och din fyrbenta vän till en eller fler av
         aktiviteterna.
@@ -221,8 +218,11 @@ const SignupForm = () => {
             <input
               type="number"
               name="phone"
+              min="0"
               value={phoneNumber || ''}
-              onChange={(e) => setPhoneNumber(parseInt(e.target.value))}
+              onChange={(e) => {
+                setPhoneNumber(e.target.value);
+              }}
             />
           </div>
         </form>
@@ -242,7 +242,6 @@ const SignupForm = () => {
         onClick={submitFromBtn}
         className="bg-moss px-8 py-3 text-melon rounded-3xl 
       mx-auto w-40 mb-4 md:py-5 md:px-8 md:rounded-full md:text-xl disabled:opacity-50"
-        // TODO - Byt ut mot att formuläret ska vara ifyllt och att minst ett event finns med.
         disabled={!hasEnteredSufficentDetails()}
       >
         Skicka
