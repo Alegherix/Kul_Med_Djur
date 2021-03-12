@@ -1,15 +1,20 @@
 import Image from 'next/image';
+import useMatchMedia from '../hooks/useMatchMedia';
 
 interface ICollab {
   src: string;
-  height: number;
-  width: number;
   hooverText: string;
   href: string;
 }
 const CollabImage: React.FC<ICollab> = ({ href, hooverText }) => {
+  const tablet = useMatchMedia('(min-width: 1024px)');
+
   return (
-    <div className="relative rounded-full w-36 h-36 bg-white flex items-center justify-center flex-grow mx-auto">
+    <div
+      className={
+        'relative rounded-full w-36 h-36 bg-white flex items-center justify-center flex-grow mx-auto lg:h-48 lg:w-48'
+      }
+    >
       <div
         className="w-full h-full bg-wine absolute top-0 left-0 rounded-full z-10 opacity-0 hover:opacity-100
       flex items-center justify-center transition duration-300 ease-out
@@ -19,7 +24,11 @@ const CollabImage: React.FC<ICollab> = ({ href, hooverText }) => {
           {hooverText}
         </a>
       </div>
-      <Image src="/collaborations/SKK.webp" height={95} width={95} />
+      <Image
+        src="/collaborations/SKK.webp"
+        height={tablet ? 120 : 95}
+        width={tablet ? 120 : 95}
+      />
     </div>
   );
 };
@@ -28,29 +37,21 @@ export const Collaboration = () => {
   const collabs: ICollab[] = [
     {
       src: '/collaborations/SKK.webp',
-      height: 95,
-      width: 95,
       hooverText: 'Svenska Kennelklubben',
       href: 'https://skk.se',
     },
     {
       src: '/collaborations/SKK.webp',
-      height: 95,
-      width: 95,
       hooverText: 'Second',
       href: 'https://skk.se',
     },
     {
       src: '/collaborations/SKK.webp',
-      height: 95,
-      width: 95,
       hooverText: 'Third',
       href: 'https://skk.se',
     },
     {
       src: '/collaborations/SKK.webp',
-      height: 250,
-      width: 250,
       hooverText: 'Fourth',
       href: 'https://skk.se',
     },
@@ -66,7 +67,7 @@ export const Collaboration = () => {
         Vi är stolta över att kunna presentera de samarbetspartners som hjälper
         oss att anordna eventet!
       </p>
-      <div className="grid grid-cols-2 gap-4 flex-grow max-w-sm md:grid-cols-4 md:max-w-screen-md mx-auto md:gap-0">
+      <div className="grid grid-cols-2 gap-4 flex-grow max-w-sm md:grid-cols-4 md:max-w-screen-lg mx-auto md:gap-0">
         {collabs.map((collab) => (
           <CollabImage key={collab.hooverText} {...collab} />
         ))}

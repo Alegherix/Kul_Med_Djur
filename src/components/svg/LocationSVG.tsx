@@ -2,7 +2,11 @@ import React from 'react';
 
 export default function LocationSVG() {
   return (
-    <svg viewBox="0 0 276.47 182.13" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      className="w-80 md:w-full"
+      viewBox="0 0 276.47 182.13"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <defs />
       <g style={{ isolation: 'isolate' }}>
         <g id="Lager_1" data-name="Lager 1">
@@ -23,7 +27,7 @@ export default function LocationSVG() {
               className="pinShadow"
               d="M106.23 280A31.77 31.77 0 0080 329.7l12.39 22 11.84 21a2.29 2.29 0 004 0l11.84-21 12.39-22a31.77 31.77 0 00-26.23-49.7zm4.94 47.14a16 16 0 01-10.34 0 16 16 0 1110.34 0z"
               transform="translate(-51.26 -278)"
-              fill="#33333388 "
+              fill="#33333388"
             />
             <path
               className="pin"
