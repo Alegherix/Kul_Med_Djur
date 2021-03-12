@@ -2,7 +2,13 @@ import { useState } from 'react';
 import { useEventDispatch, useEventState } from '../hooks/useEvent';
 import Swal from 'sweetalert2';
 import { IoClose } from 'react-icons/io5';
-import { EventPeriod, EventType } from '../utils/eventUtils';
+import {
+  capitalizeFirstLetter,
+  EventPeriod,
+  EventType,
+} from '../utils/eventUtils';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 export const SucessPopup = () => {
   return (
@@ -64,7 +70,7 @@ interface IActivites {
   type: EventType;
 }
 
-// Used for showing activites that user is signed up for.
+// Used for rendering a single acitvity that the user has subscribed to.
 const Activites: React.FC<IActivites> = ({ text, period, type }) => {
   const { dispatch } = useEventDispatch();
 
@@ -73,7 +79,7 @@ const Activites: React.FC<IActivites> = ({ text, period, type }) => {
   };
 
   return (
-    <div className="p-2 rounded-full bg-white shadow-md text-moss  inline-block m-2">
+    <div className="p-2 rounded-full bg-white shadow-md text-moss  inline-block mr-2 my-2">
       <div className="flex items-center">
         <p className="ml-2 mr-4">{text}</p>
         <IoClose
@@ -87,45 +93,93 @@ const Activites: React.FC<IActivites> = ({ text, period, type }) => {
   );
 };
 
-const SignupForm = () => {
+// Used for rendering all activites that the user has subscribed to.
+const SubscribedEvents = () => {
   const {
     state: { first, second, third, fourth },
   } = useEventState();
 
+  return (
+    <div>
+      {first.type !== '' && (
+        <Activites text={first.summary} period="first" type={first.type} />
+      )}
+      {second.type !== '' && (
+        <Activites text={second.summary} period="second" type={second.type} />
+      )}
+      {third.type !== '' && (
+        <Activites text={third.summary} period="third" type={third.type} />
+      )}
+      {fourth.type !== '' && (
+        <Activites text={fourth.summary} period="fourth" type={fourth.type} />
+      )}
+    </div>
+  );
+};
+
+const SignupForm = () => {
+  const { state } = useEventState();
+  const [firstName, setFirstName] = useState<string>('');
+  const [lastName, setLastName] = useState<string>('');
+  const [mail, setMail] = useState<string>('');
+  const [phoneNumber, setPhoneNumber] = useState<number | undefined>(undefined);
+
+  // Fetches data from query string,
+  const router = useRouter();
+  const {
+    name: queryFirstName,
+    lastname: queryLastName,
+    email: queryEmail,
+    phone: queryPhone,
+  } = router.query;
+
+  // Sets the different name states when query is loaded, otherwise useEffect runs first
+  // Needs to have useEffect to handle both personalized and non personalized usage the same way
+  useEffect(() => {
+    if (!router.isReady) return;
+
+    setFirstName(
+      queryFirstName ? capitalizeFirstLetter(queryFirstName as string) : ''
+    );
+    setLastName(
+      queryLastName ? capitalizeFirstLetter(queryLastName as string) : ''
+    );
+    setMail(queryEmail ? (queryEmail as string) : '');
+
+    let number;
+    try {
+      number = queryPhone ?? parseInt(queryPhone as string);
+    } catch (err) {}
+    if (number) setPhoneNumber(number);
+  }, [router.query]);
+
+  // Resets form when submiting
   const submitFromBtn = () => {
-    document.querySelector<HTMLFormElement>('form')?.reset();
-    Swal.fire('Strålande!', 'Din anmälan är nu registrerad', 'success');
-  };
-
-  const SubscribedEvents = () => {
-    return (
-      <div>
-        {first.type !== '' && (
-          <Activites text={first.summary} period="first" type={first.type} />
-        )}
-        {second.type !== '' && (
-          <Activites text={second.summary} period="second" type={second.type} />
-        )}
-        {third.type !== '' && (
-          <Activites text={third.summary} period="third" type={third.type} />
-        )}
-        {fourth.type !== '' && (
-          <Activites text={fourth.summary} period="fourth" type={fourth.type} />
-        )}
-      </div>
+    Swal.fire(
+      `Strålande ${firstName}!`,
+      'Din anmälan är nu registrerad',
+      'success'
     );
+    setFirstName('');
+    setLastName('');
+    setMail('');
+    setPhoneNumber(null);
   };
 
+  // Used for deciding how we should render if events are subscribed to or not
   const hasSubscribedForEvent = (): boolean => {
-    return (
-      first.type !== '' ||
-      second.type !== '' ||
-      third.type !== '' ||
-      fourth.type !== ''
-    );
+    return Object.keys(state).some((key) => state[key].type !== '');
   };
 
-  const updateFirstName = () => {};
+  // Used for deciding if user should be able to submit form or not
+  const hasEnteredSufficentDetails = (): boolean => {
+    return (
+      firstName !== '' &&
+      lastName !== '' &&
+      (mail !== '' || phoneNumber !== null) &&
+      hasSubscribedForEvent()
+    );
+  };
 
   return (
     <section id="interest" className="text-moss px-8 mt-8 pb-4 flex flex-col">
@@ -139,29 +193,47 @@ const SignupForm = () => {
         <form className="grid grid-cols-2 gap-2 mb-4 w-full max-w-2xl mx-auto otherText">
           <div className="flex flex-col w-full">
             <label>Förnamn</label>
-            <input name="firstName" onChange={updateFirstName} />
+            <input
+              name="firstName"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+            />
           </div>
 
           <div className="flex flex-col w-full">
             <label>Efternamn</label>
-            <input name="lastName" />
+            <input
+              name="lastName"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+            />
           </div>
-
           <div className="col-span-2 flex flex-col">
             <label>E-postadress</label>
-            <input name="email" />
+            <input
+              name="email"
+              value={mail}
+              onChange={(e) => setMail(e.target.value)}
+            />
           </div>
           <div className="flex flex-col">
             <label>Mobilnummer</label>
-            <input name="cellphone" />
+            <input
+              type="number"
+              name="phone"
+              value={phoneNumber || ''}
+              onChange={(e) => setPhoneNumber(parseInt(e.target.value))}
+            />
           </div>
         </form>
         <div className="mb-4 w-full max-w-2xl mx-auto">
-          <p>Jag har anmält mig till följande aktiviteter:</p>
           {!hasSubscribedForEvent() ? (
-            <p>No event yet</p>
+            <p>Du har inte anmält dig till något event ännu.</p>
           ) : (
-            <SubscribedEvents />
+            <>
+              <p>Du har anmält mig till följande aktiviteter:</p>
+              <SubscribedEvents />
+            </>
           )}
         </div>
       </div>
@@ -171,7 +243,7 @@ const SignupForm = () => {
         className="bg-moss px-8 py-3 text-melon rounded-3xl 
       mx-auto w-40 mb-4 md:py-5 md:px-8 md:rounded-full md:text-xl disabled:opacity-50"
         // TODO - Byt ut mot att formuläret ska vara ifyllt och att minst ett event finns med.
-        disabled={!hasSubscribedForEvent()}
+        disabled={!hasEnteredSufficentDetails()}
       >
         Skicka
       </button>

@@ -1,9 +1,13 @@
 import React from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 interface AboutProps {}
 
 const About: React.FC<AboutProps> = ({}) => {
+  const router = useRouter();
+  const { name, lastname, petname } = router.query;
+
   return (
     <section
       style={{
