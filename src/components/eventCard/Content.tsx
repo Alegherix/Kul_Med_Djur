@@ -36,9 +36,6 @@ const Content: React.FC<IContent> = ({
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
     },
   };
 
@@ -53,7 +50,7 @@ const Content: React.FC<IContent> = ({
       variants={container}
       initial="hidden"
       animate="show"
-      exit={{ opacity: 0, transition: { duration: 0.5 } }}
+      exit="hidden"
       className="w-full px-2 pb-2"
     >
       <motion.div

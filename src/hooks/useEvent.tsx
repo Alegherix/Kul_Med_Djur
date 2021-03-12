@@ -75,17 +75,26 @@ const eventReducer = (draft: IEventState, action: IEventAction) => {
         draft.second.type = action.type;
         draft.second.summary = action.summary;
       }
+      return;
     }
     case 'third': {
-      draft.third.type === action.type
-        ? (draft.third.type = '')
-        : (draft.third.type = action.type);
+      if (draft.third.type === action.type) {
+        draft.third.type = '';
+        draft.third.summary = '';
+      } else {
+        draft.third.type = action.type;
+        draft.third.summary = action.summary;
+      }
       return;
     }
     case 'fourth': {
-      draft.fourth.type === action.type
-        ? (draft.fourth.type = '')
-        : (draft.fourth.type = action.type);
+      if (draft.fourth.type === action.type) {
+        draft.fourth.type = '';
+        draft.fourth.summary = '';
+      } else {
+        draft.fourth.type = action.type;
+        draft.fourth.summary = action.summary;
+      }
       return;
     }
 

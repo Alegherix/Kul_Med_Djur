@@ -100,30 +100,30 @@ const dogEventDetails: IFullEventDetails[] = [
   },
   {
     time: '13.00',
-    text: 'Föreläsning om hundars beteende',
+    text: 'Kloklippning och pälsvård',
     textContent:
       'Hundars beteende är mer komplext än vad de flesta någonsin kunnat föreställa sig, lär dig mer om hur hundar fungerar och ta eran relation till en ny nivå.',
     period: 'third',
     type: 'dog',
     colorScheme: dogColorScheme,
-    summary: 'Föreläsning: Hundars beteende',
+    summary: 'Klolippning & Pälsvård',
   },
   {
     time: '14.00',
-    text: 'Föreläsning om hundars beteende',
+    text: 'Testa på lydnas med Jan Jansson',
     textContent:
       'Hundars beteende är mer komplext än vad de flesta någonsin kunnat föreställa sig, lär dig mer om hur hundar fungerar och ta eran relation till en ny nivå.',
     period: 'fourth',
     type: 'dog',
     colorScheme: dogColorScheme,
-    summary: 'Föreläsning: Hundars beteende',
+    summary: 'Lydnadsträning',
   },
 ];
 
 const catEventDetails: IFullEventDetails[] = [
   {
     time: '10.00',
-    text: 'Testa på agility med Anna Andersson',
+    text: 'Utställningstips med Anna Andersson',
     textContent:
       'Testa på agility med Anna Andersson, ta med din fyrbenta kompis och öva tillsammans eller kom ensam och lär dig mer om hur agility fungerar',
     period: 'first',
@@ -133,76 +133,76 @@ const catEventDetails: IFullEventDetails[] = [
   },
   {
     time: '11.00',
-    text: 'Föreläsning om hundars beteende',
+    text: 'Föreläsning om katters beteende',
     textContent:
       'Hundars beteende är mer komplext än vad de flesta någonsin kunnat föreställa sig, lär dig mer om hur hundar fungerar och ta eran relation till en ny nivå.',
     period: 'second',
     type: 'cat',
     colorScheme: catColorScheme,
-    summary: 'Föreläsning: Hundars beteende',
+    summary: 'Föreläsning: Katters beteende',
   },
   {
     time: '13.00',
-    text: 'Föreläsning om hundars beteende',
+    text: 'Katt Café med medhavd fika',
     textContent:
       'Hundars beteende är mer komplext än vad de flesta någonsin kunnat föreställa sig, lär dig mer om hur hundar fungerar och ta eran relation till en ny nivå.',
     period: 'third',
     type: 'cat',
     colorScheme: catColorScheme,
-    summary: '',
+    summary: 'Katt Café',
   },
   {
     time: '14.00',
-    text: 'Föreläsning om hundars beteende',
+    text: 'Träffa uppfödare av olika raser',
     textContent:
       'Hundars beteende är mer komplext än vad de flesta någonsin kunnat föreställa sig, lär dig mer om hur hundar fungerar och ta eran relation till en ny nivå.',
     period: 'fourth',
     type: 'cat',
     colorScheme: catColorScheme,
-    summary: '',
+    summary: 'Meet & Greet med kattuppfödare',
   },
 ];
 
 const horseEventDetails: IFullEventDetails[] = [
   {
     time: '10.00',
-    text: 'Testa på agility med Anna Andersson',
+    text: 'Hästvård med Anders Karlsson',
     textContent:
-      'Testa på agility med Anna Andersson, ta med din fyrbenta kompis och öva tillsammans eller kom ensam och lär dig mer om hur agility fungerar',
+      'Att ta hand om sin häst på rätt sätt är en av de absolut viktigaste delarna för att få din häst att må bra. Anders Karlsson håller därför en föreläsning om hur du tar hand om din häst på bästa sätt med allt ifrån tänder till hovar.',
     period: 'first',
     type: 'horse',
     colorScheme: horseColorScheme,
-    summary: 'Hästfika',
+    summary: 'Hästvård',
   },
   {
     time: '11.00',
-    text: 'Föreläsning om hundars beteende',
+    text: 'Skritt teknik med Johanna Svensson',
     textContent:
       'Hundars beteende är mer komplext än vad de flesta någonsin kunnat föreställa sig, lär dig mer om hur hundar fungerar och ta eran relation till en ny nivå.',
     period: 'second',
     type: 'horse',
     colorScheme: horseColorScheme,
-    summary: 'Föreläsning: Hundars beteende',
+    summary: 'Skritt teknik',
   },
   {
     time: '13.00',
-    text: 'Föreläsning om hundars beteende',
+    text: 'Travövningar inför tävling',
     textContent:
       'Hundars beteende är mer komplext än vad de flesta någonsin kunnat föreställa sig, lär dig mer om hur hundar fungerar och ta eran relation till en ny nivå.',
     period: 'third',
     type: 'horse',
     colorScheme: horseColorScheme,
-    summary: 'Föreläsning: Hundars beteende',
+    summary: 'Travövningar',
   },
   {
     time: '14.00',
-    text: 'Föreläsning om hundars beteende',
+    text: 'Föreläsning om hästars beteende',
     textContent:
       'Hundars beteende är mer komplext än vad de flesta någonsin kunnat föreställa sig, lär dig mer om hur hundar fungerar och ta eran relation till en ny nivå.',
     period: 'fourth',
     type: 'horse',
     colorScheme: horseColorScheme,
-    summary: 'Föreläsning: Hundars beteende',
+    summary: 'Föreläsning: Hästars beteende',
   },
 ];
 

@@ -74,7 +74,7 @@ const Activites: React.FC<IActivites> = ({ text, period, type }) => {
   };
 
   return (
-    <div className="p-2 rounded-full bg-white shadow-md text-moss  inline-block">
+    <div className="p-2 rounded-full bg-white shadow-md text-moss  inline-block m-2">
       <div className="flex items-center">
         <p className="ml-2 mr-4">{text}</p>
         <IoClose
