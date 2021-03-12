@@ -13,7 +13,7 @@ interface IFooterIcon {
 
 const FooterIcon: React.FC<IFooterIcon> = ({ Icon, href }) => {
   return (
-    <a className="w-4 h-4 rounded-md mx-2" href={href}>
+    <a className="w-4 h-4 rounded-md mx-2 md:mx-4" href={href}>
       <Icon />
     </a>
   );
@@ -44,11 +44,11 @@ const Footer = () => {
   ];
   return (
     <footer
-      style={{ background: "url('/dark_brown_plate.svg')", height: '22vh' }}
+      style={{ background: "url('/dark_brown_plate.svg')", height: '25vh' }}
       className="relative flex justify-center flex-col items-center pt-2"
     >
       <WhiteFolksamSVG />
-      <p className="text-dirt w-48 text-xs text-center mb-5">
+      <p className="text-dirt w-48 text-xs text-center mb-5 md:text-base md:w-64">
         Läs mer om våra försäkringar och vad vi kan hjälpa dig med på{' '}
         <a className="text-white" href="https://www.folksam.se">
           folksam.se

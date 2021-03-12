@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useForm } from 'react-hook-form';
 import { useEventDispatch, useEventState } from '../hooks/useEvent';
 import Swal from 'sweetalert2';
 import { IoClose } from 'react-icons/io5';
@@ -88,22 +87,12 @@ const Activites: React.FC<IActivites> = ({ text, period, type }) => {
   );
 };
 
-type FormValues = {
-  firstName: string;
-  lastName: string;
-  email: string;
-};
-
 const SignupForm = () => {
   const {
     state: { first, second, third, fourth },
   } = useEventState();
-  const { register, handleSubmit, errors, reset } = useForm<FormValues>();
-
-  const [submit, setSubmit] = useState(false);
 
   const submitFromBtn = () => {
-    setSubmit(true);
     document.querySelector<HTMLFormElement>('form')?.reset();
     Swal.fire('Strålande!', 'Din anmälan är nu registrerad', 'success');
   };
@@ -136,6 +125,8 @@ const SignupForm = () => {
     );
   };
 
+  const updateFirstName = () => {};
+
   return (
     <section id="interest" className="text-moss px-8 mt-8 pb-4 flex flex-col">
       <h3>Anmälan</h3>
@@ -148,21 +139,21 @@ const SignupForm = () => {
         <form className="grid grid-cols-2 gap-2 mb-4 w-full max-w-2xl mx-auto otherText">
           <div className="flex flex-col w-full">
             <label>Förnamn</label>
-            <input name="lastName" ref={register} />
+            <input name="firstName" onChange={updateFirstName} />
           </div>
 
           <div className="flex flex-col w-full">
             <label>Efternamn</label>
-            <input name="lastName" ref={register} />
+            <input name="lastName" />
           </div>
 
           <div className="col-span-2 flex flex-col">
             <label>E-postadress</label>
-            <input name="email" ref={register} />
+            <input name="email" />
           </div>
           <div className="flex flex-col">
             <label>Mobilnummer</label>
-            <input name="cellphone" ref={register} />
+            <input name="cellphone" />
           </div>
         </form>
         <div className="mb-4 w-full max-w-2xl mx-auto">

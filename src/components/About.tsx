@@ -13,7 +13,7 @@ const About: React.FC<AboutProps> = ({}) => {
       className="text-center text-moss -mt-4 flex items-center justify-center flex-col h-full py-8 bg-cover bg-center"
     >
       <h2 className="mb-3">Eventbeskrivning här</h2>
-      <p className="mb-4 w-96 md:w-bigger mx-auto md:text-xl md:mb-8">
+      <p className="mb-4 w-full md:w-bigger mx-auto md:text-xl md:mb-8">
         Lite ytterligare text om eventet här och ännu mer info och beskrivning
         av syfte med evenmanget...
       </p>

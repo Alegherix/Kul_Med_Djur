@@ -7,7 +7,7 @@ export default function WhiteFolksamSVG() {
       viewBox="0 0 141.73 50.71"
       xmlns="http://www.w3.org/2000/svg"
       data-name="Lager 1"
-      className="w-28 h-auto mb-4"
+      className="w-28 h-auto mb-4 md:w-40"
     >
       <defs />
       <path

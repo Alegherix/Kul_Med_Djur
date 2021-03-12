@@ -12,13 +12,14 @@ const Event: React.FC<IEvent> = ({
     colorScheme: { primaryColor },
   },
   details,
-  Svg,
+  SVG,
+  MobileSVG,
   reverse,
 }) => {
   return (
     <AnimateSharedLayout>
       <div
-        className={`flex justify-center md:h-40 max-w-5xl md:mx-auto xl:h-56 ${
+        className={`flex justify-center relative max-w-5xl md:h-40 md:mx-auto xl:h-56 ${
           reverse && 'flex-row-reverse'
         }`}
       >
@@ -37,8 +38,15 @@ const Event: React.FC<IEvent> = ({
             </p>
           ))}
         </div>
-        <div className="w-full -my-28 absolute md:relative ">
-          <Svg />
+        <div
+          className={`absolute md:hidden -top-24 ${
+            reverse ? '-left-4' : '-right-4'
+          }`}
+        >
+          <MobileSVG />
+        </div>
+        <div className="w-full -my-28 absolute md:relative hidden md:flex">
+          <SVG />
         </div>
       </div>
 

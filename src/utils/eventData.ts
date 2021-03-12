@@ -1,5 +1,8 @@
+import CatMobileSVG from '../components/svg/CatMobileSVG';
 import CatSVG from '../components/svg/CatSVG';
+import DogMobileSVG from '../components/svg/DogMobileSVG';
 import DogSVG from '../components/svg/DogSVG';
+import HorseMobileSVG from '../components/svg/HorseMobileSVG';
 import HorseSVG from '../components/svg/HorseSVG';
 import { EventPeriod, EventType } from './eventUtils';
 
@@ -19,16 +22,17 @@ export interface IFullEventDetails {
   colorScheme: ColorScheme;
 }
 
-export type ColorScheme = {
+export interface ColorScheme {
   primaryColor: string;
   secondaryColor: string;
   tertiaryColor: string;
-};
+}
 
 export interface IEvent {
   heading: IEventHeading;
   details: IFullEventDetails[];
-  Svg: React.FC;
+  SVG: React.FC;
+  MobileSVG?: React.FC;
   reverse?: boolean;
 }
 
@@ -209,18 +213,21 @@ const horseEventDetails: IFullEventDetails[] = [
 export const dogEvent: IEvent = {
   heading: dogEventHeading,
   details: dogEventDetails,
-  Svg: DogSVG,
+  SVG: DogSVG,
+  MobileSVG: DogMobileSVG,
 };
 
 export const catEvent: IEvent = {
   heading: catEventHeading,
   details: catEventDetails,
-  Svg: CatSVG,
+  SVG: CatSVG,
+  MobileSVG: CatMobileSVG,
   reverse: true,
 };
 
 export const horseEvent: IEvent = {
   heading: horseEventHeading,
   details: horseEventDetails,
-  Svg: HorseSVG,
+  SVG: HorseSVG,
+  MobileSVG: HorseMobileSVG,
 };

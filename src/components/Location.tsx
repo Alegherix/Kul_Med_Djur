@@ -1,7 +1,6 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import useIsomorphicLayoutEffect from '../hooks/UseIsomorphicLayoutEffect';
 import LocationSVG from './svg/LocationSVG';
 
@@ -18,37 +17,6 @@ const pinAnimation = (part: string) => {
     duration: 0.8,
   });
   return anim;
-};
-
-const FindUsAnimation = () => {
-  const tl = gsap.timeline();
-
-  const makeVisible = gsap.from('.findUs', {
-    scrollTrigger: {
-      trigger: `.pin`,
-      start: 'top center',
-    },
-    delay: 1,
-    opacity: 0,
-    duration: 0.6,
-  });
-
-  const shakeTl = gsap
-    .timeline({ repeat: 2 })
-    .to('.findUs', {
-      rotate: 15,
-      x: 5,
-      scale: 1.05,
-      duration: 0.1,
-    })
-    .to('.findUs', {
-      rotate: -15,
-      x: 0,
-      duration: 0.1,
-    });
-  tl.add(makeVisible);
-  tl.add(shakeTl);
-  return tl;
 };
 
 export const Location = () => {
