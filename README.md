@@ -14,4 +14,4 @@ This is a project dedicated to create a landing page for Kul med djur - Delsjön
 ## Authors
 
 - [Martin Hansson](https://next-portfolio-sooty-five.vercel.app) Full Stack Web Developer
-- [Tova Range](https://tovarane.com) - Graphic Designer & Graphic illustrator
+- [Tova Rane](https://tovarane.com) - Graphic Designer & Graphic illustrator

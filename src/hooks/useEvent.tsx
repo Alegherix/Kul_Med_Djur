@@ -13,35 +13,44 @@ interface IEventStateContext {
 interface IEventAction {
   period: EventPeriod;
   type: EventType;
+  summary: string;
 }
 
 interface IEventState {
   first: {
     type: EventType;
+    summary: string;
   };
   second: {
     type: EventType;
+    summary: string;
   };
   third: {
     type: EventType;
+    summary: string;
   };
   fourth: {
     type: EventType;
+    summary: string;
   };
 }
 
 const initialState: IEventState = {
   first: {
     type: '',
+    summary: '',
   },
   second: {
     type: '',
+    summary: '',
   },
   third: {
     type: '',
+    summary: '',
   },
   fourth: {
     type: '',
+    summary: '',
   },
 };
 
@@ -49,16 +58,23 @@ const initialState: IEventState = {
 const eventReducer = (draft: IEventState, action: IEventAction) => {
   switch (action.period) {
     case 'first': {
-      draft.first.type === action.type
-        ? (draft.first.type = '')
-        : (draft.first.type = action.type);
+      if (draft.first.type === action.type) {
+        draft.first.type = '';
+        draft.first.summary = '';
+      } else {
+        draft.first.type = action.type;
+        draft.first.summary = action.summary;
+      }
       return;
     }
     case 'second': {
-      draft.second.type === action.type
-        ? (draft.second.type = '')
-        : (draft.second.type = action.type);
-      return;
+      if (draft.second.type === action.type) {
+        draft.second.type = '';
+        draft.second.summary = '';
+      } else {
+        draft.second.type = action.type;
+        draft.second.summary = action.summary;
+      }
     }
     case 'third': {
       draft.third.type === action.type

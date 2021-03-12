@@ -12,6 +12,7 @@ const Card: React.FC<IFullEventDetails> = ({
   textContent,
   period,
   type,
+  summary,
 }) => {
   const { secondaryColor, tertiaryColor } = colorScheme;
   const [isOpen, setIsOpen] = useState(false);
@@ -38,6 +39,7 @@ const Card: React.FC<IFullEventDetails> = ({
           <Content
             textContent={textContent}
             period={period}
+            summary={summary}
             type={type}
             color={colorScheme}
           />

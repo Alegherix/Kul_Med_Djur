@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { useEventState } from '../hooks/useEvent';
+import { useEventDispatch, useEventState } from '../hooks/useEvent';
 import Swal from 'sweetalert2';
 import { IoClose } from 'react-icons/io5';
+import { EventPeriod, EventType } from '../utils/eventUtils';
 
 export const SucessPopup = () => {
   return (
@@ -58,12 +59,30 @@ export const ErrorPopup = () => {
   );
 };
 
-const Activites = ({ text }) => {
+interface IActivites {
+  text: string;
+  period: EventPeriod;
+  type: EventType;
+}
+
+// Used for showing activites that user is signed up for.
+const Activites: React.FC<IActivites> = ({ text, period, type }) => {
+  const { dispatch } = useEventDispatch();
+
+  const removeEvent = () => {
+    dispatch({ period, type, summary: '' });
+  };
+
   return (
     <div className="p-2 rounded-full bg-white shadow-md text-moss  inline-block">
       <div className="flex items-center">
         <p className="ml-2 mr-4">{text}</p>
-        <IoClose color="#1a431f" />
+        <IoClose
+          onClick={removeEvent}
+          className="flex-1 cursor-pointer"
+          color="#1a431f"
+          size="18px"
+        />
       </div>
     </div>
   );
@@ -86,8 +105,35 @@ const SignupForm = () => {
   const submitFromBtn = () => {
     setSubmit(true);
     document.querySelector<HTMLFormElement>('form')?.reset();
-    if (!submit)
-      Swal.fire('Strålande!', 'Din anmälan är nu registrerad', 'success');
+    Swal.fire('Strålande!', 'Din anmälan är nu registrerad', 'success');
+  };
+
+  const SubscribedEvents = () => {
+    return (
+      <div>
+        {first.type !== '' && (
+          <Activites text={first.summary} period="first" type={first.type} />
+        )}
+        {second.type !== '' && (
+          <Activites text={second.summary} period="second" type={second.type} />
+        )}
+        {third.type !== '' && (
+          <Activites text={third.summary} period="third" type={third.type} />
+        )}
+        {fourth.type !== '' && (
+          <Activites text={fourth.summary} period="fourth" type={fourth.type} />
+        )}
+      </div>
+    );
+  };
+
+  const hasSubscribedForEvent = (): boolean => {
+    return (
+      first.type !== '' ||
+      second.type !== '' ||
+      third.type !== '' ||
+      fourth.type !== ''
+    );
   };
 
   return (
@@ -121,10 +167,10 @@ const SignupForm = () => {
         </form>
         <div className="mb-4 w-full max-w-2xl mx-auto">
           <p>Jag har anmält mig till följande aktiviteter:</p>
-          {first.type !== '' ? (
-            <Activites text="Agility" />
-          ) : (
+          {!hasSubscribedForEvent() ? (
             <p>No event yet</p>
+          ) : (
+            <SubscribedEvents />
           )}
         </div>
       </div>
@@ -134,7 +180,7 @@ const SignupForm = () => {
         className="bg-moss px-8 py-3 text-melon rounded-3xl 
       mx-auto w-40 mb-4 md:py-5 md:px-8 md:rounded-full md:text-xl disabled:opacity-50"
         // TODO - Byt ut mot att formuläret ska vara ifyllt och att minst ett event finns med.
-        disabled={first.type === ''}
+        disabled={!hasSubscribedForEvent()}
       >
         Skicka
       </button>

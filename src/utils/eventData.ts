@@ -13,6 +13,7 @@ export interface IFullEventDetails {
   time: string;
   text: string;
   textContent: string;
+  summary: string;
   period: EventPeriod;
   type: EventType;
   colorScheme: ColorScheme;
@@ -85,6 +86,7 @@ const dogEventDetails: IFullEventDetails[] = [
     period: 'first',
     type: 'dog',
     colorScheme: dogColorScheme,
+    summary: 'Agility',
   },
   {
     time: '11.00',
@@ -94,6 +96,7 @@ const dogEventDetails: IFullEventDetails[] = [
     period: 'second',
     type: 'dog',
     colorScheme: dogColorScheme,
+    summary: 'Föreläsning: Hundars beteende',
   },
   {
     time: '13.00',
@@ -103,6 +106,7 @@ const dogEventDetails: IFullEventDetails[] = [
     period: 'third',
     type: 'dog',
     colorScheme: dogColorScheme,
+    summary: 'Föreläsning: Hundars beteende',
   },
   {
     time: '14.00',
@@ -112,6 +116,7 @@ const dogEventDetails: IFullEventDetails[] = [
     period: 'fourth',
     type: 'dog',
     colorScheme: dogColorScheme,
+    summary: 'Föreläsning: Hundars beteende',
   },
 ];
 
@@ -124,6 +129,7 @@ const catEventDetails: IFullEventDetails[] = [
     period: 'first',
     type: 'cat',
     colorScheme: catColorScheme,
+    summary: 'Agility',
   },
   {
     time: '11.00',
@@ -133,6 +139,7 @@ const catEventDetails: IFullEventDetails[] = [
     period: 'second',
     type: 'cat',
     colorScheme: catColorScheme,
+    summary: 'Föreläsning: Hundars beteende',
   },
   {
     time: '13.00',
@@ -142,6 +149,7 @@ const catEventDetails: IFullEventDetails[] = [
     period: 'third',
     type: 'cat',
     colorScheme: catColorScheme,
+    summary: '',
   },
   {
     time: '14.00',
@@ -151,6 +159,7 @@ const catEventDetails: IFullEventDetails[] = [
     period: 'fourth',
     type: 'cat',
     colorScheme: catColorScheme,
+    summary: '',
   },
 ];
 
@@ -163,6 +172,7 @@ const horseEventDetails: IFullEventDetails[] = [
     period: 'first',
     type: 'horse',
     colorScheme: horseColorScheme,
+    summary: 'Hästfika',
   },
   {
     time: '11.00',
@@ -172,6 +182,7 @@ const horseEventDetails: IFullEventDetails[] = [
     period: 'second',
     type: 'horse',
     colorScheme: horseColorScheme,
+    summary: 'Föreläsning: Hundars beteende',
   },
   {
     time: '13.00',
@@ -181,6 +192,7 @@ const horseEventDetails: IFullEventDetails[] = [
     period: 'third',
     type: 'horse',
     colorScheme: horseColorScheme,
+    summary: 'Föreläsning: Hundars beteende',
   },
   {
     time: '14.00',
@@ -190,6 +202,7 @@ const horseEventDetails: IFullEventDetails[] = [
     period: 'fourth',
     type: 'horse',
     colorScheme: horseColorScheme,
+    summary: 'Föreläsning: Hundars beteende',
   },
 ];
 
@@ -211,12 +224,3 @@ export const horseEvent: IEvent = {
   details: horseEventDetails,
   Svg: HorseSVG,
 };
-
-// export const eventMap = [
-//   {1: "Agility"},
-//   {2: "Föreläsning"},
-
-//   {12: "Träffa hästuppfödare"},
-//   {13: "Föreläsning: Hästars beteende"}
-
-// ]

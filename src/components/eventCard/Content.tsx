@@ -8,6 +8,7 @@ interface IContent {
   period: EventPeriod;
   type: EventType;
   color: ColorScheme;
+  summary: string;
 }
 
 const Content: React.FC<IContent> = ({
@@ -15,12 +16,13 @@ const Content: React.FC<IContent> = ({
   type,
   period,
   color: { tertiaryColor },
+  summary,
 }) => {
   const { dispatch } = useEventDispatch();
   const { state } = useEventState();
 
   const toggleSubscribed = () => {
-    dispatch({ period, type });
+    dispatch({ period, type, summary });
   };
 
   const findCorrectPeriod = () => {
