@@ -10,11 +10,12 @@ import YoutubeSVG from './svg/YoutubeSVG';
 interface IFooterIcon {
   Icon: React.FunctionComponent;
   href: string;
+  alt: string;
 }
 
-const FooterIcon: React.FC<IFooterIcon> = ({ Icon, href }) => {
+const FooterIcon: React.FC<IFooterIcon> = ({ Icon, href, alt }) => {
   return (
-    <a className="w-4 h-4 rounded-md mx-2 md:mx-4" href={href}>
+    <a className="w-4 h-4 rounded-md mx-2 md:mx-4" href={href} title={alt}>
       <Icon />
     </a>
   );
@@ -25,22 +26,27 @@ const Footer = () => {
     {
       Icon: FacebookSVG,
       href: 'https://sv-se.facebook.com/folksam',
+      alt: 'Image of Facebook Icon',
     },
     {
       Icon: TwitterSVG,
       href: 'https://twitter.com/folksam',
+      alt: 'Image of Twitter Icon',
     },
     {
       Icon: InstagramSVG,
       href: 'https://www.instagram.com/folksam/',
+      alt: 'Image of Instagram Icon',
     },
     {
       Icon: YoutubeSVG,
       href: 'https://www.youtube.com/user/folksam',
+      alt: 'Image of Youtube Icon',
     },
     {
       Icon: LinkedInSVG,
       href: 'https://www.linkedin.com/company/folksam/?originalSubdomain=se',
+      alt: 'Image of LinkedIn Icon',
     },
   ];
   return (
@@ -60,7 +66,6 @@ const Footer = () => {
           <FooterIcon key={icon.href} {...icon} />
         ))}
       </div>
-      {/* <FlowerSVG /> */}
       <FlowerMobileSVG />
     </footer>
   );

@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import { Link } from 'react-scroll';
 
 interface AboutProps {}
 
@@ -10,6 +11,7 @@ const About: React.FC<AboutProps> = ({}) => {
 
   return (
     <section
+      id="about"
       style={{
         height: '35vh',
         backgroundImage: "url('/light_green_plate.svg')",
@@ -21,9 +23,17 @@ const About: React.FC<AboutProps> = ({}) => {
         Lite ytterligare text om eventet här och ännu mer info och beskrivning
         av syfte med evenmanget...
       </p>
-      <button className=" bg-grass py-3 px-5 rounded-3xl shadow-md hover:bg-overgrownGrass md:py-5 md:px-8 md:rounded-full md:text-xl">
-        Till anmälan
-      </button>
+
+      <Link
+        className="cursor-pointer p-2 hover:underline"
+        to="interest"
+        smooth={true}
+        duration={500}
+      >
+        <button className=" bg-grass py-3 px-5 rounded-3xl shadow-md hover:bg-overgrownGrass md:py-5 md:px-8 md:rounded-full md:text-xl">
+          Till anmälan
+        </button>
+      </Link>
     </section>
   );
 };

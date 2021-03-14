@@ -11,7 +11,7 @@ const CatEvent = () => {
         className="py-20 bg-cover bg-center -mt-11"
       ></div>
 
-      <div className="bg-ice -mt-28 px-4 pb-10">
+      <div id="cats" className="bg-ice -mt-28 px-4 pb-10">
         <Event {...catEvent} />
       </div>
 

@@ -7,11 +7,13 @@ import HorseEvent from '../src/components/eventCard/HorseEvent';
 import Footer from '../src/components/Footer';
 import Hero from '../src/components/Hero';
 import Location from '../src/components/Location';
+import Meta from '../src/components/Meta';
 import SignupForm from '../src/components/SignupForm';
 
 export default function Home() {
   return (
     <>
+      <Meta />
       <Hero />
       <About />
       <DogEvent />

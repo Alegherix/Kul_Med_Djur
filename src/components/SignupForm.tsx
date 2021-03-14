@@ -190,8 +190,9 @@ const SignupForm = () => {
       <div className="xl:flex mx-auto gap-8 w-full max-w-5xl xl:gap-0">
         <form className="grid grid-cols-2 gap-2 mb-4 w-full max-w-2xl mx-auto otherText xl:mr-8">
           <div className="flex flex-col w-full">
-            <label>Förnamn</label>
+            <label htmlFor="firstName">Förnamn</label>
             <input
+              id="firstName"
               name="firstName"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
@@ -199,24 +200,27 @@ const SignupForm = () => {
           </div>
 
           <div className="flex flex-col w-full">
-            <label>Efternamn</label>
+            <label htmlFor="lastName">Efternamn</label>
             <input
               name="lastName"
+              id="lastName"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
             />
           </div>
           <div className="col-span-2 flex flex-col">
-            <label>E-postadress</label>
+            <label htmlFor="email">E-postadress</label>
             <input
               name="email"
+              id="email"
               value={mail}
               onChange={(e) => setMail(e.target.value)}
             />
           </div>
           <div className="flex flex-col">
-            <label>Mobilnummer</label>
+            <label htmlFor="phone">Mobilnummer</label>
             <input
+              id="phone"
               type="number"
               name="phone"
               min="0"

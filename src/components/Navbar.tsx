@@ -78,6 +78,7 @@ const Navbar = () => {
           height={45}
           layout="fixed"
           priority={true}
+          alt="A picture of the Logo for Folksam"
         />
         {!tablet && <Burger open={open} setOpen={setOpen} />}
         {tablet && <NavigationItems />}

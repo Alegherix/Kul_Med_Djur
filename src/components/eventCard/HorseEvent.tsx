@@ -12,7 +12,7 @@ const HorseEvent: React.FC<HorseEventProps> = ({}) => {
         className="py-20 bg-cover bg-center -mt-11"
       ></div>
 
-      <div className="bg-dirt -mt-28 px-4">
+      <div id="horses" className="bg-dirt -mt-28 px-4">
         <Event {...horseEvent} />
       </div>
 

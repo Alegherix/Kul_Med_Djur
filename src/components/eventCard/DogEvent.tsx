@@ -11,12 +11,12 @@ const DogEvent = () => {
         style={{ backgroundImage: "url('/dark_green_plate.svg')" }}
         className="py-20 bg-cover bg-center"
       ></div>
-      <div className="bg-moss -mt-28 px-4 md:pb-10">
+      <div id="dogs" className="bg-moss -mt-28 px-4 md:pb-10">
         <Event {...dogEvent} />
       </div>
 
       <div
-        style={{ backgroundImage: "url('/dark_green_plate.svg.svg')" }}
+        style={{ backgroundImage: "url('/dark_green_plate.svg')" }}
         className="px-4 py-16 bg-cover bg-center bg-moss"
       ></div>
     </section>
