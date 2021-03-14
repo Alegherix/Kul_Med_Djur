@@ -1,8 +1,7 @@
-import React, { useRef, useState, useLayoutEffect, useEffect } from 'react';
-import HeroSVG from './svg/HeroSVG';
-import Image from 'next/image';
+import { motion, useTransform, useViewportScroll } from 'framer-motion';
+import React, { useEffect, useRef, useState } from 'react';
 import Navbar from './Navbar';
-import { motion, useViewportScroll, useTransform } from 'framer-motion';
+import HeroSVG from './svg/HeroSVG';
 
 const Hero = () => {
   const [elementTop, setElementTop] = useState(0);
@@ -20,20 +19,20 @@ const Hero = () => {
 
   return (
     <main ref={ref} className="relative " style={{ height: '80vh' }}>
-      <HeroSVG refHook={{ ref }} />
+      <HeroSVG />
       <Navbar />
       <motion.div style={{ y }} className="mt-10 text-center text-white">
-        <motion.h1
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.7, ease: 'easeOut' }}
+        <h1
+          // initial={{ opacity: 0 }}
+          // animate={{ opacity: 1 }}
+          // transition={{ duration: 0.7, ease: 'easeOut' }}
           style={{
             textShadow: '1px 4px 7px rgba(0,0,0,0.2)',
           }}
           className="text-5xl mb-2 font-bold md:text-7xl lg:text-8xl md:mt-40"
         >
           Kul med Djur
-        </motion.h1>
+        </h1>
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

@@ -1,6 +1,5 @@
-import React from 'react';
-import Image from 'next/image';
 import { useRouter } from 'next/router';
+import React from 'react';
 import { Link } from 'react-scroll';
 
 interface AboutProps {}

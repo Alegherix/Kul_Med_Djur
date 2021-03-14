@@ -1,15 +1,6 @@
-import React, { useRef, useState, useLayoutEffect, useEffect } from 'react';
+import React from 'react';
 
-import { motion, useViewportScroll, useTransform } from 'framer-motion';
-
-export default function HeroSVG(refHook) {
-  const [elementTop, setElementTop] = useState(0);
-  const { scrollY } = useViewportScroll();
-
-  const y = useTransform(scrollY, [elementTop, elementTop + 1], [0, -1], {
-    clamp: false,
-  });
-
+export default function HeroSVG() {
   return (
     <svg
       id="Lager_1"
@@ -116,9 +107,8 @@ export default function HeroSVG(refHook) {
         d="M375 0v351.2a162.3 162.3 0 00-56-4.2c-15.14 1.38-29.14 4.75-43.07 8.2-4 1-7.9 2-11.87 2.91-1.6.38-3.2.76-4.8 1.12a205.69 205.69 0 01-34.86 5.34c-14.18.78-28-1.48-41.74-4.74-15.41-3.66-30.65-8.6-46-11.91a150.09 150.09 0 00-26.21-3.52A100.58 100.58 0 0095 345c-8.31 1-16.18 1.61-24 2.53a149.59 149.59 0 00-27 5.31c-1.62.5-3.25 1-4.89 1.4a136.67 136.67 0 01-26.74 4.31q-3.81.24-7.63.26H0V0z"
         fill="url(#Namnlös_övertoning_4)"
       />
-      <motion.path
+      <path
         className="cls-2 animate-cloudOne"
-        style={{ y }}
         id="cloud2"
         fill="#fff"
         d="M124.45 38.52c3 .11 6.55 0 8.5-2.34a5.45 5.45 0 00-.65-7.28 6 6 0 00-7.44 0c-.48-3.49-1.63-7.14-4.41-9.29s-7.55-1.91-9.19 1.2a21.8 21.8 0 00-3.52-8.4 9.57 9.57 0 00-7.86-4c-3.06.2-6 2.81-5.88 5.87-3.48-2.56-8.51-5.09-11.7-2.18-2.61 2.37-1.82 6.57-.82 10h-7.37a6 6 0 00-2.63.4 4.08 4.08 0 00-1.83 4.46A11.8 11.8 0 0072 31.41c-1.69.12-3.49.28-4.78 1.36s-1.62 3.43-.2 4.33c3 1.89 6.68 2 10.21 1.83a62.72 62.72 0 016.8-.18c4.13.1 8.87.13 13-.18 4.34-.32 8.7-.45 12.88-.65 4.9-.23 9.72.43 14.54.6z"
@@ -147,8 +137,7 @@ export default function HeroSVG(refHook) {
         fill="#fff"
         d="M43.92 113.54c-.69 3.55-5 4.58-8.5 4.81-1.7.11-3.4.21-5.1.28-2.15.12-4.3.2-6.45.26-7 .18-14 .15-21-.19A9.82 9.82 0 010 118V84.27a7.64 7.64 0 011.06.73 4 4 0 001.88 1.16 3.76 3.76 0 001.63-.34A10 10 0 0114 87.53a11 11 0 013.94 9c5.61-1 11.32 4.75 10.57 10.62a11.5 11.5 0 017.08-1.55 11.14 11.14 0 014.93 1.64c2.08 1.35 3.89 3.76 3.4 6.3z"
       />
-      <motion.path
-        style={{ y }}
+      <path
         className="cls-2 animate-cloudThree "
         id="cloud4 rightSideBehindTree"
         fill="#fff"

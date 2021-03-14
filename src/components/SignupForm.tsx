@@ -1,16 +1,14 @@
-import { useState } from 'react';
-import { useEventDispatch, useEventState } from '../hooks/useEvent';
-import Swal from 'sweetalert2';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 import { IoClose } from 'react-icons/io5';
+import Swal from 'sweetalert2';
+import { useEventDispatch, useEventState } from '../hooks/useEvent';
 import {
   capitalizeFirstLetter,
   EventPeriod,
   EventType,
 } from '../utils/eventUtils';
-import { useRouter } from 'next/router';
-import { useEffect } from 'react';
 import FlowerSVG from './svg/FlowerSVG';
-import FlowerMobileSVG from './svg/FlowerMobileSVG';
 
 export const SucessPopup = () => {
   return (

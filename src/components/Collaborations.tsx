@@ -28,7 +28,7 @@ const CollabImage: React.FC<ICollab> = ({ href, hooverText }) => {
         src="/collaborations/SKK.webp"
         height={tablet ? 120 : 95}
         width={tablet ? 120 : 95}
-        layout="responsive"
+        layout="fixed"
       />
     </div>
   );

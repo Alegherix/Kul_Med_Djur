@@ -1,6 +1,5 @@
 import FacebookSVG from './svg/FacebookSVG';
 import FlowerMobileSVG from './svg/FlowerMobileSVG';
-import FlowerSVG from './svg/FlowerSVG';
 import InstagramSVG from './svg/InstagramSVG';
 import LinkedInSVG from './svg/LinkedInSVG';
 import TwitterSVG from './svg/TwitterSVG';
