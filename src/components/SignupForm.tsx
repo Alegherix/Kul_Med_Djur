@@ -180,14 +180,13 @@ const SignupForm = () => {
   return (
     <section id="interest" className="text-moss px-8 mt-8 pb-4 flex flex-col">
       <h3>Anmälan</h3>
-      {phoneNumber}
       <p className="text-center mx-auto mb-4 descText md:mb-8 md:w-96">
         Här kan du anmäla dig och din fyrbenta vän till en eller fler av
         aktiviteterna.
       </p>
 
-      <div className="xl:flex mx-auto gap-8 w-full max-w-5xl">
-        <form className="grid grid-cols-2 gap-2 mb-4 w-full max-w-2xl mx-auto otherText">
+      <div className="xl:flex mx-auto gap-8 w-full max-w-5xl xl:gap-0">
+        <form className="grid grid-cols-2 gap-2 mb-4 w-full max-w-2xl mx-auto otherText xl:mr-8">
           <div className="flex flex-col w-full">
             <label>Förnamn</label>
             <input
