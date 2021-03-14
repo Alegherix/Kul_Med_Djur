@@ -25,7 +25,7 @@ const CollabImage: React.FC<ICollab> = ({ href, hooverText }) => {
         </a>
       </div>
       <Image
-        src="/collaborations/SKK.webp"
+        src="/static/images/collaborations/SKK.webp"
         height={tablet ? 120 : 95}
         width={tablet ? 120 : 95}
         layout="fixed"
@@ -37,22 +37,22 @@ const CollabImage: React.FC<ICollab> = ({ href, hooverText }) => {
 const Collaboration = () => {
   const collabs: ICollab[] = [
     {
-      src: '/collaborations/SKK.webp',
+      src: '/static/images/collaborations/SKK.webp',
       hooverText: 'Svenska Kennelklubben',
       href: 'https://skk.se',
     },
     {
-      src: '/collaborations/SKK.webp',
+      src: '/static/images/collaborations/SKK.webp',
       hooverText: 'Second',
       href: 'https://skk.se',
     },
     {
-      src: '/collaborations/SKK.webp',
+      src: '/static/images/collaborations/SKK.webp',
       hooverText: 'Third',
       href: 'https://skk.se',
     },
     {
-      src: '/collaborations/SKK.webp',
+      src: '/static/images/collaborations/SKK.webp',
       hooverText: 'Fourth',
       href: 'https://skk.se',
     },
@@ -60,7 +60,9 @@ const Collaboration = () => {
 
   return (
     <section
-      style={{ background: "url('/light_pink_plate.svg')" }}
+      style={{
+        background: "url('/static/images/plates/light_pink_plate.svg')",
+      }}
       className="text-wine px-6 bg-cover bg-center -mt-10 py-16 text-center md:py-28"
     >
       <h3 className="mb-2">Samarbetspartners</h3>

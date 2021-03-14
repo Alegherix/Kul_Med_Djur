@@ -23,9 +23,6 @@ const Hero = () => {
       <Navbar />
       <motion.div style={{ y }} className="mt-10 text-center text-white">
         <h1
-          // initial={{ opacity: 0 }}
-          // animate={{ opacity: 1 }}
-          // transition={{ duration: 0.7, ease: 'easeOut' }}
           style={{
             textShadow: '1px 4px 7px rgba(0,0,0,0.2)',
           }}

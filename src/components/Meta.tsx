@@ -4,7 +4,7 @@ const Meta: React.FC = () => {
   return (
     <Head>
       <title>Kul med djur</title>
-      {/* <link rel="icon" href="/favicon.ico" /> */}
+      <link rel="icon" href="/static/favicons/favicon.ico" />
       <meta property="og:title" content="Kul med djur" key="title" />
       <meta
         property="og:description"

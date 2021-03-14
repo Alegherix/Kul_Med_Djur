@@ -73,7 +73,7 @@ const Navbar = () => {
     <nav className="flex flex-col w-full text-white ">
       <div className="flex justify-between items-center p-4">
         <Image
-          src="/Folksam_logo.svg"
+          src="/static/images/logo/Folksam_logo.svg"
           width={90}
           height={45}
           layout="fixed"

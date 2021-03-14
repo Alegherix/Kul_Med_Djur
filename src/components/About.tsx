@@ -13,7 +13,7 @@ const About: React.FC<AboutProps> = ({}) => {
       id="about"
       style={{
         height: '35vh',
-        backgroundImage: "url('/light_green_plate.svg')",
+        backgroundImage: "url('/static/images/plates/light_green_plate.svg')",
       }}
       className="text-center text-moss -mt-4 flex items-center justify-center flex-col h-full py-8 bg-cover bg-center"
     >

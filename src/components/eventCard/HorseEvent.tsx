@@ -8,7 +8,9 @@ const HorseEvent: React.FC<HorseEventProps> = ({}) => {
   return (
     <section>
       <div
-        style={{ backgroundImage: "url('/light_brown_plate.svg')" }}
+        style={{
+          backgroundImage: "url('/static/images/plates/light_brown_plate.svg')",
+        }}
         className="py-20 bg-cover bg-center -mt-11"
       ></div>
 
@@ -17,7 +19,9 @@ const HorseEvent: React.FC<HorseEventProps> = ({}) => {
       </div>
 
       <div
-        style={{ backgroundImage: "url('/light_brown_plate.svg')" }}
+        style={{
+          backgroundImage: "url('/static/images/plates/light_brown_plate.svg')",
+        }}
         className="-mt-6 px-4 py-16 bg-cover bg-center"
       ></div>
     </section>

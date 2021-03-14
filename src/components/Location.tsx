@@ -27,7 +27,7 @@ const Location = () => {
 
   return (
     <section
-      style={{ background: "url('/green_plate.svg')" }}
+      style={{ background: "url('/static/images/plates/green_plate.svg')" }}
       className="text-moss -mt-9 py-12 px-6 text-center flex flex-col h-full relative"
     >
       <div className="max-w-5xl md:flex flex-row-reverse  items-center md:mx-auto">

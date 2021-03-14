@@ -7,7 +7,9 @@ const CatEvent = () => {
   return (
     <section>
       <div
-        style={{ backgroundImage: "url('/light_blue_plate.svg')" }}
+        style={{
+          backgroundImage: "url('/static/images/plates/light_blue_plate.svg')",
+        }}
         className="py-20 bg-cover bg-center -mt-11"
       ></div>
 
@@ -16,7 +18,9 @@ const CatEvent = () => {
       </div>
 
       <div
-        style={{ backgroundImage: "url('/light_blue_plate.svg')" }}
+        style={{
+          backgroundImage: "url('/static/images/plates/light_blue_plate.svg')",
+        }}
         className="-mt-6 px-4 py-16 bg-cover bg-center"
       ></div>
     </section>

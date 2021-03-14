@@ -50,7 +50,10 @@ const Footer = () => {
   ];
   return (
     <footer
-      style={{ background: "url('/dark_brown_plate.svg')", height: '25vh' }}
+      style={{
+        background: "url('/static/images/plates/dark_brown_plate.svg')",
+        height: '25vh',
+      }}
       className="relative flex justify-center flex-col items-center pt-2"
     >
       <WhiteFolksamSVG />
