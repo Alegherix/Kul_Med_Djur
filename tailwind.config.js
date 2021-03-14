@@ -28,6 +28,11 @@ module.exports = {
         smallest: '1px',
         bigger: '440px',
       },
+      inset: {
+        '1/10': '10%',
+        '3/20': '15%',
+        '1/5': '20%',
+      },
 
       animation: {
         cloudOne: 'glide 11s alternate-reverse infinite linear',

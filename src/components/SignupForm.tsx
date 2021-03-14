@@ -9,6 +9,8 @@ import {
 } from '../utils/eventUtils';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
+import FlowerSVG from './svg/FlowerSVG';
+import FlowerMobileSVG from './svg/FlowerMobileSVG';
 
 export const SucessPopup = () => {
   return (
@@ -246,11 +248,16 @@ const SignupForm = () => {
         Skicka
       </button>
 
-      <p className="pl-4 mx-auto text-center max-w-md otherText md:pb-8">
-        När vi har bekräftat din anmälan skickas ett mejl till adressen du
-        angett. I mejlet får du mer information om aktiviteterna som du har
-        anmält dig till.
-      </p>
+      <div className="flex max-w-md mx-auto">
+        <p className="text-sm md:text-base text-center md:pb-8 pr-8">
+          När vi har bekräftat din anmälan skickas ett mejl till adressen du
+          angett. I mejlet får du mer information om aktiviteterna som du har
+          anmält dig till.
+        </p>
+        <div className="relative hidden md:flex">
+          <FlowerSVG />
+        </div>
+      </div>
     </section>
   );
 };

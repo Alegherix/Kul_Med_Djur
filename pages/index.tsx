@@ -1,37 +1,26 @@
-import About from '../src/components/About';
-import ColorIncluderTest from '../src/components/ColorIncluderTest';
-import {
-  CatContainer,
-  DogContainer,
-  HorseContainer,
-} from '../src/components/Event';
-import HeroSVG from '../src/components/svg/HeroSVG';
-import Hero from '../src/components/Hero';
 import React from 'react';
-import { Collaboration } from '../src/components/Collaborations';
-import { Location } from '../src/components/Location';
-import SignupForm from '../src/components/SignupForm';
-import Footer from '../src/components/Footer';
-import DogEvent from '../src/components/eventCard/DogEvent';
+import About from '../src/components/About';
+import Collaboration from '../src/components/Collaborations';
 import CatEvent from '../src/components/eventCard/CatEvent';
+import DogEvent from '../src/components/eventCard/DogEvent';
 import HorseEvent from '../src/components/eventCard/HorseEvent';
+import Footer from '../src/components/Footer';
+import Hero from '../src/components/Hero';
+import Location from '../src/components/Location';
+import SignupForm from '../src/components/SignupForm';
 
 export default function Home() {
   return (
-    <main>
+    <>
       <Hero />
       <About />
       <DogEvent />
       <CatEvent />
       <HorseEvent />
-      {/* <CatContainer /> */}
-      {/* <HorseContainer /> */}
       <Collaboration />
       <Location />
       <SignupForm />
       <Footer />
-
-      {/* <HeroSVG /> */}
-    </main>
+    </>
   );
 }

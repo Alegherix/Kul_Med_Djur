@@ -33,7 +33,7 @@ const CollabImage: React.FC<ICollab> = ({ href, hooverText }) => {
   );
 };
 
-export const Collaboration = () => {
+const Collaboration = () => {
   const collabs: ICollab[] = [
     {
       src: '/collaborations/SKK.webp',
@@ -75,3 +75,5 @@ export const Collaboration = () => {
     </section>
   );
 };
+
+export default Collaboration;

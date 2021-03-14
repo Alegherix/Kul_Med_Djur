@@ -16,7 +16,7 @@ const DogEvent = () => {
       </div>
 
       <div
-        style={{ backgroundImage: "url('/dark_bottom.svg')" }}
+        style={{ backgroundImage: "url('/dark_green_plate.svg.svg')" }}
         className="px-4 py-16 bg-cover bg-center bg-moss"
       ></div>
     </section>

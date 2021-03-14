@@ -19,7 +19,7 @@ const pinAnimation = (part: string) => {
   return anim;
 };
 
-export const Location = () => {
+const Location = () => {
   useIsomorphicLayoutEffect(() => {
     pinAnimation('.pin');
     pinAnimation('.pinShadow');
@@ -54,3 +54,5 @@ export const Location = () => {
     </section>
   );
 };
+
+export default Location;

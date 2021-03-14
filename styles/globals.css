@@ -13,8 +13,7 @@
 
 @layer base {
   body {
-    @apply bg-melon;
-    @apply font-sans;
+    @apply bg-melon font-sans;
   }
 
   h3 {
