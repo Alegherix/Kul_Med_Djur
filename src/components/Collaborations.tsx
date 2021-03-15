@@ -6,7 +6,7 @@ interface ICollab {
   hooverText: string;
   href: string;
 }
-const CollabImage: React.FC<ICollab> = ({ href, hooverText }) => {
+const CollabImage: React.FC<ICollab> = ({ src, href, hooverText }) => {
   const tablet = useMatchMedia('(min-width: 1024px)');
 
   return (
@@ -25,7 +25,7 @@ const CollabImage: React.FC<ICollab> = ({ href, hooverText }) => {
         </a>
       </div>
       <Image
-        src="/static/images/collaborations/SKK.webp"
+        src={src}
         height={tablet ? 120 : 95}
         width={tablet ? 120 : 95}
         layout="fixed"
@@ -42,19 +42,19 @@ const Collaboration = () => {
       href: 'https://skk.se',
     },
     {
-      src: '/static/images/collaborations/SKK.webp',
-      hooverText: 'Second',
-      href: 'https://skk.se',
+      src: '/static/images/collaborations/GDF.webp',
+      hooverText: 'Göteborgs Djurskyddsförening',
+      href: 'https://djurskydd.nu',
     },
     {
-      src: '/static/images/collaborations/SKK.webp',
-      hooverText: 'Third',
-      href: 'https://skk.se',
+      src: '/static/images/collaborations/SRF.webp',
+      hooverText: 'Svenska Ridsports Förbundet',
+      href: 'https://www.ridsport.se',
     },
     {
-      src: '/static/images/collaborations/SKK.webp',
-      hooverText: 'Fourth',
-      href: 'https://skk.se',
+      src: '/static/images/collaborations/FirstVet.webp',
+      hooverText: 'FirstVet',
+      href: 'https://firstvet.com/sv',
     },
   ];
 
