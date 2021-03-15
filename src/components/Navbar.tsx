@@ -57,17 +57,19 @@ const NavigationItems = () => {
   return (
     <ul className="flex flex-wrap items-center justify-center flex-col  gap-2 text-xl md:flex-row text-happy">
       <SmoothScroll text="Om Eventet" to="about" />
-      <SmoothScroll text="Hundar" to="dogs" />
-      <SmoothScroll text="Katter" to="cats" />
-      <SmoothScroll text="Hästar" to="horses" />
-      <SmoothScroll text="Intresseanmälan" to="interest" />
+      <SmoothScroll text="Hund" to="dogs" />
+      <SmoothScroll text="Katt" to="cats" />
+      <SmoothScroll text="Häst" to="horses" />
+      <SmoothScroll text="Sammarbeten" to="horses" />
+      <SmoothScroll text="Hitta hit" to="horses" />
+      <SmoothScroll text="Anmälan" to="interest" />
     </ul>
   );
 };
 
 const Navbar = () => {
   const [open, setOpen] = React.useState(false);
-  const tablet = useMatchMedia('(min-width: 768px)');
+  const laptop = useMatchMedia('(min-width: 1280px)');
 
   return (
     <nav className="flex flex-col w-full text-white ">
@@ -80,10 +82,10 @@ const Navbar = () => {
           priority={true}
           alt="A picture of the Logo for Folksam"
         />
-        {!tablet && <Burger open={open} setOpen={setOpen} />}
-        {tablet && <NavigationItems />}
+        {!laptop && <Burger open={open} setOpen={setOpen} />}
+        {laptop && <NavigationItems />}
       </div>
-      {open && !tablet && <NavigationItems />}
+      {open && !laptop && <NavigationItems />}
     </nav>
   );
 };

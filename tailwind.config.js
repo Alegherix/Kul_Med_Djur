@@ -28,6 +28,13 @@ module.exports = {
         smallest: '1px',
         bigger: '440px',
       },
+      minWidth: {
+        full: '100%',
+      },
+      screens: {
+        macbook: '2500px',
+      },
+
       inset: {
         '1/10': '10%',
         '3/20': '15%',

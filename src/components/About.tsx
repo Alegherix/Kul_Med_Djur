@@ -12,13 +12,13 @@ const About: React.FC<AboutProps> = ({}) => {
     <section
       id="about"
       style={{
-        height: '35vh',
+        height: '40vh',
         backgroundImage: "url('/static/images/plates/light_green_plate.svg')",
       }}
-      className="text-center text-moss -mt-4 flex items-center justify-center flex-col h-full py-8 bg-cover bg-center"
+      className="text-center text-moss -mt-4 flex items-center justify-center flex-col h-full py-8 bg-cover bg-center pt-10 macbook:pt-16"
     >
       <h2 className="mb-3">Eventbeskrivning här</h2>
-      <p className="mb-4 w-full md:w-bigger mx-auto md:text-xl md:mb-8">
+      <p className="mb-4 w-full md:w-bigger mx-auto md:text-xl md:mb-8 px-2">
         Lite ytterligare text om eventet här och ännu mer info och beskrivning
         av syfte med evenmanget...
       </p>

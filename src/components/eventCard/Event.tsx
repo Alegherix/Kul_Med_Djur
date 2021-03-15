@@ -1,8 +1,6 @@
 import { AnimateSharedLayout, motion } from 'framer-motion';
 import React from 'react';
 import { IEvent } from '../../utils/eventData';
-import DogSVG from '../svg/DogSVG';
-import HorseSVG from '../svg/HorseSVG';
 import Card from './Card';
 
 const Event: React.FC<IEvent> = ({
