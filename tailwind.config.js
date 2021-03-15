@@ -31,8 +31,8 @@ module.exports = {
       minWidth: {
         full: '100%',
       },
-      screens: {
-        macbook: '2500px',
+      mb: {
+        macbook: '2100px',
       },
 
       inset: {
