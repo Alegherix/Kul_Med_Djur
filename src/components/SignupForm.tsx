@@ -131,7 +131,7 @@ const SignupForm = () => {
   const {
     name: queryFirstName,
     lastname: queryLastName,
-    email: queryEmail,
+    mail: queryEmail,
     phone: queryPhone,
   } = router.query;
 

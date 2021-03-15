@@ -21,7 +21,7 @@ const CollabImage: React.FC<ICollab> = ({ src, href, hooverText }) => {
       "
       >
         <a
-          className="font-bold hover:underline text-white text-xs md:text-base"
+          className="font-bold hover:underline text-white text-sm md:text-base px-1"
           href={href}
         >
           {hooverText}
