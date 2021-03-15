@@ -20,7 +20,10 @@ const CollabImage: React.FC<ICollab> = ({ src, href, hooverText }) => {
       flex items-center justify-center transition duration-300 ease-out
       "
       >
-        <a className="font-bold hover:underline text-white" href={href}>
+        <a
+          className="font-bold hover:underline text-white text-xs md:text-base"
+          href={href}
+        >
           {hooverText}
         </a>
       </div>
