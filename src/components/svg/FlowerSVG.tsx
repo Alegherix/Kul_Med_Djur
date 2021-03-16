@@ -7,7 +7,7 @@ export default function FlowerSVG() {
       viewBox="0 0 374.21 1247.11"
       xmlns="http://www.w3.org/2000/svg"
       data-name="Lager 1"
-      className="w-20  absolute z-10 hidden md:flex lg:w-32 lg:-top-20 xl:-top-24 macbook:-top-32"
+      className="w-20  absolute z-10 hidden md:flex lg:w-24 lg:-top-20 "
     >
       <defs />
       <path

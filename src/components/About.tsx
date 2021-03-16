@@ -6,7 +6,7 @@ interface AboutProps {}
 
 const About: React.FC<AboutProps> = ({}) => {
   const router = useRouter();
-  const { name, lastname, petname } = router.query;
+  const { name, petname } = router.query;
 
   return (
     <section
@@ -14,12 +14,23 @@ const About: React.FC<AboutProps> = ({}) => {
       style={{
         backgroundImage: "url('/static/images/plates/light_green_plate.svg')",
       }}
-      className="text-center text-moss -mt-4 flex items-center justify-center flex-col h-full py-8 bg-cover bg-center pt-10 macbook:pt-16 h-[40vh]"
+      className=" text-moss -mt-4 flex items-center justify-center flex-col h-full py-8 bg-cover bg-center pt-10 macbook:pt-16 "
     >
-      <h2 className="mb-3">Eventbeskrivning här</h2>
-      <p className="mb-4 w-full md:w-bigger mx-auto md:text-xl md:mb-8 px-2">
-        Lite ytterligare text om eventet här och ännu mer info och beskrivning
-        av syfte med evenmanget...
+      <h2 className="mb-3 pt-6">
+        {name && petname
+          ? `Välkommen ${name} & ${petname}`
+          : 'Välkommen ut i naturen!'}
+      </h2>
+      <p className="aboutText">
+        Folksam finns till för allt du bryr dig om. Nu vill vi på Folksam,
+        tillsammans med våra samarbetspartners, visa att vi bryr oss om dig!
+        Därför bjuder vi in till en heldag i naturen full med aktiviteter för
+        dig och ditt älskade husdjur.
+      </p>
+      <p className="aboutText">
+        Evenemanget kommer äga rum runt Stora Delsjön i Göteborg och vi utgår
+        från Delsjöbadet. Läs mer om dagens aktiviteter och anmäl dig direkt här
+        på sidan. Hoppas att vi ses!
       </p>
 
       <Link

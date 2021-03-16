@@ -37,7 +37,7 @@ const Event: React.FC<IEvent> = ({
           ))}
         </div>
         <div
-          className={`absolute md:hidden -top-24 ${
+          className={`absolute md:hidden -top-28 ${
             reverse ? '-left-4' : '-right-4'
           }`}
         >

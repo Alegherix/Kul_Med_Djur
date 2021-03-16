@@ -57,8 +57,7 @@ const horseColorScheme: ColorScheme = {
 const dogEventHeading: IEventHeading = {
   header: 'Hundägare?',
   description: [
-    'Eller går du i tankarna att skaffa en fyrbent kompis?',
-    'Passa på att delta i någon av våra aktiviteter för just hundar',
+    'Eller går du i tankarna att skaffa en fyrbent kompis? Vill du testa på agility,lära dig mer om hundars beteende eller bara träffa andra hundägare?',
   ],
   colorScheme: dogColorScheme,
 };
@@ -66,8 +65,7 @@ const dogEventHeading: IEventHeading = {
 const catEventHeading: IEventHeading = {
   header: 'Kattägare?',
   description: [
-    'Eller drömmer du om att skaffa en lurvig rumskamrat?',
-    'Passa på att delta i någon av våra aktiviteter för just katter',
+    'Eller drömmer du om att ta hand om en mysig spinnande kisse? Här kan du träffa uppfödare, lära dig mer om katters beteende och prata med andra kattägare!',
   ],
   colorScheme: catColorScheme,
 };
@@ -75,8 +73,7 @@ const catEventHeading: IEventHeading = {
 const horseEventHeading: IEventHeading = {
   header: 'Hästägare?',
   description: [
-    'Eller alltid varit lite nyfiken på vad det innebär?',
-    'Passa på att delta i någon av våra aktiviteter för just hästar',
+    'Eller alltid varit lite nyfiken på vad det innebär att äga eller ta hand om en häst? Under dagen finns det bland annat möjlighet att lära sig om hästvård och lyssna på en föreläsning om hästars beteende! ',
   ],
   colorScheme: horseColorScheme,
 };
@@ -84,9 +81,9 @@ const horseEventHeading: IEventHeading = {
 const dogEventDetails: IFullEventDetails[] = [
   {
     time: '10.00',
-    text: 'Testa på agility med Anna Andersson',
+    text: 'Agility med Anna',
     textContent:
-      'Testa på agility med Anna Andersson, ta med din fyrbenta kompis och öva tillsammans eller kom ensam och lär dig mer om hur agility fungerar',
+      'Testa på agility med Anna Andersson. Ta med din fyrbenta kompis och öva tillsammans eller kom ensam och lär dig mer om hur agility fungerar. Anna kommer tillsammans med sin prisbelönta hund Viggo att visa hur de tränar agility.',
     period: 'first',
     type: 'dog',
     colorScheme: dogColorScheme,
@@ -94,9 +91,9 @@ const dogEventDetails: IFullEventDetails[] = [
   },
   {
     time: '11.00',
-    text: 'Föreläsning om hundars beteende',
+    text: 'Hundars beteende',
     textContent:
-      'Hundars beteende är mer komplext än vad de flesta någonsin kunnat föreställa sig, lär dig mer om hur hundar fungerar och ta eran relation till en ny nivå.',
+      'Välkommen på en föreläsning om hundars beteende tillsammans med Viktor Johansson. Hundars beteende är mer komplext än du kan tro. Nu kan du lära dig mer om hur just din hund fungerar i olika situationer och ta er relation till en ny nivå.',
     period: 'second',
     type: 'dog',
     colorScheme: dogColorScheme,
@@ -104,9 +101,9 @@ const dogEventDetails: IFullEventDetails[] = [
   },
   {
     time: '13.00',
-    text: 'Kloklippning och pälsvård',
+    text: 'Vårda vovven',
     textContent:
-      'Hundars beteende är mer komplext än vad de flesta någonsin kunnat föreställa sig, lär dig mer om hur hundar fungerar och ta eran relation till en ny nivå.',
+      'Alla hundar behöver vård för att må bra. Johanna Johansson som är hundfrisör kommer att visa och berätta om hur du bäst vårdar din hund när det kommer till det yttre. Under dagen så kommer hon prata om både pälsvård och kloklippning för olika sorters raser.',
     period: 'third',
     type: 'dog',
     colorScheme: dogColorScheme,
@@ -114,9 +111,9 @@ const dogEventDetails: IFullEventDetails[] = [
   },
   {
     time: '14.00',
-    text: 'Testa på lydnas med Jan Jansson',
+    text: 'Lydnad med Jan',
     textContent:
-      'Hundars beteende är mer komplext än vad de flesta någonsin kunnat föreställa sig, lär dig mer om hur hundar fungerar och ta eran relation till en ny nivå.',
+      'Nu har du chansen att få testa på lydnadsträning tillsammans med Jan Jansson. Jan har tillsammans med hunden Fluffis vunnit flera priser inom rallylydnad och nu ska han dela med sig av sina bästa tips. Ta med din hund och träna eller kom ensam och inspireras.',
     period: 'fourth',
     type: 'dog',
     colorScheme: dogColorScheme,
@@ -127,19 +124,19 @@ const dogEventDetails: IFullEventDetails[] = [
 const catEventDetails: IFullEventDetails[] = [
   {
     time: '10.00',
-    text: 'Utställningstips med Anna Andersson',
+    text: 'Utställningstips',
     textContent:
-      'Testa på agility med Anna Andersson, ta med din fyrbenta kompis och öva tillsammans eller kom ensam och lär dig mer om hur agility fungerar',
+      'Lär dig mer om kattutställning tillsammans med Eva Nilsson och hennes katt Uffe. Ta med din fluffiga kompis och testa tillsammans eller kom ensam och lär dig mer om hur en utställning fungerar. Det kommer även finnas tid till att ställa frågor till Eva, så ta chansen!',
     period: 'first',
     type: 'cat',
     colorScheme: catColorScheme,
-    summary: 'Agility',
+    summary: 'Utställningstips',
   },
   {
     time: '11.00',
-    text: 'Föreläsning om katters beteende',
+    text: 'Katters beteende',
     textContent:
-      'Hundars beteende är mer komplext än vad de flesta någonsin kunnat föreställa sig, lär dig mer om hur hundar fungerar och ta eran relation till en ny nivå.',
+      'Välkommen på en föreläsning om katters beteende tillsammans med Stefan Karlsson. Katters beteende är mer komplext än du kan tro. Nu kan du lära dig mer om hur just din kisse fungerar i olika situationer och ta er relation till en ny nivå.',
     period: 'second',
     type: 'cat',
     colorScheme: catColorScheme,
@@ -147,19 +144,19 @@ const catEventDetails: IFullEventDetails[] = [
   },
   {
     time: '13.00',
-    text: 'Katt Café med medhavd fika',
+    text: 'Kattkafé',
     textContent:
-      'Hundars beteende är mer komplext än vad de flesta någonsin kunnat föreställa sig, lär dig mer om hur hundar fungerar och ta eran relation till en ny nivå.',
+      'Fika + katter = sant! Passa på att delta i vårt kattkafé. Här bjuder vi på kaffe och kaka samtidigt som du får möjligheten att umgås med detta fantastiska djur. Ta med din egna lilla älskling eller njut av att få hälsa på alla andra katter som finns på plats.',
     period: 'third',
     type: 'cat',
     colorScheme: catColorScheme,
-    summary: 'Katt Café',
+    summary: 'Kattkafé',
   },
   {
     time: '14.00',
-    text: 'Träffa uppfödare av olika raser',
+    text: 'Träffa uppfödare',
     textContent:
-      'Hundars beteende är mer komplext än vad de flesta någonsin kunnat föreställa sig, lär dig mer om hur hundar fungerar och ta eran relation till en ny nivå.',
+      'Funderar du på att skaffa katt men inte vet vilket ras som skulle passa just dig? Eller är du en kattuppfödare som vill lära känna fler inom området? Nu har du chansen att få träffa kattuppfödare av olika raser. Här kan du mingla och ställa frågor om olika raser.',
     period: 'fourth',
     type: 'cat',
     colorScheme: catColorScheme,
@@ -170,43 +167,44 @@ const catEventDetails: IFullEventDetails[] = [
 const horseEventDetails: IFullEventDetails[] = [
   {
     time: '10.00',
-    text: 'Hästvård med Anders Karlsson',
+    text: 'Dressyr med Maja',
     textContent:
-      'Att ta hand om sin häst på rätt sätt är en av de absolut viktigaste delarna för att få din häst att må bra. Anders Karlsson håller därför en föreläsning om hur du tar hand om din häst på bästa sätt med allt ifrån tänder till hovar.',
+      'Maja Olsson har vunnit flera priser inom dressyr med sin häst Champion. Nu berättar hon om hur det är att tävla tillsammans med en häst och ger tips och råd till de som är sugna på att börja med dressyr. Här har du chansen att ställa frågor och lära dig mer om grenen.',
     period: 'first',
+    type: 'horse',
+    colorScheme: horseColorScheme,
+    summary: 'Dressyr',
+  },
+  {
+    time: '11.00',
+    text: 'Hästars beteende',
+    textContent:
+      'Välkommen på en föreläsning om hästars beteende tillsammans med Viktoria Johansson. Hästars beteende är mer komplext än du kan tro. Nu kan du lära dig mer om hur just din häst fungerar i olika situationer och ta er relation till en ny nivå.',
+    period: 'third',
+    type: 'horse',
+    colorScheme: horseColorScheme,
+    summary: 'Föreläsning: hästars beteende',
+  },
+  {
+    time: '13.00',
+    text: 'Vårda din häst',
+    textContent:
+      'Att ta hand om sin häst på rätt sätt är en av de viktigaste delarna för att få din häst att må bra inifrån och ut. Nu har du chansen att lyssna på Anders Karlsson när han berättar om hur du tar hand om din häst på bästa sätt med allt från tänder till hovar.',
+    period: 'second',
     type: 'horse',
     colorScheme: horseColorScheme,
     summary: 'Hästvård',
   },
-  {
-    time: '11.00',
-    text: 'Skritt teknik med Johanna Svensson',
-    textContent:
-      'Hundars beteende är mer komplext än vad de flesta någonsin kunnat föreställa sig, lär dig mer om hur hundar fungerar och ta eran relation till en ny nivå.',
-    period: 'second',
-    type: 'horse',
-    colorScheme: horseColorScheme,
-    summary: 'Skritt teknik',
-  },
-  {
-    time: '13.00',
-    text: 'Travövningar inför tävling',
-    textContent:
-      'Hundars beteende är mer komplext än vad de flesta någonsin kunnat föreställa sig, lär dig mer om hur hundar fungerar och ta eran relation till en ny nivå.',
-    period: 'third',
-    type: 'horse',
-    colorScheme: horseColorScheme,
-    summary: 'Travövningar',
-  },
+
   {
     time: '14.00',
-    text: 'Föreläsning om hästars beteende',
+    text: 'Träffa uppfödare',
     textContent:
-      'Hundars beteende är mer komplext än vad de flesta någonsin kunnat föreställa sig, lär dig mer om hur hundar fungerar och ta eran relation till en ny nivå.',
+      'Funderar du på att skaffa häst men inte vet vilket ras som skulle passa just dig och ditt liv? Eller är du en hästuppfödare som vill lära känna fler inom området? Nu har du chansen att få träffa hästuppfödare av olika raser. Här kan du mingla och ställa frågor om olika raser.',
     period: 'fourth',
     type: 'horse',
     colorScheme: horseColorScheme,
-    summary: 'Föreläsning: Hästars beteende',
+    summary: 'Meet & Greet med hästuppfödare',
   },
 ];
 
