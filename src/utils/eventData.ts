@@ -57,7 +57,7 @@ const horseColorScheme: ColorScheme = {
 const dogEventHeading: IEventHeading = {
   header: 'Hundägare?',
   description: [
-    'Eller går du i tankarna att skaffa en fyrbent kompis? Vill du testa på agility,lära dig mer om hundars beteende eller bara träffa andra hundägare?',
+    'Eller går du i tankarna att skaffa en fyrbent kompis? Vill du testa på agility, lära dig mer om hundars beteende eller bara träffa andra hundägare?',
   ],
   colorScheme: dogColorScheme,
 };
