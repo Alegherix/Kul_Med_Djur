@@ -24,14 +24,17 @@ module.exports = {
         moss: '#1a431f',
         wine: '#561E42',
       },
+
       width: {
         smallest: '1px',
         bigger: '440px',
       },
+
       minWidth: {
         full: '100%',
       },
-      mb: {
+
+      screens: {
         macbook: '2100px',
       },
 
@@ -69,12 +72,6 @@ module.exports = {
           '100%': { transform: 'translateX(-5%)' },
         },
       },
-    },
-  },
-  variants: {
-    extend: {
-      transform: ['group-focus'],
-      opacity: ['disabled'],
     },
   },
   plugins: [],

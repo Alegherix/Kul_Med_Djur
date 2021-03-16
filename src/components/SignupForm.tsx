@@ -9,60 +9,7 @@ import {
   EventType,
 } from '../utils/eventUtils';
 import FlowerSVG from './svg/FlowerSVG';
-
-export const SucessPopup = () => {
-  return (
-    <div className="flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
-      <div className="flex items-center justify-center w-12 bg-green-500">
-        <svg
-          className="w-6 h-6 text-white fill-current"
-          viewBox="0 0 40 40"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M20 3.33331C10.8 3.33331 3.33337 10.8 3.33337 20C3.33337 29.2 10.8 36.6666 20 36.6666C29.2 36.6666 36.6667 29.2 36.6667 20C36.6667 10.8 29.2 3.33331 20 3.33331ZM16.6667 28.3333L8.33337 20L10.6834 17.65L16.6667 23.6166L29.3167 10.9666L31.6667 13.3333L16.6667 28.3333Z" />
-        </svg>
-      </div>
-
-      <div className="px-4 py-2 -mx-3">
-        <div className="mx-3">
-          <span className="font-semibold text-green-500 dark:text-green-400">
-            Success
-          </span>
-          <p className="text text-gray-600 dark:text-gray-200">
-            Din anmälan har nu registrerats!
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export const ErrorPopup = () => {
-  return (
-    <div className="flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
-      <div className="flex items-center justify-center w-12 bg-red-500">
-        <svg
-          className="w-6 h-6 text-white fill-current"
-          viewBox="0 0 40 40"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M20 3.36667C10.8167 3.36667 3.3667 10.8167 3.3667 20C3.3667 29.1833 10.8167 36.6333 20 36.6333C29.1834 36.6333 36.6334 29.1833 36.6334 20C36.6334 10.8167 29.1834 3.36667 20 3.36667ZM19.1334 33.3333V22.9H13.3334L21.6667 6.66667V17.1H27.25L19.1334 33.3333Z" />
-        </svg>
-      </div>
-
-      <div className="px-4 py-2 -mx-3">
-        <div className="mx-3">
-          <span className="font-semibold text-red-500 dark:text-red-400 tracking-wider">
-            Error
-          </span>
-          <p className="text-sm text-gray-600 dark:text-gray-200 ">
-            Någonting gick fel, vänligen försök igen.
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-};
+import { motion, AnimateSharedLayout } from 'framer-motion';
 
 interface IActivites {
   text: string;
@@ -79,8 +26,12 @@ const Activites: React.FC<IActivites> = ({ text, period, type }) => {
   };
 
   return (
-    <div className="p-2 rounded-full bg-white shadow-md text-moss  inline-block mr-2 my-2">
-      <div className="flex items-center">
+    <motion.div
+      layout
+      exit={{ opacity: 0 }}
+      className="p-2 rounded-full bg-white shadow-md text-moss  inline-block mr-2 my-2"
+    >
+      <motion.div className="flex items-center">
         <p className="ml-2 mr-4">{text}</p>
         <IoClose
           onClick={removeEvent}
@@ -88,8 +39,8 @@ const Activites: React.FC<IActivites> = ({ text, period, type }) => {
           color="#1a431f"
           size="18px"
         />
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 
@@ -151,8 +102,8 @@ const SignupForm = () => {
     let number;
     try {
       number = queryPhone ?? parseInt(queryPhone as string);
+      if (number) setPhoneNumber(number);
     } catch (err) {}
-    if (number) setPhoneNumber(number);
   }, [router.query]);
 
   // Resets form when submiting
@@ -178,89 +129,108 @@ const SignupForm = () => {
     firstName && lastName && (mail || phoneNumber) && hasSubscribedForEvent();
 
   return (
-    <section id="interest" className="text-moss px-8 mt-8 pb-4 flex flex-col">
-      <h3>Anmälan</h3>
-      <p className="text-center mx-auto mb-4 descText md:mb-8 md:w-96">
-        Här kan du anmäla dig och din fyrbenta vän till en eller fler av
-        aktiviteterna.
-      </p>
-
-      <div className="xl:flex mx-auto gap-8 w-full max-w-5xl xl:gap-0">
-        <form className="grid grid-cols-2 gap-2 mb-4 w-full max-w-2xl mx-auto otherText xl:mr-8">
-          <div className="flex flex-col w-full">
-            <label htmlFor="firstName">Förnamn</label>
-            <input
-              id="firstName"
-              name="firstName"
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
-            />
-          </div>
-
-          <div className="flex flex-col w-full">
-            <label htmlFor="lastName">Efternamn</label>
-            <input
-              name="lastName"
-              id="lastName"
-              value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
-            />
-          </div>
-          <div className="col-span-2 flex flex-col">
-            <label htmlFor="email">E-postadress</label>
-            <input
-              name="email"
-              id="email"
-              value={mail}
-              onChange={(e) => setMail(e.target.value)}
-            />
-          </div>
-          <div className="flex flex-col">
-            <label htmlFor="phone">Mobilnummer</label>
-            <input
-              id="phone"
-              type="number"
-              name="phone"
-              min="0"
-              value={phoneNumber || ''}
-              onChange={(e) => {
-                setPhoneNumber(e.target.value);
-              }}
-            />
-          </div>
-        </form>
-        <div className="mb-4 w-full max-w-2xl mx-auto">
-          {!hasSubscribedForEvent() ? (
-            <p>Du har inte anmält dig till något event ännu.</p>
-          ) : (
-            <>
-              <p>Du har anmält mig till följande aktiviteter:</p>
-              <SubscribedEvents />
-            </>
-          )}
-        </div>
-      </div>
-
-      <button
-        onClick={submitFromBtn}
-        className="bg-moss px-8 py-3 text-melon rounded-3xl 
-      mx-auto w-40 mb-4 md:py-5 md:px-8 md:rounded-full md:text-xl disabled:opacity-50"
-        disabled={!hasEnteredSufficentDetails()}
+    <AnimateSharedLayout>
+      <motion.section
+        id="interest"
+        className="text-moss px-8 mt-8 pb-4 flex flex-col"
       >
-        Skicka
-      </button>
+        <motion.h3>Anmälan</motion.h3>
+        <motion.p className="text-center mx-auto mb-4 descText md:mb-8 md:w-96">
+          Här kan du anmäla dig och din fyrbenta vän till en eller fler av
+          aktiviteterna.
+        </motion.p>
 
-      <div className="flex max-w-md mx-auto">
-        <p className="text-sm md:text-base text-center md:pb-8 pr-8">
-          När vi har bekräftat din anmälan skickas ett mejl till adressen du
-          angett. I mejlet får du mer information om aktiviteterna som du har
-          anmält dig till.
-        </p>
-        <div className="relative hidden md:flex">
-          <FlowerSVG />
-        </div>
-      </div>
-    </section>
+        <motion.div
+          layout
+          className="xl:flex mx-auto gap-8 w-full max-w-5xl xl:gap-0"
+        >
+          <motion.form
+            layout
+            className="grid grid-cols-2 gap-2 mb-4 w-full max-w-2xl mx-auto otherText xl:mr-8"
+          >
+            <div className="flex flex-col w-full">
+              <label htmlFor="firstName">Förnamn</label>
+              <input
+                id="firstName"
+                name="firstName"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+              />
+            </div>
+
+            <div className="flex flex-col w-full">
+              <label htmlFor="lastName">Efternamn</label>
+              <input
+                name="lastName"
+                id="lastName"
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+              />
+            </div>
+            <div className="col-span-2 flex flex-col">
+              <label htmlFor="email">E-postadress</label>
+              <input
+                name="email"
+                id="email"
+                value={mail}
+                onChange={(e) => setMail(e.target.value)}
+              />
+            </div>
+            <div className="flex flex-col">
+              <label htmlFor="phone">Mobilnummer</label>
+              <input
+                id="phone"
+                type="number"
+                name="phone"
+                min="0"
+                value={phoneNumber || ''}
+                onChange={(e) => {
+                  setPhoneNumber(e.target.value);
+                }}
+              />
+            </div>
+          </motion.form>
+          <motion.div layout className="mb-4 w-full max-w-2xl mx-auto">
+            {!hasSubscribedForEvent() ? (
+              <motion.p layout>
+                Du har inte anmält dig till något event ännu.
+              </motion.p>
+            ) : (
+              <>
+                <motion.p layout>
+                  Du har anmält mig till följande aktiviteter:
+                </motion.p>
+                <SubscribedEvents />
+              </>
+            )}
+          </motion.div>
+        </motion.div>
+
+        <motion.button
+          layout
+          onClick={submitFromBtn}
+          className="bg-moss px-8 py-3 text-melon rounded-3xl 
+      mx-auto w-40 mb-4 md:py-5 md:px-8 md:rounded-full md:text-xl disabled:opacity-50"
+          disabled={!hasEnteredSufficentDetails()}
+        >
+          Skicka
+        </motion.button>
+
+        <motion.div layout className="flex max-w-md mx-auto">
+          <motion.p
+            layout
+            className="text-sm md:text-base text-center md:pb-8 pr-8"
+          >
+            När vi har bekräftat din anmälan skickas ett mejl till adressen du
+            angett. I mejlet får du mer information om aktiviteterna som du har
+            anmält dig till.
+          </motion.p>
+          <div className="relative hidden md:flex">
+            <FlowerSVG />
+          </div>
+        </motion.div>
+      </motion.section>
+    </AnimateSharedLayout>
   );
 };
 
