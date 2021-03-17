@@ -45,7 +45,7 @@ const Hero = () => {
           style={{ textShadow: '1px 4px 7px rgba(0,0,0,0.2)' }}
           className="text-xl md:text-3xl"
         >
-          Delsjön runt - 15/5 2021
+          Delsjön runt - 15 maj 2021
         </p>
       </motion.div>
     </main>
