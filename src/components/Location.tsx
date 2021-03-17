@@ -1,39 +1,40 @@
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+// import { gsap } from 'gsap';
+// import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import React from 'react';
-import useIsomorphicLayoutEffect from '../hooks/UseIsomorphicLayoutEffect';
-import LocationSVG from './svg/LocationSVG';
+// import useIsomorphicLayoutEffect from '../hooks/UseIsomorphicLayoutEffect';
+// import LocationSVG from './svg/LocationSVG';
+import GMap from './GMap';
 
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
-const pinAnimation = (part: string) => {
-  const anim = gsap.from(`${part}`, {
-    scrollTrigger: {
-      trigger: `${part}`,
-      start: 'top center',
-    },
-    opacity: 0,
-    y: -400,
-    duration: 0.8,
-  });
-  return anim;
-};
+// const pinAnimation = (part: string) => {
+//   const anim = gsap.from(`${part}`, {
+//     scrollTrigger: {
+//       trigger: `${part}`,
+//       start: 'top center',
+//     },
+//     opacity: 0,
+//     y: -400,
+//     duration: 0.8,
+//   });
+//   return anim;
+// };
 
 const Location = () => {
-  useIsomorphicLayoutEffect(() => {
-    pinAnimation('.pin');
-    pinAnimation('.pinShadow');
-  }, []);
+  // useIsomorphicLayoutEffect(() => {
+  //   pinAnimation('.pin');
+  //   pinAnimation('.pinShadow');
+  // }, []);
 
   return (
     <section
       id="location"
       style={{ background: "url('/static/images/plates/green_plate.svg')" }}
-      className="text-moss -mt-9 py-12 px-6 text-center flex flex-col h-full relative"
+      className="text-moss -mt-12 py-16 px-6 text-center flex flex-col h-full relative"
     >
-      <div className="max-w-5xl md:flex flex-row-reverse  items-center md:mx-auto">
+      <div className="max-w-6xl md:flex flex-row-reverse  items-center md:mx-auto">
         <div className="md:w-full md:ml-2 xl:text-left xl:pl-14">
-          <h3 className="xl:text-left xl:px-7">Hitta hit!</h3>
+          <h3 className="xl:text-left xl:px-7 pt-6">Hitta hit!</h3>
           <p className="mb-7 descText md:w-bigger  md:px-8 lg:px-7 xl:pl-7 xl:w-full">
             Alla aktiviteter som sker under dagen kommer äga rum runt Stora
             Delsjön i Göteborg. Vi utgår från Delsjöbadet, där Folksam kommer
@@ -41,12 +42,9 @@ const Location = () => {
           </p>
         </div>
 
-        <div className="flex flex-col md:w-full items-center descText">
-          <div
-            style={{ maxWidth: '450px' }}
-            className="w-full flex items-center justify-center md:w-72 xl:w-bigger"
-          >
-            <LocationSVG />
+        <div className="flex flex-col md:w-full items-center descText w-full">
+          <div className="w-full flex items-center justify-center md:w-72 lg:w-bigger">
+            <GMap />
           </div>
           <p className="textLocation mt-4 font-bold text-center">Delsjöbadet</p>
           <p className="font-bold text-center">416 55 Göteborg</p>
