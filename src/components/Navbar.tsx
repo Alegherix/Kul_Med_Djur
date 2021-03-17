@@ -60,8 +60,8 @@ const NavigationItems = () => {
       <SmoothScroll text="Hund" to="dogs" />
       <SmoothScroll text="Katt" to="cats" />
       <SmoothScroll text="Häst" to="horses" />
-      <SmoothScroll text="Samarbeten" to="horses" />
-      <SmoothScroll text="Hitta hit" to="horses" />
+      <SmoothScroll text="Samarbeten" to="collaborations" />
+      <SmoothScroll text="Hitta hit" to="location" />
       <SmoothScroll text="Anmälan" to="interest" />
     </ul>
   );

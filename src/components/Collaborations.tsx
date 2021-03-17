@@ -63,6 +63,7 @@ const Collaboration = () => {
 
   return (
     <section
+      id="collaborations"
       style={{
         background: "url('/static/images/plates/light_pink_plate.svg')",
       }}

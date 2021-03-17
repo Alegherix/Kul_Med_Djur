@@ -26,7 +26,7 @@ const Hero = () => {
           style={{
             textShadow: '1px 4px 7px rgba(0,0,0,0.2)',
           }}
-          className="text-5xl mb-2 font-bold md:text-7xl lg:text-8xl md:mt-40 macbook:mt-10"
+          className="text-5xl mb-2 font-bold md:text-7xl lg:text-8xl md:mt-16 macbook:mt-10"
         >
           Kul med Djur
         </h1>
