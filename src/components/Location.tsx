@@ -1,31 +1,7 @@
-// import { gsap } from 'gsap';
-// import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import React from 'react';
-// import useIsomorphicLayoutEffect from '../hooks/UseIsomorphicLayoutEffect';
-// import LocationSVG from './svg/LocationSVG';
 import GMap from './GMap';
 
-// gsap.registerPlugin(ScrollTrigger);
-
-// const pinAnimation = (part: string) => {
-//   const anim = gsap.from(`${part}`, {
-//     scrollTrigger: {
-//       trigger: `${part}`,
-//       start: 'top center',
-//     },
-//     opacity: 0,
-//     y: -400,
-//     duration: 0.8,
-//   });
-//   return anim;
-// };
-
 const Location = () => {
-  // useIsomorphicLayoutEffect(() => {
-  //   pinAnimation('.pin');
-  //   pinAnimation('.pinShadow');
-  // }, []);
-
   return (
     <section
       id="location"
