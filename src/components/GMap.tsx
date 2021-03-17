@@ -5,7 +5,7 @@ import mapStyles from '../utils/mapstyles';
 const containerStyle = {
   width: '350px',
   height: '350px',
-  borderRadius: '10px',
+  borderRadius: '15px',
 };
 
 const center = {
