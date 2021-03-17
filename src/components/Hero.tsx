@@ -31,8 +31,8 @@ const Hero = () => {
         style={{ y }}
         className="mt-10 text-center text-white relative"
       >
-        {/* <CloudOne />
-        <CloudTwo /> */}
+        <CloudOne />
+        <CloudTwo />
         <h1
           style={{
             textShadow: '1px 4px 7px rgba(0,0,0,0.2)',
