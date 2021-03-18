@@ -180,7 +180,7 @@ const horseEventDetails: IFullEventDetails[] = [
     text: 'Hästars beteende',
     textContent:
       'Välkommen på en föreläsning om hästars beteende tillsammans med Viktoria Johansson. Hästars beteende är mer komplext än du kan tro. Nu kan du lära dig mer om hur just din häst fungerar i olika situationer och ta er relation till en ny nivå.',
-    period: 'third',
+    period: 'second',
     type: 'horse',
     colorScheme: horseColorScheme,
     summary: 'Föreläsning: hästars beteende',
@@ -190,7 +190,7 @@ const horseEventDetails: IFullEventDetails[] = [
     text: 'Vårda din häst',
     textContent:
       'Att ta hand om sin häst på rätt sätt är en av de viktigaste delarna för att få din häst att må bra inifrån och ut. Nu har du chansen att lyssna på Anders Karlsson när han berättar om hur du tar hand om din häst på bästa sätt med allt från tänder till hovar.',
-    period: 'second',
+    period: 'third',
     type: 'horse',
     colorScheme: horseColorScheme,
     summary: 'Hästvård',
