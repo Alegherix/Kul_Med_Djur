@@ -146,7 +146,7 @@ const SignupForm = () => {
         >
           <motion.form
             layout
-            className="grid grid-cols-2 gap-2 mb-4 w-full max-w-2xl mx-auto otherText xl:mr-8"
+            className="grid grid-cols-2 gap-2 mb-4 w-full max-w-2xl mx-auto xl:mr-8"
           >
             <div className="flex flex-col w-full">
               <label htmlFor="firstName">Förnamn</label>

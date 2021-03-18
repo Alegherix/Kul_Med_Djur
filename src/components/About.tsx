@@ -39,7 +39,7 @@ const About: React.FC<AboutProps> = ({}) => {
         smooth={true}
         duration={500}
       >
-        <button className=" bg-grass py-3 px-5 rounded-3xl shadow-md hover:bg-overgrownGrass md:py-5 md:px-8 md:rounded-full md:text-xl">
+        <button className=" bg-grass py-3 px-5 rounded-3xl shadow-md hover:bg-overgrownGrass md:py-5 md:px-8 md:rounded-full md:text-xl transition duration-300">
           Till anmälan
         </button>
       </Link>

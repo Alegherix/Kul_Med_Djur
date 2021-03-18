@@ -10,6 +10,7 @@ This is a project dedicated to create a landing page for Kul med djur - Delsjön
 - Vercel
 - Framer Motion
 - Immer
+- Google Maps API
 
 ## Authors
 

@@ -1,5 +1,8 @@
 import React from 'react';
-import GMap from './GMap';
+import dynamic from 'next/dynamic';
+
+// Testing out using Dynamic import to reduce blocking of main thread
+const GMap = dynamic(() => import('./GMap'));
 
 const Location = () => {
   return (
@@ -19,7 +22,7 @@ const Location = () => {
         </div>
 
         <div className="flex flex-col md:w-full items-center descText w-full">
-          <div className="w-full flex items-center justify-center md:w-72 lg:w-bigger">
+          <div className="w-full flex items-center justify-center md:w-72 lg:w-bigger xl:w-[500px]">
             <GMap />
           </div>
           <p className="textLocation mt-4 font-bold text-center">Delsjöbadet</p>

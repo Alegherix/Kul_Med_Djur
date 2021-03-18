@@ -2,8 +2,8 @@ import { motion, useTransform, useViewportScroll } from 'framer-motion';
 import React, { useEffect, useRef, useState } from 'react';
 import Navbar from './Navbar';
 import HeroSVG from './svg/HeroSVG';
-import CloudOne from './svg/testClouds/CloudOne';
-import CloudTwo from './svg/testClouds/CloudTwo';
+import RightCloudSVG from './svg/RightCloudSVG';
+import LeftCloudSVG from './svg/LeftCloudSVG';
 
 const Hero = () => {
   const [elementTop, setElementTop] = useState(0);
@@ -31,8 +31,8 @@ const Hero = () => {
         style={{ y }}
         className="mt-10 text-center text-white relative"
       >
-        <CloudOne />
-        <CloudTwo />
+        <RightCloudSVG />
+        <LeftCloudSVG />
         <h1
           style={{
             textShadow: '1px 4px 7px rgba(0,0,0,0.2)',
