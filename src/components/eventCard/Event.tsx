@@ -42,7 +42,7 @@ const Event: React.FC<IEvent> = ({
         >
           <MobileSVG />
         </div>
-        <div className="w-full -my-28 absolute md:relative hidden md:flex">
+        <div className="pointer-events-none w-full -my-28 absolute md:relative hidden md:flex">
           <SVG />
         </div>
       </div>

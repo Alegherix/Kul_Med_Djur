@@ -209,8 +209,10 @@ const SignupForm = () => {
         <motion.button
           layout
           onClick={submitFromBtn}
-          className="bg-moss px-8 py-3 text-melon rounded-3xl 
-      mx-auto w-40 mb-4 md:py-5 md:px-8 md:rounded-full md:text-xl disabled:opacity-50"
+          className={`bg-moss px-8 py-3 text-melon rounded-3xl mx-auto w-40 mb-4 md:py-5 md:px-8 md:rounded-full md:text-xl disabled:opacity-50 ${
+            hasEnteredSufficentDetails() &&
+            'hover:bg-[#205226] transition duration-300'
+          }`}
           disabled={!hasEnteredSufficentDetails()}
         >
           Skicka
