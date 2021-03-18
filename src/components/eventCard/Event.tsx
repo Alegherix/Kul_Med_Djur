@@ -1,5 +1,4 @@
 import { AnimateSharedLayout, motion } from 'framer-motion';
-import React from 'react';
 import { IEvent } from '../../utils/eventData';
 import Card from './Card';
 

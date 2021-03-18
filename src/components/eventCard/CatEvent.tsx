@@ -1,4 +1,3 @@
-import React from 'react';
 import { catEvent } from '../../utils/eventData';
 import Event from './Event';
 

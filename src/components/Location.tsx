@@ -1,8 +1,5 @@
 import React from 'react';
-import dynamic from 'next/dynamic';
-
-// Testing out using Dynamic import to reduce blocking of main thread
-const GMap = dynamic(() => import('./GMap'));
+import GMap from './GMap';
 
 const Location = () => {
   return (

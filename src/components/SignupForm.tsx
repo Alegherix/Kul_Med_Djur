@@ -107,7 +107,7 @@ const SignupForm = () => {
   }, [router.query]);
 
   // Resets form when submiting
-  const submitFromBtn = () => {
+  const submitFromBtn = async () => {
     Swal.fire(
       `Strålande ${firstName}!`,
       'Din anmälan är nu registrerad',

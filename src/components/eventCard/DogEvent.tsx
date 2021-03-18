@@ -1,9 +1,6 @@
-import { AnimateSharedLayout, motion } from 'framer-motion';
-import React from 'react';
 import { dogEvent } from '../../utils/eventData';
 import Event from './Event';
 
-// testImplementationOf an Event
 const DogEvent = () => {
   return (
     <section>

@@ -28,7 +28,7 @@
     @apply text-moss mb-1 text-sm lg:text-base;
   }
   input {
-    @apply placeholder-moss placeholder-opacity-50 rounded-2xl text-sm bg-grass pl-2 h-8  md:py-5 md:text-base lg:text-base lg:py-5;
+    @apply placeholder-moss placeholder-opacity-50 rounded-2xl text-sm bg-grass pl-2 h-8  md:py-5 md:text-base;
   }
 }
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import { horseEvent } from '../../utils/eventData';
 import Event from './Event';
 

@@ -1,6 +1,19 @@
 import React from 'react';
-import { GoogleMap, LoadScript } from '@react-google-maps/api';
 import mapStyles from '../utils/mapstyles';
+import dynamic from 'next/dynamic';
+import type {
+  LoadScript as LoadScriptType,
+  GoogleMap as GoogleMapType,
+} from '@react-google-maps/api';
+
+// Dynamically import the Google maps Components
+const LoadScript = dynamic(() =>
+  import('@react-google-maps/api').then((lib) => lib.LoadScript as any)
+) as typeof LoadScriptType;
+
+const GoogleMap = dynamic(() =>
+  import('@react-google-maps/api').then((lib) => lib.GoogleMap as any)
+) as typeof GoogleMapType;
 
 const containerStyle = {
   width: '460px',
