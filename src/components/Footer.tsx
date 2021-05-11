@@ -53,7 +53,7 @@ const Footer = () => {
       style={{
         background: "url('/static/images/plates/dark_brown_plate.svg')",
       }}
-      className="relative flex justify-center flex-col items-center pt-12 pb-12"
+      className="relative flex justify-center flex-col items-center pt-12 pb-8"
     >
       <WhiteFolksamSVG />
       <p className="text-dirt w-48 text-xs text-center mb-5 md:text-base md:w-64">
@@ -66,6 +66,11 @@ const Footer = () => {
         {footerIcons.map((icon) => (
           <FooterIcon key={icon.href} {...icon} />
         ))}
+      </div>
+      <div className="mt-8 text-white px-4 max-w-md mx-auto lg:max-w-screen-lg">
+        <span className="font-bold">Disclaimer</span>: Detta är en fiktionell
+        hemsida skapad som en skoluppgift på Yrgo. Sidan har inget med Folksam
+        att göra.
       </div>
       <FlowerMobileSVG />
     </footer>
